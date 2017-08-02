@@ -3,7 +3,8 @@
 
 # TEAM
 
-  <name> -- <role> -- <twitter>
+  Pascal Honegger -- Developer
+  Seraphin Rihm -- Developer
 
 # THANKS
 
@@ -14,4 +15,4 @@
 # TECHNOLOGY COLOPHON
 
   HTML5, CSS3
-  Angular2, TypeScript, Webpack
+  Angular4, TypeScript, Webpack
