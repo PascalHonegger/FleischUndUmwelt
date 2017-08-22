@@ -1,3 +1,4 @@
+import { AdsenseModule } from 'ng2-adsense';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -63,7 +64,10 @@ interface StoreType {
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules }),
+    AdsenseModule.forRoot({
+      adClient: 'ca-pub-5587044720123310'
+    })
   ],
   /**
    * Expose our Services and Providers into Angular's dependency injection.
