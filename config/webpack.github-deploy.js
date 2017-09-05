@@ -38,7 +38,7 @@ module.exports = function (options) {
       * Prefixing so every resource will be absolute (otherwise it will be url.com/repoName/repoName...
       * Suffixing since chunks will not do it automatically (testes against about page)
       */
-     publicPath: '/' + GH_REPO_NAME + '/' + ghDeploy.safeUrl(webpackConfig.output.publicPath)
+     publicPath: '/' // + GH_REPO_NAME + '/' + ghDeploy.safeUrl(webpackConfig.output.publicPath)
    },
 
    plugins: [
