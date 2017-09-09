@@ -49,7 +49,10 @@ import '../styles/headings.css';
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules }),
+    RouterModule.forRoot(ROUTES, {
+      useHash: Boolean(history.pushState) === false,
+      preloadingStrategy: PreloadAllModules
+    }),
     AdsenseModule.forRoot({
       adClient: 'ca-pub-5587044720123310'
     })

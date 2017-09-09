@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import OfflinePluginRuntime from 'offline-plugin/runtime';
 
 @Component({
   selector: 'app',
@@ -14,10 +15,32 @@ import { Component } from '@angular/core';
       <router-outlet></router-outlet>
     </main>
 
+    <!--
     <footer>
       <ng2-adsense></ng2-adsense>
     </footer>
+    -->
   `
 })
 export class AppComponent {
+  constructor() {
+    OfflinePluginRuntime.install({
+      onUpdating: () => {
+        console.log('SW Event:', 'onUpdating');
+      },
+      onUpdateReady: () => {
+        console.log('SW Event:', 'onUpdateReady');
+        // Tells to new SW to take control immediately
+        OfflinePluginRuntime.applyUpdate();
+      },
+      onUpdated: () => {
+        console.log('SW Event:', 'onUpdated');
+        // Reload the webpage to load into the new version
+        window.location.reload();
+      },
+      onUpdateFailed: () => {
+        console.log('SW Event:', 'onUpdateFailed');
+      }
+    });
+  }
 }

@@ -22,6 +22,7 @@ const InlineManifestWebpackPlugin = require('inline-manifest-webpack-plugin');
 const LoaderOptionsPlugin = require('webpack/lib/LoaderOptionsPlugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const ngcWebpack = require('ngc-webpack');
+const OfflinePlugin = require('offline-plugin');
 //const PreloadWebpackPlugin = require('preload-webpack-plugin');
 
 /**
@@ -33,7 +34,8 @@ const METADATA = {
   title: 'Fleisch und Umwelt',
   baseUrl: '/',
   isDevServer: helpers.isWebpackDevServer(),
-  HMR: HMR
+  HMR: HMR,
+  AOT: AOT
 };
 
 /**
@@ -114,13 +116,6 @@ module.exports = function (options) {
         {
           test: /\.ts$/,
           use: [
-            {
-              loader: '@angularclass/hmr-loader',
-              options: {
-                pretty: !isProd,
-                prod: isProd
-              }
-            },
             {
               /**
                *  MAKE SURE TO CHAIN VANILLA JS CODE, I.E. TS COMPILATION OUTPUT.
@@ -267,7 +262,7 @@ module.exports = function (options) {
         /**
          * The (\\|\/) piece accounts for path separators in *nix and Windows
          */
-        /angular(\\|\/)core(\\|\/)@angular/,
+        /(.+)?angular(\\|\/)core(.+)?/,
         helpers.root('src'), // location of your src
         {
           /**
@@ -286,7 +281,6 @@ module.exports = function (options) {
        */
       new CopyWebpackPlugin([
         { from: 'src/assets', to: 'assets' },
-        { from: 'src/CNAME', to: '' },
         { from: 'src/meta' }
       ],
         isProd ? { ignore: [ 'mock-data/**/*' ] } : undefined
@@ -322,7 +316,10 @@ module.exports = function (options) {
       new HtmlWebpackPlugin({
         template: 'src/index.html',
         title: METADATA.title,
-        chunksSortMode: 'dependency',
+        chunksSortMode: function (a, b) {
+          const entryPoints = ["inline","polyfills","sw-register","styles","vendor","main"];
+          return entryPoints.indexOf(a.names[0]) - entryPoints.indexOf(b.names[0]);
+        },
         metadata: METADATA,
         inject: 'body'
       }),
@@ -393,6 +390,21 @@ module.exports = function (options) {
        * https://github.com/szrenwei/inline-manifest-webpack-plugin
        */
       new InlineManifestWebpackPlugin(),
+
+      // it's always better if OfflinePlugin is the last plugin added
+      new OfflinePlugin({
+        ServiceWorker: {
+          events: true,
+        },
+        cacheMaps: [
+          {
+            match: function(requestUrl) {
+              return new URL('/', location);
+            },
+            requestTypes: ['navigate']
+          }
+        ]
+      })
     ],
 
     /**
