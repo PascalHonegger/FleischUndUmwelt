@@ -1,47 +1,11 @@
 CACHE MANIFEST
-#ver:2017-9-9 15:04:49
+#ver:2017-9-9 15:14:57
 #plugin:4.8.3
 
 CACHE:
-/polyfills.a508ea28dc1ea3639d67.bundle.js
-/main.b5b5cb328cc8c228ca65.bundle.js
 /main.d799841e5ce53c2fb9389a7567f94401.css
-/assets/data.json
-/assets/icon/android-icon-192x192.png
-/assets/icon/android-icon-36x36.png
-/assets/icon/android-icon-144x144.png
-/assets/icon/android-icon-48x48.png
-/assets/icon/android-icon-72x72.png
-/assets/icon/android-icon-96x96.png
-/assets/icon/apple-icon-120x120.png
-/assets/icon/apple-icon-114x114.png
-/assets/icon/apple-icon-144x144.png
-/assets/icon/apple-icon-152x152.png
-/assets/icon/apple-icon-57x57.png
-/assets/icon/apple-icon-180x180.png
-/assets/icon/apple-icon-60x60.png
-/assets/icon/apple-icon-72x72.png
-/assets/icon/apple-icon-76x76.png
-/assets/icon/browserconfig.xml
-/assets/icon/favicon-16x16.png
-/assets/icon/favicon-32x32.png
-/assets/icon/favicon-96x96.png
-/assets/icon/apple-icon-precomposed.png
-/assets/icon/favicon.ico
-/assets/icon/ms-icon-144x144.png
-/assets/icon/ms-icon-150x150.png
-/assets/icon/ms-icon-70x70.png
-/assets/icon/ms-icon-310x310.png
-/assets/img/angularclass-avatar.png
-/assets/img/angular-logo.png
-/assets/img/angularclass-logo.png
-/assets/icon/apple-icon.png
-/humans.txt
-/robots.txt
-/manifest.json
-/404.html
-/CNAME
-/
+/main.b5b5cb328cc8c228ca65.bundle.js
+/polyfills.a508ea28dc1ea3639d67.bundle.js
 
 NETWORK:
 *
