@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import OfflinePluginRuntime from 'offline-plugin/runtime';
+import { Component, isDevMode } from '@angular/core';
 
 @Component({
   selector: 'app',
@@ -24,6 +23,13 @@ import OfflinePluginRuntime from 'offline-plugin/runtime';
 })
 export class AppComponent {
   constructor() {
+    if (isDevMode()) {
+      // No caching in dev mode
+      return;
+    }
+
+    const OfflinePluginRuntime = require('offline-plugin/runtime');
+
     OfflinePluginRuntime.install({
       onUpdating: () => {
         console.log('SW Event:', 'onUpdating');

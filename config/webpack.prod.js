@@ -25,6 +25,7 @@ const ProvidePlugin = require('webpack/lib/ProvidePlugin');
 const ModuleConcatenationPlugin = require('webpack/lib/optimize/ModuleConcatenationPlugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeJsPlugin = require('optimize-js-plugin');
+const OfflinePlugin = require('offline-plugin');
 
 /**
  * Webpack Constants
@@ -268,6 +269,34 @@ module.exports = function (env) {
           },
 
         }
+      }),
+
+      // it's always better if OfflinePlugin is the last plugin added
+      new OfflinePlugin({
+        publicPath: '/',
+        caches: {
+          main: [
+            'main.*.css',
+            'main.*.js',
+            'polyfills.*.js',
+            'assets/manifest.json',
+            'assets/img/*.png'
+          ]
+        },
+
+
+        ServiceWorker: {
+          events: true,
+          navigateFallbackURL: '/'
+        },
+        cacheMaps: [
+          {
+            match: function(requestUrl) {
+              return new URL('/', location);
+            },
+            requestTypes: ['navigate']
+          }
+        ]
       }),
 
       /**

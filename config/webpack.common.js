@@ -22,7 +22,6 @@ const InlineManifestWebpackPlugin = require('inline-manifest-webpack-plugin');
 const LoaderOptionsPlugin = require('webpack/lib/LoaderOptionsPlugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const ngcWebpack = require('ngc-webpack');
-const OfflinePlugin = require('offline-plugin');
 //const PreloadWebpackPlugin = require('preload-webpack-plugin');
 
 /**
@@ -281,7 +280,8 @@ module.exports = function (options) {
        */
       new CopyWebpackPlugin([
         { from: 'src/assets', to: 'assets' },
-        { from: 'src/meta' }
+        { from: 'src/meta' },
+        { from: 'src/gh-pages' }
       ],
         isProd ? { ignore: [ 'mock-data/**/*' ] } : undefined
       ),
@@ -390,21 +390,6 @@ module.exports = function (options) {
        * https://github.com/szrenwei/inline-manifest-webpack-plugin
        */
       new InlineManifestWebpackPlugin(),
-
-      // it's always better if OfflinePlugin is the last plugin added
-      new OfflinePlugin({
-        ServiceWorker: {
-          events: true,
-        },
-        cacheMaps: [
-          {
-            match: function(requestUrl) {
-              return new URL('/', location);
-            },
-            requestTypes: ['navigate']
-          }
-        ]
-      })
     ],
 
     /**

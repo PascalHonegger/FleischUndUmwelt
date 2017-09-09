@@ -31,8 +31,8 @@ const RE_ENDS_WITH_BS = /\/$/;
  * Create an HTML tag with attributes from a map.
  *
  * Example:
- * createTag('link', { rel: "manifest", href: "/manifest.json" })
- * // <link rel="manifest" href="/manifest.json">
+ * createTag('link', { rel: "manifest", href: "/assets/manifest.json" })
+ * // <link rel="manifest" href="/assets/manifest.json">
  * @param tagName The name of the tag
  * @param attrMap A Map of attribute names (keys) and their values.
  * @param publicPath a path to add to eh start of static asset url
