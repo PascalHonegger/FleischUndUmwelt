@@ -1,10 +1,10 @@
 CACHE MANIFEST
-#ver:2017-9-9 15:41:51
+#ver:2017-9-10 20:05:52
 #plugin:4.8.3
 
 CACHE:
 /main.d799841e5ce53c2fb9389a7567f94401.css
-/main.f43270231c3b692dcadf.bundle.js
+/main.fd68c78254b691d8cfea.bundle.js
 /polyfills.a508ea28dc1ea3639d67.bundle.js
 /assets/manifest.json
 /assets/img/angular-logo.png
