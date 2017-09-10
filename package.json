@@ -73,7 +73,7 @@
     "@angular/compiler-cli": "~4.4.0-RC.0",
     "@types/hammerjs": "^2.0.35",
     "@types/jasmine": "2.5.54",
-    "@types/node": "^8.0.28",
+    "@types/node": "8.0.26",
     "@types/source-map": "^0.5.1",
     "@types/uglify-js": "^2.6.29",
     "@types/webpack": "^3.0.10",
