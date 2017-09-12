@@ -1,15 +1,39 @@
-<nav>
-  <a [routerLink]=" ['./'] ">Start</a>
-  <a [routerLink]=" ['./rechner'] ">Rechner</a>
-  <a [routerLink]=" ['./impressum'] ">Impressum</a>
-</nav>
+<md-toolbar class="app-toolbar mat-toolbar mat-primary" role="toolbar">
+  <div class="mat-toolbar-layout">
+    <md-toolbar-row class="mat-toolbar-row">
+      <ul role="navigation">
+        <li>
+          <a class="nav-link" routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
+            <md-icon>sort</md-icon>
+            <span>Rechner</span>
+          </a>
+        </li>
+        <li>
+          <a class="nav-link" routerLink="/facts" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
+            <md-icon>info_outline</md-icon>
+            <span>Fakten &amp; Quellen</span>
+          </a>
+        </li>
+        <li>
+          <a class="nav-link" routerLink="/impressum" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
+            <md-icon>contact_mail</md-icon>
+            <span>Impressum</span>
+          </a>
+        </li>
+      </ul>
+    </md-toolbar-row>
+  </div>
+</md-toolbar>
 
 <main>
-  <router-outlet></router-outlet>
+  <div class="main-container">
+    <router-outlet></router-outlet>
+  </div>
 </main>
 
-<!--
 <footer>
+  <cookie-law></cookie-law>
+<!--
 <ng2-adsense></ng2-adsense>
-</footer>
 -->
+</footer>

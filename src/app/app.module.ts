@@ -1,5 +1,8 @@
 import { AdsenseModule } from 'ng2-adsense';
+import { CookieLawModule } from 'angular2-cookie-law';
+
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {
@@ -23,10 +26,20 @@ import { ENV_PROVIDERS } from './environment';
 import { ROUTES } from './app.routes';
 // App is our top level component
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home';
+import { FactsComponent } from './facts';
 import { AboutComponent } from './about';
 import { CalculatorComponent } from './calculator';
 import { NoContentComponent } from './no-content';
+
+// Material 2
+import {
+  MdSidenavModule,
+  MdIconModule,
+  MdButtonModule,
+  MdListModule,
+  MdToolbarModule
+} from '@angular/material';
+import 'hammerjs';
 
 import '../styles/styles.scss';
 import '../styles/headings.css';
@@ -40,7 +53,7 @@ import '../styles/headings.css';
     AppComponent,
     AboutComponent,
     CalculatorComponent,
-    HomeComponent,
+    FactsComponent,
     NoContentComponent,
   ],
   /**
@@ -48,6 +61,7 @@ import '../styles/headings.css';
    */
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     RouterModule.forRoot(ROUTES, {
       useHash: Boolean(history.pushState) === false,
@@ -55,7 +69,13 @@ import '../styles/headings.css';
     }),
     AdsenseModule.forRoot({
       adClient: 'ca-pub-5587044720123310'
-    })
+    }),
+    CookieLawModule,
+    MdSidenavModule,
+    MdIconModule,
+    MdButtonModule,
+    MdListModule,
+    MdToolbarModule
   ],
   /**
    * Expose our Services and Providers into Angular's dependency injection.
