@@ -1,14 +1,14 @@
 CACHE MANIFEST
-#ver:2017-9-10 20:20:35
+#ver:2017-9-12 23:02:04
 #plugin:4.8.3
 
 CACHE:
-/main.d799841e5ce53c2fb9389a7567f94401.css
-/main.fd68c78254b691d8cfea.bundle.js
+/main.96fb83631a0fdc4c1dc76d0913d9f8a9.css
+/main.d66d7c7a1b2460b5cefd.bundle.js
 /polyfills.a508ea28dc1ea3639d67.bundle.js
 /assets/manifest.json
-/assets/img/angularclass-avatar.png
 /assets/img/angular-logo.png
+/assets/img/angularclass-avatar.png
 /assets/img/angularclass-logo.png
 
 NETWORK:
