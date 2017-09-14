@@ -1,6 +1,7 @@
 import { AdsenseModule } from 'ng2-adsense';
 import { CookieLawModule } from 'angular2-cookie-law';
 
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
@@ -37,7 +38,8 @@ import {
   MdIconModule,
   MdButtonModule,
   MdListModule,
-  MdToolbarModule
+  MdToolbarModule,
+  MdMenuModule
 } from '@angular/material';
 import 'hammerjs';
 
@@ -75,7 +77,9 @@ import '../styles/headings.css';
     MdIconModule,
     MdButtonModule,
     MdListModule,
-    MdToolbarModule
+    MdToolbarModule,
+    MdMenuModule,
+    FlexLayoutModule
   ],
   /**
    * Expose our Services and Providers into Angular's dependency injection.

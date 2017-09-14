@@ -6,6 +6,20 @@ import { Component, isDevMode } from '@angular/core';
   templateUrl: './app.component.html'
 })
 export class AppComponent {
+  public links = [{
+    url: ['/'],
+    mdIcon: 'sort',
+    content: 'Rechner'
+  }, {
+    url: ['/facts'],
+    mdIcon: 'info_outline',
+    content: 'Fakten & Quellen'
+  }, {
+    url: ['/impressum'],
+    mdIcon: 'contact_mail',
+    content: 'Impressum'
+  }];
+
   constructor() {
     if (isDevMode()) {
       // No caching in dev mode

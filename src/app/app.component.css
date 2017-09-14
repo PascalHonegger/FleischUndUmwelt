@@ -30,3 +30,15 @@ a.active-link {
   outline: none;
   padding: 8px 16px;
 }
+
+.align-right {
+  float: right;
+}
+
+.main-text {
+  align-self: center;
+}
+
+.nav-flex-div {
+  width: 100%;
+}
