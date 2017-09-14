@@ -3,8 +3,8 @@
     <div fxFlex class="main-text">
       Fleisch &amp; Umwelt
     </div>
-    <div fxFlexFill fxHide fxShow.gt-sm class="mat-toolbar-layout">
-      <md-toolbar-row class="mat-toolbar-row">
+    <div fxFlexAlign="right" fxHide fxShow.gt-sm class="mat-toolbar-layout">
+      <div class="mat-toolbar-row">
         <ul role="navigation">
           <li *ngFor="let link of links">
               <a class="nav-link" [routerLink]="link.url" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
@@ -13,9 +13,9 @@
               </a>
           </li>
         </ul>
-      </md-toolbar-row>
+      </div>
     </div>
-    <div fxFlexAlign="right" fxShow fxHide.gt-sm>
+    <div fxFlexAlign="right" fxHide fxShow.sm>
       <button md-icon-button [mdMenuTriggerFor]="menu" class="align-right">
         <md-icon>more_vert</md-icon>
       </button>
