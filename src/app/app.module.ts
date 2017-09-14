@@ -37,9 +37,11 @@ import {
   MdSidenavModule,
   MdIconModule,
   MdButtonModule,
-  MdListModule,
   MdToolbarModule,
-  MdMenuModule
+  MdMenuModule,
+  MdSliderModule,
+  MdRadioModule,
+  MdTabsModule
 } from '@angular/material';
 import 'hammerjs';
 
@@ -76,9 +78,11 @@ import '../styles/headings.css';
     MdSidenavModule,
     MdIconModule,
     MdButtonModule,
-    MdListModule,
     MdToolbarModule,
     MdMenuModule,
+    MdSliderModule,
+    MdRadioModule,
+    MdTabsModule,
     FlexLayoutModule
   ],
   /**

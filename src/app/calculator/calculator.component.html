@@ -1,6 +1,29 @@
-<div class="col-md-12">
-  <h1>Fleischrechner</h1>
-  <div>
-    1 + 1 = 2
-  </div>
+<div fxLayout="column">
+  <h1 fxFlex>Fleischrechner</h1>
+  <p fxFlex>Berechnen Sie, wie stark Ihr Fleischkonsum die Umwelt belastet:</p>
+  <h2 fxFlex>Welche Ernährungsstrategie verfolgen Sie?</h2>
+  <md-tab-group fxFlexFill>
+    <md-tab label="Fleischfresser">
+      <div fxLayout="column">
+        <h2 fxFlex>Wie viele Mahlzeiten pro Woche beinhalten Fleisch?</h2>
+        <div fxFlex class="meat-slider-div">
+            <md-slider class="meat-slider"
+              [max]="21"
+              [min]="0"
+              [step]="1"
+              [thumb-label]="true"
+              [value]="mealsContainingMeat"
+              (change)="mealsContainingMeat = $event.value">
+            </md-slider>
+        </div>
+        <div fxFlexFill>Sie essen {{mealsContainingMeat}} Mahlzeiten mit Fleisch pro Woche!</div>
+      </div>
+    </md-tab>
+    <md-tab label="Vegetarier">
+        <md-icon>done</md-icon>
+    </md-tab>
+    <md-tab label="Veganer">
+      <md-icon>done_all</md-icon>
+    </md-tab>
+  </md-tab-group>
 </div>
