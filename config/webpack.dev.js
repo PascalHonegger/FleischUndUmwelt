@@ -164,7 +164,6 @@ module.exports = function (options) {
       //       '@angular/core',
       //       '@angular/common',
       //       '@angular/forms',
-      //       '@angular/http',
       //       '@angular/router',
       //       '@angularclass/hmr',
       //       'rxjs',
