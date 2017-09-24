@@ -1,4 +1,4 @@
-<md-toolbar class="app-toolbar mat-toolbar mat-primary" role="toolbar">
+<mat-toolbar class="app-toolbar mat-toolbar mat-primary" role="toolbar">
   <div fxLayout="row" class="nav-flex-div">
     <div fxFlex class="main-text">
       Fleisch &amp; Umwelt
@@ -8,7 +8,7 @@
         <ul role="navigation">
           <li *ngFor="let link of links">
               <a class="nav-link" [routerLink]="link.url" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
-                <md-icon>{{link.mdIcon}}</md-icon>
+                <mat-icon>{{link.matIcon}}</mat-icon>
                 <span>{{link.content}}</span>
               </a>
           </li>
@@ -16,18 +16,18 @@
       </div>
     </div>
     <div fxFlexAlign="right" fxShow fxHide.gt-sm>
-      <button md-icon-button [mdMenuTriggerFor]="menu" class="align-right">
-        <md-icon>more_vert</md-icon>
+      <button mat-icon-button [matMenuTriggerFor]="menu" class="align-right">
+        <mat-icon>more_vert</mat-icon>
       </button>
-      <md-menu #menu="mdMenu">
-        <button [routerLink]="link.url" md-menu-item *ngFor="let link of links">
-          <md-icon>{{link.mdIcon}}</md-icon>
+      <mat-menu #menu="matMenu">
+        <button [routerLink]="link.url" mat-menu-item *ngFor="let link of links">
+          <mat-icon>{{link.matIcon}}</mat-icon>
           <span>{{link.content}}</span>
         </button>
-      </md-menu>
+      </mat-menu>
     </div>
   </div>
-</md-toolbar>
+</mat-toolbar>
 
 <main>
   <div class="main-container">

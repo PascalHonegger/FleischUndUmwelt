@@ -8,15 +8,15 @@ import { Component, isDevMode } from '@angular/core';
 export class AppComponent {
   public links = [{
     url: ['/'],
-    mdIcon: 'sort',
+    matIcon: 'sort',
     content: 'Rechner'
   }, {
     url: ['/facts'],
-    mdIcon: 'info_outline',
+    matIcon: 'info_outline',
     content: 'Fakten & Quellen'
   }, {
     url: ['/impressum'],
-    mdIcon: 'contact_mail',
+    matIcon: 'contact_mail',
     content: 'Impressum'
   }];
 

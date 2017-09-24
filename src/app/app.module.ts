@@ -33,14 +33,15 @@ import { NoContentComponent } from './no-content';
 
 // Material 2
 import {
-  MdSidenavModule,
-  MdIconModule,
-  MdButtonModule,
-  MdToolbarModule,
-  MdMenuModule,
-  MdSliderModule,
-  MdRadioModule,
-  MdTabsModule
+  MATERIAL_COMPATIBILITY_MODE,
+  MatSidenavModule,
+  MatIconModule,
+  MatButtonModule,
+  MatToolbarModule,
+  MatMenuModule,
+  MatSliderModule,
+  MatRadioModule,
+  MatTabsModule
 } from '@angular/material';
 import 'hammerjs';
 
@@ -74,21 +75,22 @@ import '../styles/headings.css';
       adClient: 'ca-pub-5587044720123310'
     }),
     CookieLawModule,
-    MdSidenavModule,
-    MdIconModule,
-    MdButtonModule,
-    MdToolbarModule,
-    MdMenuModule,
-    MdSliderModule,
-    MdRadioModule,
-    MdTabsModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatMenuModule,
+    MatSliderModule,
+    MatRadioModule,
+    MatTabsModule,
     FlexLayoutModule
   ],
   /**
    * Expose our Services and Providers into Angular's dependency injection.
    */
   providers: [
-    ENV_PROVIDERS
+    ENV_PROVIDERS,
+    { provide: MATERIAL_COMPATIBILITY_MODE, useValue: true }
   ]
 })
 export class AppModule {
