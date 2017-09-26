@@ -5,7 +5,7 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title><%= htmlWebpackPlugin.options.title %></title>
-  <meta name="description" content="<%= htmlWebpackPlugin.options.title %>">
+  <meta name="description" content="<%= htmlWebpackPlugin.options.metadata.description %>">
   <!-- base url -->
   <base href="<%= htmlWebpackPlugin.options.metadata.baseUrl %>">
   <% if (webpackConfig.htmlElements.headTags) { %>
@@ -67,6 +67,30 @@
     }(window.location))
   </script>
   <!-- End Single Page Apps for GitHub Pages -->
+
+  <!-- Cookie Consent -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+  <script>
+  window.addEventListener("load", function(){
+  window.cookieconsent.initialise({
+    "palette": {
+      "popup": {
+        "background": "#3f51b5"
+      },
+      "button": {
+        "background": "#fff",
+        "text": "#237afc"
+      }
+    },
+    "content": {
+      "message": "Diese Webseite verwendet Cookies um Ihre Erfahrungen zu verbessern",
+      "dismiss": "Einverstanden",
+      "link": "Mehr erfahren"
+    }
+  })});
+  </script>
+  <!-- End Cookie Consent -->
 
   <!-- CSS will be injected by webpack here -->
   <!-- Preload link tags will be injected by webpack here -->

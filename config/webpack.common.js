@@ -31,6 +31,7 @@ const HMR = helpers.hasProcessFlag('hot');
 const AOT = process.env.BUILD_AOT || helpers.hasNpmFlag('aot');
 const METADATA = {
   title: 'Fleisch und Umwelt',
+  description: 'Was hat dein Steak mit dem Kohlekraftwerk zu tun? Wie stark belasten Sie durch Ihre Ernährung die Umwelt? Ist Fleisch ökologisch gesehen schlecht?',
   baseUrl: '/',
   isDevServer: helpers.isWebpackDevServer(),
   HMR: HMR,
