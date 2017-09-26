@@ -1,5 +1,4 @@
 import { AdsenseModule } from 'ng2-adsense';
-import { CookieLawModule } from 'angular2-cookie-law';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserModule } from '@angular/platform-browser';
@@ -74,7 +73,6 @@ import '../styles/headings.css';
     AdsenseModule.forRoot({
       adClient: 'ca-pub-5587044720123310'
     }),
-    CookieLawModule,
     MatSidenavModule,
     MatIconModule,
     MatButtonModule,
