@@ -274,20 +274,9 @@ module.exports = function (env) {
       // it's always better if OfflinePlugin is the last plugin added
       new OfflinePlugin({
         publicPath: '/',
-        caches: {
-          main: [
-            'main.*.css',
-            'main.*.js',
-            'polyfills.*.js',
-            'assets/manifest.json',
-            'assets/img/*.png'
-          ]
-        },
-
-
+        caches: 'all',
         ServiceWorker: {
-          events: true,
-          navigateFallbackURL: '/'
+          events: true
         },
         cacheMaps: [
           {
