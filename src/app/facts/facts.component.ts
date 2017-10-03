@@ -1,3 +1,4 @@
+import { CustomTitleService } from './../services/custom-title-service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,4 +7,7 @@ import { Component } from '@angular/core';
   templateUrl: './facts.component.html'
 })
 export class FactsComponent {
+  constructor(title: CustomTitleService) {
+    title.detailTitle = 'Fakten';
+  }
 }

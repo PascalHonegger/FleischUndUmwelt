@@ -30,10 +30,12 @@ import { AboutComponent } from './about';
 import { CalculatorComponent } from './calculator';
 import { NoContentComponent } from './no-content';
 
+// Services
+import { CustomTitleService } from './services/custom-title-service';
+
 // Material 2
 import {
   MATERIAL_COMPATIBILITY_MODE,
-  MatSidenavModule,
   MatIconModule,
   MatButtonModule,
   MatToolbarModule,
@@ -73,14 +75,12 @@ import '../styles/headings.css';
     AdsenseModule.forRoot({
       adClient: 'ca-pub-5587044720123310'
     }),
-    MatSidenavModule,
     MatIconModule,
     MatButtonModule,
     MatToolbarModule,
     MatMenuModule,
     MatSliderModule,
     MatRadioModule,
-    MatTabsModule,
     FlexLayoutModule
   ],
   /**
@@ -88,6 +88,7 @@ import '../styles/headings.css';
    */
   providers: [
     ENV_PROVIDERS,
+    CustomTitleService,
     { provide: MATERIAL_COMPATIBILITY_MODE, useValue: true }
   ]
 })

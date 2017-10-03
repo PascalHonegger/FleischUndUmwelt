@@ -1,29 +1,22 @@
 <div fxLayout="column">
-  <h1 fxFlex>Fleischrechner</h1>
   <p fxFlex>Berechnen Sie, wie stark Ihr Fleischkonsum die Umwelt belastet:</p>
-  <h2 fxFlex>Welche Ernährungsstrategie verfolgen Sie?</h2>
-  <mat-tab-group fxFlexFill>
-    <mat-tab label="Fleischfresser">
-      <div fxLayout="column">
-        <h2 fxFlex>Wie viele Mahlzeiten pro Woche beinhalten Fleisch?</h2>
-        <div fxFlex class="meat-slider-div">
-            <mat-slider class="meat-slider"
-              [max]="21"
-              [min]="0"
-              [step]="1"
-              [thumb-label]="true"
-              [value]="mealsContainingMeat"
-              (change)="mealsContainingMeat = $event.value">
-            </mat-slider>
-        </div>
-        <div fxFlexFill>Sie essen {{mealsContainingMeat}} Mahlzeiten mit Fleisch pro Woche!</div>
+  <h2 fxFlex>Essen Sie Fleisch?</h2>
+  <mat-radio-group [(ngModel)]="eatsMeat">
+    <mat-radio-button [value]="true">Ja</mat-radio-button>
+    <mat-radio-button [value]="false">Nein</mat-radio-button>
+  </mat-radio-group>
+  <div fxLayout="column" *ngIf="eatsMeat">
+      <h2 fxFlex>Wie viele Mahlzeiten pro Woche beinhalten Fleisch?</h2>
+      <div fxFlex class="meat-slider-div">
+          <mat-slider class="meat-slider"
+            [max]="21"
+            [min]="0"
+            [step]="1"
+            [thumb-label]="true"
+            [value]="mealsContainingMeat"
+            (change)="mealsContainingMeat = $event.value">
+          </mat-slider>
       </div>
-    </mat-tab>
-    <mat-tab label="Vegetarier">
-        <mat-icon>done</mat-icon>
-    </mat-tab>
-    <mat-tab label="Veganer">
-      <mat-icon>done_all</mat-icon>
-    </mat-tab>
-  </mat-tab-group>
+      <div fxFlexFill>Sie essen {{mealsContainingMeat}} Mahlzeiten mit Fleisch pro Woche!</div>
+    </div>
 </div>

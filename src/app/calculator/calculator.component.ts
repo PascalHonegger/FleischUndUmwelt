@@ -1,3 +1,4 @@
+import { CustomTitleService } from './../services/custom-title-service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,22 +8,9 @@ import { Component } from '@angular/core';
 })
 export class CalculatorComponent {
   public mealsContainingMeat: number = 5;
-  public meatEaterType: MeatEaterType = 'meat';
+  public eatsMeat: boolean;
 
-  public meatEaterTypes: Array<{ display: string, value: MeatEaterType }> = [
-    {
-      display: 'Fleischfresser',
-      value: 'meat'
-    },
-    {
-      display: 'Vegetarier',
-      value: 'vegetarian'
-    },
-    {
-      display: 'Veganer',
-      value: 'vegan'
-    },
-  ];
+  constructor(title: CustomTitleService) {
+    title.detailTitle = 'Rechner';
+  }
 }
-
-export type MeatEaterType = 'meat' | 'vegetarian' | 'vegan';

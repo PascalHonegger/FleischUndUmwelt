@@ -1,3 +1,4 @@
+import { CustomTitleService } from './services/custom-title-service';
 import { Component, isDevMode } from '@angular/core';
 
 @Component({
@@ -20,7 +21,7 @@ export class AppComponent {
     content: 'Impressum'
   }];
 
-  constructor() {
+  constructor(public titleService: CustomTitleService) {
     if (isDevMode()) {
       // No caching in dev mode
       return;
