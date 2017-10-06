@@ -1,32 +1,19 @@
 <mat-toolbar class="app-toolbar mat-toolbar mat-primary" role="toolbar">
-  <div fxLayout="row" class="nav-flex-div">
-    <div fxFlex class="main-text">
-      <a routerLink="/">Fleisch &amp; Umwelt</a>
-    </div>
-    <div fxFlexAlign="right" fxHide fxShow.gt-sm class="mat-toolbar-layout">
-      <div class="mat-toolbar-row">
-        <ul role="navigation">
-          <li *ngFor="let link of links">
-              <a [routerLink]="link.url" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
-                <mat-icon>{{link.matIcon}}</mat-icon>
-                <span>{{link.content}}</span>
-              </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div fxFlexAlign="right" fxShow fxHide.gt-sm>
-      <mat-menu #menu="matMenu">
-        <button [routerLink]="link.url" [disabled]="test.isActive" #test="routerLinkActive" routerLinkActive [routerLinkActiveOptions]="{exact: true}" mat-menu-item *ngFor="let link of links">
+  <div fxFlex class="app-title">Fleisch und Umwelt</div>
+  <nav fxLayout="row" fxHide fxShow.gt-sm>
+    <a class="menu-link" *ngFor="let link of links" fxFlex mat-button [routerLink]="link.url" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
+      <mat-icon>{{link.matIcon}}</mat-icon>
+      <span>{{link.content}}</span>
+    </a>
+  </nav>
+  <mat-toolbar-row fxShow fxHide.gt-sm>
+      <nav fxLayout="row" class="nav-flex-div">
+        <a class="menu-link" *ngFor="let link of links" fxFlex mat-button [routerLink]="link.url" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
           <mat-icon>{{link.matIcon}}</mat-icon>
           <span>{{link.content}}</span>
-        </button>
-      </mat-menu>
-      <button mat-icon-button [matMenuTriggerFor]="menu" class="align-right">
-        <mat-icon>more_vert</mat-icon>
-      </button>
-    </div>
-  </div>
+        </a>
+      </nav>
+  </mat-toolbar-row>
 </mat-toolbar>
 
 <main>

@@ -35,14 +35,11 @@ import { CustomTitleService } from './services/custom-title-service';
 
 // Material 2
 import {
-  MATERIAL_COMPATIBILITY_MODE,
   MatIconModule,
   MatButtonModule,
   MatToolbarModule,
-  MatMenuModule,
   MatSliderModule,
-  MatRadioModule,
-  MatTabsModule
+  MatRadioModule
 } from '@angular/material';
 import 'hammerjs';
 
@@ -78,7 +75,6 @@ import '../styles/headings.css';
     MatIconModule,
     MatButtonModule,
     MatToolbarModule,
-    MatMenuModule,
     MatSliderModule,
     MatRadioModule,
     FlexLayoutModule

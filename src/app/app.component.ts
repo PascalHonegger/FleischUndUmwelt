@@ -14,11 +14,11 @@ export class AppComponent {
   }, {
     url: ['/facts'],
     matIcon: 'info_outline',
-    content: 'Fakten & Quellen'
+    content: 'Fakten'
   }, {
     url: ['/impressum'],
     matIcon: 'contact_mail',
-    content: 'Impressum'
+    content: 'Kontakt'
   }];
 
   constructor(public titleService: CustomTitleService) {
