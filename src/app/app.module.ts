@@ -88,8 +88,7 @@ import '../styles/headings.css';
    */
   providers: [
     ENV_PROVIDERS,
-    CustomTitleService,
-    { provide: MATERIAL_COMPATIBILITY_MODE, useValue: true }
+    CustomTitleService
   ]
 })
 export class AppModule {
