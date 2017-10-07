@@ -275,6 +275,20 @@ module.exports = function (env) {
       new OfflinePlugin({
         publicPath: '/',
         caches: 'all',
+        excludes: [
+          '**/.*',
+          '**/*.map',
+          '**/humans.txt',
+          '**/robots.txt',
+          '**/sitemap.xml',
+          '**/humans.txt',
+          '**/google*.html.txt',
+          '**/CNAME'
+        ],
+        externals: [
+          'https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css',
+          'https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js'
+        ],
         ServiceWorker: {
           events: true
         },
