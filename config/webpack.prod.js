@@ -282,7 +282,7 @@ module.exports = function (env) {
           '**/robots.txt',
           '**/sitemap.xml',
           '**/humans.txt',
-          '**/google*.html.txt',
+          '**/google*.html',
           '**/CNAME'
         ],
         externals: [

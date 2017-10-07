@@ -283,7 +283,7 @@ module.exports = function (options) {
         { from: 'src/assets', to: 'assets' },
         { from: 'src/meta' },
         { from: 'src/gh-pages' },
-        { from: 'node_modules/material-design-icons/iconfont/*-Regular.*' }
+        { from: 'node_modules/material-design-icons/iconfont/*-Regular.*', to: 'assets' }
       ],
         isProd ? { ignore: [ 'mock-data/**/*' ] } : undefined
       ),

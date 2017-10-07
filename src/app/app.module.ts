@@ -1,7 +1,7 @@
 import { AdsenseModule } from 'ng2-adsense';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import {
@@ -25,10 +25,10 @@ import { ENV_PROVIDERS } from './environment';
 import { ROUTES } from './app.routes';
 // App is our top level component
 import { AppComponent } from './app.component';
-import { FactsComponent } from './facts';
-import { AboutComponent } from './about';
-import { CalculatorComponent } from './calculator';
-import { NoContentComponent } from './no-content';
+import { FactsComponent } from './facts/facts.component';
+import { AboutComponent } from './about/about.component';
+import { CalculatorComponent } from './calculator/calculator.component';
+import { NoContentComponent } from './no-content/no-content.component';
 
 // Services
 import { CustomTitleService } from './services/custom-title-service';
@@ -43,7 +43,6 @@ import {
 import 'hammerjs';
 
 import '../styles/styles.scss';
-import '../styles/headings.css';
 
 /**
  * `AppModule` is the main entry point into Angular2's bootstraping process
@@ -82,6 +81,7 @@ import '../styles/headings.css';
    */
   providers: [
     ENV_PROVIDERS,
+    Title,
     CustomTitleService
   ]
 })
