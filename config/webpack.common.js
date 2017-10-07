@@ -282,7 +282,8 @@ module.exports = function (options) {
       new CopyWebpackPlugin([
         { from: 'src/assets', to: 'assets' },
         { from: 'src/meta' },
-        { from: 'src/gh-pages' }
+        { from: 'src/gh-pages' },
+        { from: 'node_modules/material-design-icons/iconfont/*-Regular.*' }
       ],
         isProd ? { ignore: [ 'mock-data/**/*' ] } : undefined
       ),

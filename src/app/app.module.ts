@@ -35,7 +35,6 @@ import { CustomTitleService } from './services/custom-title-service';
 
 // Material 2
 import {
-  MatIconModule,
   MatButtonModule,
   MatToolbarModule,
   MatSliderModule,
@@ -72,7 +71,6 @@ import '../styles/headings.css';
     AdsenseModule.forRoot({
       adClient: 'ca-pub-5587044720123310'
     }),
-    MatIconModule,
     MatButtonModule,
     MatToolbarModule,
     MatSliderModule,
