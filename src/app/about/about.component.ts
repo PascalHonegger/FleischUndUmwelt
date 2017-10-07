@@ -10,5 +10,6 @@ import { Title } from '@angular/platform-browser';
 export class AboutComponent {
   constructor(titleService: CustomTitleService) {
     titleService.detailTitle = 'Impressum';
+    titleService.description = 'Nehmen Sie Kontakt mit uns auf';
   }
 }

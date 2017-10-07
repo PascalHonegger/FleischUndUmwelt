@@ -2,6 +2,7 @@
  "short_name": "Fleisch&U",
  "name": "Fleisch und Umwelt",
  "display": "standalone",
+ "theme_color": "#3f51b5",
  "icons": [
   {
    "src": "/assets/icon/android-icon-36x36.png",

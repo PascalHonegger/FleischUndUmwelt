@@ -9,5 +9,6 @@ import { Component } from '@angular/core';
 export class FactsComponent {
   constructor(title: CustomTitleService) {
     title.detailTitle = 'Fakten';
+    title.description = 'Erfahren Sie mehr über die Fakten rund um den Fleischkonsum';
   }
 }

@@ -4,29 +4,13 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import "../../node_modules/material-design-icons/iconfont/material-icons.css";
 
-nav {
-  margin-top: 16px;
-}
-
-nav a {
-  background-color: $nav-button-color;
-  color: white;
-  padding: 8px 16px;
-  margin: 8px;
-  vertical-align: middle;
-  line-height: 1.25;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 4px;
-}
-
 html, body{
   padding: 0;
   margin: 0;
 }
 html{
   height: 100%;
-  font-family: Arial, Helvetica, sans-serif
+  font-family: "Roboto", "Helvetica Neue" , sans-serif
 }
 body{
   min-height: 100%;

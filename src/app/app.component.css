@@ -1,17 +1,19 @@
-.fill {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-}
-
 .app-toolbar {
   color: white !important;
   text-transform: uppercase;
   text-align: center;
+  box-shadow: 0 3px 5px -1px rgba(0,0,0,.2),0 6px 10px 0 rgba(0,0,0,.14),0 1px 18px 0 rgba(0,0,0,.12);
+  z-index: 10;
+  position: relative;
 }
 
 .main-container {
-  padding: 0 16px;
+  padding: 0 54px;
+}
+
+main {
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 a.active-link {
@@ -32,7 +34,7 @@ a.active-link {
   width: 100%;
 }
 
-nav {
-  margin-top: 0px;
-  margin-bottom: 0px;
+header {
+  text-align: center;
+  padding-top: 20px;
 }

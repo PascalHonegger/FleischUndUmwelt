@@ -6,6 +6,7 @@ export class CustomTitleService {
     // TODO Kürzer damit lesbarer? private static baseTitle: string = 'Fleisch&U';
     private static baseTitle: string = 'Fleisch und Umwelt';
 
+    public description: string;
     private _detailTitle: string;
 
     constructor(private browserTitle: Title) {

@@ -12,5 +12,6 @@ export class CalculatorComponent {
 
   constructor(title: CustomTitleService) {
     title.detailTitle = 'Rechner';
+    title.description = 'Berechnen Sie, wie stark Ihr Fleischkonsum die Umwelt belastet';
   }
 }

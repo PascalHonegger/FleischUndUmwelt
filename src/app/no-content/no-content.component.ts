@@ -12,5 +12,6 @@ import { Component } from '@angular/core';
 export class NoContentComponent {
   constructor(title: CustomTitleService) {
     title.detailTitle = '404';
+    title.description = 'Seite nicht gefunden';
   }
 }

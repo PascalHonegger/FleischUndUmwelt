@@ -1,5 +1,4 @@
 <div fxLayout="column">
-  <p fxFlex>Berechnen Sie, wie stark Ihr Fleischkonsum die Umwelt belastet:</p>
   <h2 fxFlex>Essen Sie Fleisch?</h2>
   <mat-radio-group [(ngModel)]="eatsMeat">
     <mat-radio-button [value]="true">Ja</mat-radio-button>
@@ -17,6 +16,6 @@
             (change)="mealsContainingMeat = $event.value">
           </mat-slider>
       </div>
-      <div fxFlexFill>Sie essen {{mealsContainingMeat}} Mahlzeiten mit Fleisch pro Woche!</div>
+      <div fxFlex>Sie essen {{mealsContainingMeat}} Mahlzeiten mit Fleisch pro Woche!</div>
     </div>
 </div>
