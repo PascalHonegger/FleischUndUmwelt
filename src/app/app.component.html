@@ -1,14 +1,14 @@
 <mat-toolbar class="app-toolbar mat-primary" role="navigation">
   <div fxFlex class="app-title">Fleisch und Umwelt</div>
   <nav fxLayout="row" fxHide fxShow.gt-sm>
-    <a class="menu-link" *ngFor="let link of links" fxFlex mat-button [routerLink]="link.url" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
+    <a class="menu-link has-icon" *ngFor="let link of links" fxFlex mat-button [routerLink]="link.url" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
       <i class="material-icons">{{link.matIcon}}</i>
       <span>{{link.content}}</span>
     </a>
   </nav>
   <mat-toolbar-row fxHide.gt-sm>
       <nav fxLayout="row" class="nav-flex-div">
-        <a class="menu-link" *ngFor="let link of links" fxFlex mat-button [routerLink]="link.url" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
+        <a class="menu-link" [ngClass.gt-xs]="['has-icon']" *ngFor="let link of links" fxFlex mat-button [routerLink]="link.url" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
           <i fxHide.xs class="material-icons">{{link.matIcon}}</i>
           <span>{{link.content}}</span>
         </a>
