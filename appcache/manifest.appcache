@@ -1,5 +1,5 @@
 CACHE MANIFEST
-#ver:2017-10-8 14:24:40
+#ver:2017-10-8 15:47:45
 #plugin:4.8.4
 
 CACHE:
@@ -8,39 +8,39 @@ CACHE:
 /e79bfd88537def476913f3ed52f4f4b3.eot
 /570eb83859dc23dd0eec423a49e147fe.woff2
 /polyfills.c1866354191b0be2f9ef.bundle.js
-/main.11dbfbfdee62adf87883.bundle.js
+/main.06d6e0f4dd449214f1e2.bundle.js
 /main.c10d6d11658ceeb425464c72dd5a47c4.css
+/assets/icon/android-icon-192x192.png
 /assets/icon/android-icon-144x144.png
 /assets/icon/android-icon-36x36.png
-/assets/icon/android-icon-72x72.png
-/assets/icon/android-icon-192x192.png
 /assets/icon/android-icon-48x48.png
-/assets/icon/android-icon-96x96.png
-/assets/icon/apple-icon-120x120.png
+/assets/icon/android-icon-72x72.png
 /assets/icon/apple-icon-114x114.png
+/assets/icon/android-icon-96x96.png
 /assets/icon/apple-icon-144x144.png
 /assets/icon/apple-icon-152x152.png
+/assets/icon/apple-icon-120x120.png
 /assets/icon/apple-icon-57x57.png
 /assets/icon/apple-icon-180x180.png
+/assets/icon/apple-icon-60x60.png
 /assets/icon/apple-icon-72x72.png
 /assets/icon/apple-icon-precomposed.png
 /assets/icon/apple-icon-76x76.png
 /assets/icon/apple-icon.png
-/assets/icon/apple-icon-60x60.png
+/assets/icon/browserconfig.xml
+/assets/icon/favicon-32x32.png
+/assets/icon/favicon.ico
 /assets/icon/favicon-16x16.png
 /assets/icon/favicon-96x96.png
-/assets/icon/browserconfig.xml
-/assets/icon/ms-icon-150x150.png
-/assets/icon/favicon-32x32.png
 /assets/icon/ms-icon-144x144.png
-/assets/icon/favicon.ico
-/assets/icon/ms-icon-70x70.png
+/assets/icon/ms-icon-150x150.png
 /assets/icon/ms-icon-310x310.png
+/assets/icon/ms-icon-70x70.png
 /assets/img/angular-logo.png
 /assets/manifest.json
 /assets/node_modules/material-design-icons/iconfont/MaterialIcons-Regular.ijmap
-/assets/node_modules/material-design-icons/iconfont/MaterialIcons-Regular.woff
 /assets/node_modules/material-design-icons/iconfont/MaterialIcons-Regular.eot
+/assets/node_modules/material-design-icons/iconfont/MaterialIcons-Regular.woff
 /assets/node_modules/material-design-icons/iconfont/MaterialIcons-Regular.ttf
 /assets/node_modules/material-design-icons/iconfont/MaterialIcons-Regular.woff2
 /assets/node_modules/material-design-icons/iconfont/MaterialIcons-Regular.svg
