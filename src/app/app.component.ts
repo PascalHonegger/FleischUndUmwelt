@@ -3,7 +3,7 @@ import { Component, isDevMode } from '@angular/core';
 
 @Component({
   selector: 'app',
-  styleUrls: [ './app.component.css' ],
+  styleUrls: [ './app.component.scss' ],
   templateUrl: './app.component.html'
 })
 export class AppComponent {
