@@ -1,7 +1,6 @@
 import { Fact } from './../model/Fact';
 import { IFact } from './../model/IFact';
 import { ISource } from './../model/ISource';
-import { Title } from '@angular/platform-browser';
 import { Injectable } from '@angular/core';
 
 // tslint:disable:max-line-length

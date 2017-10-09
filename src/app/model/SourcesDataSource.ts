@@ -3,12 +3,11 @@ import { DataSource, CollectionViewer } from '@angular/cdk/collections';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/merge';
 import 'rxjs/add/operator/map';
-import { Subject } from 'rxjs/Subject';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 export class SourcesDataSource extends DataSource<ISource> {
     private _filter: string = '';
-    private _filterChanged: BehaviorSubject<string> = new BehaviorSubject('');
+    private filterChanged: BehaviorSubject<string> = new BehaviorSubject('');
 
     public get filter(): string {
         return this._filter;
@@ -20,7 +19,7 @@ export class SourcesDataSource extends DataSource<ISource> {
         }
 
         this._filter = value;
-        this._filterChanged.next(value);
+        this.filterChanged.next(value);
     }
 
     constructor(private sources: ISource[]) {
@@ -29,7 +28,7 @@ export class SourcesDataSource extends DataSource<ISource> {
 
     public connect(collectionViewer: CollectionViewer): Observable<ISource[]> {
         return Observable
-            .merge(this._filterChanged)
+            .merge(this.filterChanged)
             .map((filterString) =>
                 this.sources.filter((s) => {
                     if (!filterString) {
@@ -38,7 +37,7 @@ export class SourcesDataSource extends DataSource<ISource> {
                     const upperFilter = filterString.toUpperCase();
                     return s.title.toUpperCase().includes(upperFilter) ||
                         s.description.toUpperCase().includes(upperFilter) ||
-                        s.facts.some(f => f.description.toUpperCase().includes(upperFilter));
+                        s.facts.some((f) => f.description.toUpperCase().includes(upperFilter));
                 }));
     }
 

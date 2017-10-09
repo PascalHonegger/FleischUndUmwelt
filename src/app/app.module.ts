@@ -5,14 +5,8 @@ import { BrowserModule, Title } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import {
-  NgModule,
-  ApplicationRef
+  NgModule
 } from '@angular/core';
-import {
-  removeNgStyles,
-  createNewHosts,
-  createInputTransfer
-} from '@angularclass/hmr';
 import {
   RouterModule,
   PreloadAllModules
