@@ -1,15 +1,15 @@
 <div fxLayout="column" fxLayoutGap="20px">
-  <h2 fxFlex>Essen Sie Fleisch?</h2>
-  <mat-radio-group fxFlex [(ngModel)]="eatsMeat">
+  <h2>Essen Sie Fleisch?</h2>
+  <mat-radio-group [(ngModel)]="eatsMeat">
     <mat-radio-button [value]="true">Ja</mat-radio-button>
     <mat-radio-button [value]="false">Nein</mat-radio-button>
   </mat-radio-group>
-  <div fxFlex fxLayout="column" *ngIf="eatsMeat">
-    <meat-consumtion fxFlex meatName="Rindfleisch" [default]="300" [gramPerPortion]="150"></meat-consumtion>
-    <meat-consumtion fxFlex meatName="Schweinefleisch" [default]="350" [gramPerPortion]="150"></meat-consumtion>
-    <meat-consumtion fxFlex meatName="Hähnchenfleisch" [default]="400" [gramPerPortion]="120"></meat-consumtion>
+  <div fxLayout="column" *ngIf="eatsMeat">
+    <meat-consumtion meatName="Rindfleisch" [default]="300" [gramPerPortion]="150"></meat-consumtion>
+    <meat-consumtion meatName="Schweinefleisch" [default]="350" [gramPerPortion]="150"></meat-consumtion>
+    <meat-consumtion meatName="Hähnchenfleisch" [default]="400" [gramPerPortion]="120"></meat-consumtion>
   </div>
-  <div fxFlex *ngIf="eatsMeat !== undefined">
+  <div *ngIf="eatsMeat !== undefined">
     Hier folgt das Rechen-Resultat.
   </div>
 </div>

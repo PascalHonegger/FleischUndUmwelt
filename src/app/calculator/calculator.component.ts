@@ -30,9 +30,10 @@ export class CalculatorComponent {
     title.detailTitle = 'Rechner';
     title.description = 'Berechnen Sie, wie Ihr Fleischkonsum die Umwelt belastet';
 
-    if (localStorage.getItem(eatsMeatKey) === true.toString()) {
+    const item = localStorage.getItem(eatsMeatKey);
+    if (item === true.toString()) {
       this._eatsMeat = true;
-    } else {
+    } else if (item === false.toString()) {
       this._eatsMeat = false;
     }
   }
