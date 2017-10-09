@@ -12,7 +12,12 @@
       <ng-container matColumnDef="source">
         <mat-header-cell *matHeaderCellDef>Quelle</mat-header-cell>
         <mat-cell *matCellDef="let row">
-          <a [href]="row.url" rel="nofollow">{{row.title}}</a>
+          <ng-container *ngIf="row.url; else elseTemplate">
+            <a [href]="row.url" rel="nofollow">{{row.title}}</a>
+          </ng-container>
+          <ng-template #elseTemplate>
+            {{row.title}}
+          </ng-template>
         </mat-cell>
       </ng-container>
   
@@ -24,16 +29,14 @@
       <ng-container matColumnDef="facts">
         <mat-header-cell *matHeaderCellDef>Fakten</mat-header-cell>
         <mat-cell *matCellDef="let row">
-          <ul>
-            <li *ngFor="let fact of row.facts">
-                {{fact.description}}
-            </li>
-          </ul>
+          <p *ngFor="let fact of row.facts">
+            {{fact.description}}
+          </p>
         </mat-cell>
       </ng-container>
 
       <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      <mat-row [ngClass.xs]="['row-no-padding']" *matRowDef="let row; columns: displayedColumns;"></mat-row>
     </mat-table>
   </div>
 </div>
