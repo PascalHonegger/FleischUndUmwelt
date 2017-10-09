@@ -6,18 +6,19 @@
     <ng-container *ngIf="advancedMode; then advancedDescription; else basicDescription"></ng-container>
     <ng-template #advancedDescription>
       <mat-panel-description>
-        Sie essen pro Woche {{effectiveGramPerWeek}}g {{meatName}}
+        {{effectiveGramPerWeek}}g
       </mat-panel-description>
     </ng-template>
     <ng-template #basicDescription>
       <mat-panel-description>
-        Sie essen pro Woche {{mealsContainingMeat}} Mahlzeiten mit {{meatName}}
+        {{mealsContainingMeat}} Portionen
       </mat-panel-description>
     </ng-template>
   </mat-expansion-panel-header>
   <div fxLayout="column" class="content">
     <mat-slide-toggle [(ngModel)]="advancedMode">Exakt</mat-slide-toggle>
     <ng-container *ngIf="advancedMode; else basicOptions">
+      <h2>Wie viel Gramm {{meatName}} essen Sie pro Woche?</h2>
       <div>
         <mat-form-field fxFlex>
           <input matInput required pattern="\d+" type="number" min="0" [max]="maxPortionsPerWeek * gramPerPortion" placeholder="Gramm {{meatName}}" [formControl]="gramFormControl">

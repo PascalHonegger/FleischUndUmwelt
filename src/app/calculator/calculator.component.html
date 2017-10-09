@@ -5,6 +5,7 @@
     <mat-radio-button [value]="false">Nein</mat-radio-button>
   </mat-radio-group>
   <div fxLayout="column" *ngIf="eatsMeat">
+    <h2>Wie viel pro Woche?</h2>
     <meat-consumtion meatName="Rindfleisch" [default]="300" [gramPerPortion]="150"></meat-consumtion>
     <meat-consumtion meatName="Schweinefleisch" [default]="350" [gramPerPortion]="150"></meat-consumtion>
     <meat-consumtion meatName="Hähnchenfleisch" [default]="400" [gramPerPortion]="120"></meat-consumtion>
