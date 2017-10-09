@@ -39,7 +39,7 @@ export class SourceService {
     //#region Meat per animal
     public amountOfBeefPerCow = new Fact(
         10,
-        (val) => `Eine Kuh liefert ~${val}kg Rindfleisch`
+        (val) => `Eine Rind liefert ~${val}kg Rindfleisch`
     );
 
     public amountOfVealPerCalf = new Fact(
@@ -62,7 +62,7 @@ export class SourceService {
         {
             title: 'Cowspiracy: The Sustainability Secret',
             url: 'https://static1.squarespace.com/static/544dc5a1e4b07e8995e3effa/t/54e4d927e4b0aaf066abfcf0/1424283943008/Cowspiracy-Infographic-Metric.png',
-            description: 'Ein Dokumentarfilm aus dem jahre 2014, welcher sich mit dem Einfluss der Fleischindustrie auf die Umwelt beschäftigt',
+            description: 'Ein Dokumentarfilm (2014), welcher sich mit dem Einfluss der Fleischindustrie auf die Umwelt beschäftigt',
             facts: [
                  this.meatIndustryDeforestation
              ]
@@ -70,7 +70,7 @@ export class SourceService {
         {
             title: 'kochenOHNE',
             url: 'https://www.kochenohne.de/ratgeber/portionsgroessen-tabelle/',
-            description: 'Ein spezielles Rezeptportal für Menschen mit Lebensmittelunverträglicheiten und -allergien',
+            description: 'Ein Rezeptportal für Menschen mit Allergien',
             facts: [
                  this.amountOfMeatPerSmallPortion,
                  this.amountOfMeatPerLargePortion,

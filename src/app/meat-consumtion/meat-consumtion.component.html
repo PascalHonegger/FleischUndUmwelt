@@ -1,0 +1,44 @@
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      {{meatName}}
+    </mat-panel-title>
+    <ng-container *ngIf="advancedMode; then advancedDescription; else basicDescription"></ng-container>
+    <ng-template #advancedDescription>
+      <mat-panel-description>
+        Sie essen pro Woche {{effectiveGramPerWeek}}g {{meatName}}
+      </mat-panel-description>
+    </ng-template>
+    <ng-template #basicDescription>
+      <mat-panel-description>
+        Sie essen pro Woche {{mealsContainingMeat}} Mahlzeiten mit {{meatName}}
+      </mat-panel-description>
+    </ng-template>
+  </mat-expansion-panel-header>
+  <div fxLayout="column" class="content">
+      <mat-slide-toggle [(ngModel)]="advancedMode">Exakt</mat-slide-toggle>
+      <ng-container *ngIf="advancedMode; else basicOptions">
+        <div>
+          <mat-form-field fxFlex>
+            <input matInput required pattern="[0-9]+" type="number" min="0" [max]="maxPortionsPerWeek * gramPerPortion" placeholder="Gramm {{meatName}}" [formControl]="gramFormControl">
+            <mat-error *ngIf="gramFormControl.hasError('required') || gramFormControl.hasError('pattern')">
+              Geben Sie eine gültige Zahl ein
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </ng-container>
+      <ng-template #basicOptions>
+        <h2 fxFlex>Wie viele Portionen mit {{meatName}} essen Sie pro Woche?</h2>
+        <div fxFlex class="meat-slider-div">
+            <mat-slider fxFlex class="meat-slider"
+              [max]="maxPortionsPerWeek"
+              [min]="0"
+              [step]="1"
+              [thumb-label]="true"
+              [value]="mealsContainingMeat"
+              (change)="mealsContainingMeat = $event.value">
+            </mat-slider>
+        </div>
+      </ng-template>
+  </div>
+</mat-expansion-panel>

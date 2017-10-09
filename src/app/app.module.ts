@@ -3,14 +3,9 @@ import { AdsenseModule } from 'ng2-adsense';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
-import {
-  NgModule
-} from '@angular/core';
-import {
-  RouterModule,
-  PreloadAllModules
-} from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgModule } from '@angular/core';
+import { RouterModule, PreloadAllModules } from '@angular/router';
 
 /*
  * Platform and Environment providers/directives/pipes
@@ -22,6 +17,7 @@ import { AppComponent } from './app.component';
 import { FactsComponent } from './facts/facts.component';
 import { AboutComponent } from './about/about.component';
 import { CalculatorComponent } from './calculator/calculator.component';
+import { MeatConsumtionComponent } from './meat-consumtion/meat-consumtion.component';
 import { NoContentComponent } from './no-content/no-content.component';
 
 // Services
@@ -35,7 +31,10 @@ import {
   MatSliderModule,
   MatRadioModule,
   MatTableModule,
-  MatInputModule
+  MatInputModule,
+  MatExpansionModule,
+  MatFormFieldModule,
+  MatSlideToggleModule
 } from '@angular/material';
 import 'hammerjs';
 
@@ -52,6 +51,7 @@ import '../styles/styles.scss';
     CalculatorComponent,
     FactsComponent,
     NoContentComponent,
+    MeatConsumtionComponent
   ],
   /**
    * Import Angular's modules.
@@ -60,6 +60,7 @@ import '../styles/styles.scss';
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(ROUTES, {
       useHash: Boolean(history.pushState) === false,
       preloadingStrategy: PreloadAllModules
@@ -73,6 +74,9 @@ import '../styles/styles.scss';
     MatRadioModule,
     MatTableModule,
     MatInputModule,
+    MatExpansionModule,
+    MatFormFieldModule,
+    MatSlideToggleModule,
     FlexLayoutModule
   ],
   /**
