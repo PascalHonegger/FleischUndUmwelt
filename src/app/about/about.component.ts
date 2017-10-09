@@ -1,4 +1,4 @@
-import { CustomTitleService } from './../services/custom-title-service';
+import { CustomTitleService } from './../services/custom-title.service';
 import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 

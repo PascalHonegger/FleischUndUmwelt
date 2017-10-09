@@ -1,4 +1,8 @@
-import { CustomTitleService } from './../services/custom-title-service';
+import { SourcesDataSource } from './../model/SourcesDataSource';
+import { ISource } from './../model/ISource';
+import { DataSource } from '@angular/cdk/collections';
+import { SourceService } from './../services/source.service';
+import { CustomTitleService } from './../services/custom-title.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,8 +11,12 @@ import { Component } from '@angular/core';
   templateUrl: './facts.component.html'
 })
 export class FactsComponent {
-  constructor(title: CustomTitleService) {
+  public dataSource: SourcesDataSource;
+  public displayedColumns: string[] = ['source', 'description', 'facts'];
+
+  constructor(public sourceService: SourceService, title: CustomTitleService) {
     title.detailTitle = 'Fakten';
-    title.description = 'Erfahren Sie mehr über die Fakten rund um den Fleischkonsum';
+    title.description = 'Erfahren Sie mehr rund um den Fleischkonsum';
+    this.dataSource = new SourcesDataSource(sourceService.sources);
   }
 }

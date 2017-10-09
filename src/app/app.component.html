@@ -1,4 +1,4 @@
-<mat-toolbar class="app-toolbar mat-primary" role="navigation">
+<mat-toolbar class="app-toolbar mat-primary mat-elevation-z6" role="navigation">
   <div fxFlex class="app-title">Fleisch und Umwelt</div>
   <nav fxLayout="row" fxHide fxShow.gt-sm>
     <a class="menu-link has-icon" *ngFor="let link of links" fxFlex mat-button [routerLink]="link.url" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">

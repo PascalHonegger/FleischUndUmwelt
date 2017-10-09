@@ -1,5 +1,6 @@
-import { CustomTitleService } from './services/custom-title-service';
+import { CustomTitleService } from './services/custom-title.service';
 import { Component, isDevMode } from '@angular/core';
+import { ILink } from './model/ILink';
 
 @Component({
   selector: 'app',
@@ -7,7 +8,7 @@ import { Component, isDevMode } from '@angular/core';
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-  public links = [{
+  public links: ILink[] = [{
     url: ['/'],
     matIcon: 'sort',
     content: 'Rechner'

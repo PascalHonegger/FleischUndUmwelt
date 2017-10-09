@@ -31,14 +31,17 @@ import { CalculatorComponent } from './calculator/calculator.component';
 import { NoContentComponent } from './no-content/no-content.component';
 
 // Services
-import { CustomTitleService } from './services/custom-title-service';
+import { CustomTitleService } from './services/custom-title.service';
+import { SourceService } from './services/source.service';
 
 // Material 2
 import {
   MatButtonModule,
   MatToolbarModule,
   MatSliderModule,
-  MatRadioModule
+  MatRadioModule,
+  MatTableModule,
+  MatInputModule
 } from '@angular/material';
 import 'hammerjs';
 
@@ -74,6 +77,8 @@ import '../styles/styles.scss';
     MatToolbarModule,
     MatSliderModule,
     MatRadioModule,
+    MatTableModule,
+    MatInputModule,
     FlexLayoutModule
   ],
   /**
@@ -82,7 +87,8 @@ import '../styles/styles.scss';
   providers: [
     ENV_PROVIDERS,
     Title,
-    CustomTitleService
+    CustomTitleService,
+    SourceService
   ]
 })
 export class AppModule {

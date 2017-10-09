@@ -1,4 +1,4 @@
-import { CustomTitleService } from './../services/custom-title-service';
+import { CustomTitleService } from './../services/custom-title.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -12,6 +12,6 @@ export class CalculatorComponent {
 
   constructor(title: CustomTitleService) {
     title.detailTitle = 'Rechner';
-    title.description = 'Berechnen Sie, wie stark Ihr Fleischkonsum die Umwelt belastet';
+    title.description = 'Berechnen Sie, wie Ihr Fleischkonsum die Umwelt belastet';
   }
 }
