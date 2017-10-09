@@ -1,39 +1,39 @@
 <div fxLayout="column">
-  <div fxFlex fxLayout="column">
-    <div fxFlex>
-        <mat-form-field fxFlex floatPlaceholder="never">
-          <input matInput placeholder="Quelle suchen" [(ngModel)]="dataSource.filter">
-          <i matSuffix class="material-icons">search</i>
-        </mat-form-field>
-      </div>
+  <div fxFlex>
+    <div>
+      <mat-form-field fxFlex floatPlaceholder="never">
+        <input matInput placeholder="Quelle suchen" [(ngModel)]="dataSource.filter">
+        <i matSuffix class="material-icons">search</i>
+      </mat-form-field>
+    </div>
 
-      <mat-table fxFlex [dataSource]="dataSource">
+    <mat-table [dataSource]="dataSource">
 
-        <ng-container matColumnDef="source">
-          <mat-header-cell *matHeaderCellDef>Quelle</mat-header-cell>
-          <mat-cell *matCellDef="let row">
-            <a [href]="row.url" rel="nofollow">{{row.title}}</a>
-          </mat-cell>
-        </ng-container>
-    
-        <ng-container matColumnDef="description">
-          <mat-header-cell *matHeaderCellDef>Beschreibung</mat-header-cell>
-          <mat-cell *matCellDef="let row"> {{row.description}} </mat-cell>
-        </ng-container>
-    
-        <ng-container matColumnDef="facts">
-          <mat-header-cell *matHeaderCellDef>Fakten</mat-header-cell>
-          <mat-cell *matCellDef="let row">
-            <ul>
-              <li *ngFor="let fact of row.facts">
-                  {{fact.description}}
-              </li>
-            </ul>
-          </mat-cell>
-        </ng-container>
+      <ng-container matColumnDef="source">
+        <mat-header-cell *matHeaderCellDef>Quelle</mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          <a [href]="row.url" rel="nofollow">{{row.title}}</a>
+        </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="description">
+        <mat-header-cell *matHeaderCellDef>Beschreibung</mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.description}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="facts">
+        <mat-header-cell *matHeaderCellDef>Fakten</mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          <ul>
+            <li *ngFor="let fact of row.facts">
+                {{fact.description}}
+            </li>
+          </ul>
+        </mat-cell>
+      </ng-container>
 
-        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-      </mat-table>
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
   </div>
 </div>
