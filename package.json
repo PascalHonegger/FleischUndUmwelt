@@ -66,6 +66,7 @@
     "ng2-adsense": "^4.0.12",
     "reflect-metadata": "^0.1.10",
     "rxjs": "^5.4.3",
+    "web-animations-js": "^2.3.1",
     "zone.js": "0.8.18"
   },
   "devDependencies": {
