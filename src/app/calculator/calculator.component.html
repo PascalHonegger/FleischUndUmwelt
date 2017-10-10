@@ -1,13 +1,9 @@
-<mat-horizontal-stepper linear>
-  <mat-step [stepControl]="eatsMeatFormControl" label="Fleischkonsum erfassen">
-    <div fxLayout="column" fxLayoutGap="20px" class="stepper-body">
-      <h2>Essen Sie Fleisch?</h2>
-      <mat-radio-group [formControl]="eatsMeatFormControl">
-        <mat-radio-button [value]="true">Ja</mat-radio-button>
-        <mat-radio-button [value]="false">Nein</mat-radio-button>
-      </mat-radio-group>
-      <div fxLayout="column" *ngIf="eatsMeatFormControl.value">
-        <h2>Wie viele pro Woche?</h2>
+<mat-horizontal-stepper>
+  <mat-step label="Daten">
+    <div fxLayout="column" fxLayoutGap="20px">
+      <h2>Wie viele Fleisch essen Sie pro Woche?</h2>
+      <mat-slide-toggle class="radio-box" [(ngModel)]="eatsNoMeat">Ich esse kein Fleisch</mat-slide-toggle>
+      <div fxLayout="column" *ngIf="!eatsNoMeat">
         <meat-consumtion meatName="Rindfleisch" [default]="250" [gramPerPortion]="sourceService.amountOfMeatPerLargePortion.value * 1000"></meat-consumtion>
         <meat-consumtion meatName="Schweinefleisch" [default]="1015" [gramPerPortion]="sourceService.amountOfMeatPerLargePortion.value * 1000"></meat-consumtion>
         <meat-consumtion meatName="Hähnchenfleisch" [default]="373" [gramPerPortion]="sourceService.amountOfWingedMeatPerLargePortion.value * 1000"></meat-consumtion>
