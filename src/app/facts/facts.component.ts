@@ -12,7 +12,7 @@ import { Component } from '@angular/core';
 })
 export class FactsComponent {
   public dataSource: SourcesDataSource;
-  public displayedColumns: string[] = ['source', 'description', 'facts'];
+  public displayedColumns: string[] = ['source', 'facts'];
 
   constructor(public sourceService: SourceService, title: CustomTitleService) {
     title.detailTitle = 'Fakten';

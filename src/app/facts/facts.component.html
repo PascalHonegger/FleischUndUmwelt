@@ -18,14 +18,9 @@
           <ng-template #elseTemplate>
             {{row.title}}
           </ng-template>
+          <div class="mat-caption">{{row.description}}</div>
         </mat-cell>
       </ng-container>
-
-      <ng-container matColumnDef="description">
-        <mat-header-cell *matHeaderCellDef>Beschreibung</mat-header-cell>
-        <mat-cell *matCellDef="let row"><div class="mat-caption">{{row.description}}</div></mat-cell>
-      </ng-container>
-
       <ng-container matColumnDef="facts">
         <mat-header-cell *matHeaderCellDef>Fakten</mat-header-cell>
         <mat-cell *matCellDef="let row">

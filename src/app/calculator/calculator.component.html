@@ -1,16 +1,28 @@
-<div fxLayout="column" fxLayoutGap="20px">
-  <h2>Essen Sie Fleisch?</h2>
-  <mat-radio-group [(ngModel)]="eatsMeat">
-    <mat-radio-button [value]="true">Ja</mat-radio-button>
-    <mat-radio-button [value]="false">Nein</mat-radio-button>
-  </mat-radio-group>
-  <div fxLayout="column" *ngIf="eatsMeat">
-    <h2>Wie viel pro Woche?</h2>
-    <meat-consumtion meatName="Rindfleisch" [default]="300" [gramPerPortion]="150"></meat-consumtion>
-    <meat-consumtion meatName="Schweinefleisch" [default]="350" [gramPerPortion]="150"></meat-consumtion>
-    <meat-consumtion meatName="Hähnchenfleisch" [default]="400" [gramPerPortion]="120"></meat-consumtion>
-  </div>
-  <div *ngIf="eatsMeat !== undefined">
-    Hier folgt das Rechen-Resultat.
-  </div>
-</div>
+<mat-horizontal-stepper linear>
+  <mat-step [stepControl]="eatsMeatFormControl" label="Fleischkonsum erfassen">
+    <div fxLayout="column" fxLayoutGap="20px" class="stepper-body">
+      <h2>Essen Sie Fleisch?</h2>
+      <mat-radio-group [formControl]="eatsMeatFormControl">
+        <mat-radio-button [value]="true">Ja</mat-radio-button>
+        <mat-radio-button [value]="false">Nein</mat-radio-button>
+      </mat-radio-group>
+      <div fxLayout="column" *ngIf="eatsMeatFormControl.value">
+        <h2>Wie viele pro Woche?</h2>
+        <meat-consumtion meatName="Rindfleisch" [default]="250" [gramPerPortion]="sourceService.amountOfMeatPerLargePortion.value * 1000"></meat-consumtion>
+        <meat-consumtion meatName="Schweinefleisch" [default]="1015" [gramPerPortion]="sourceService.amountOfMeatPerLargePortion.value * 1000"></meat-consumtion>
+        <meat-consumtion meatName="Hähnchenfleisch" [default]="373" [gramPerPortion]="sourceService.amountOfWingedMeatPerLargePortion.value * 1000"></meat-consumtion>
+        <meat-consumtion meatName="Fisch" [default]="400" [gramPerPortion]="120"></meat-consumtion>
+      </div>
+      <div fxLayoutAlign="end">
+        <button mat-raised-button color="primary" matStepperNext>Weiter</button>
+      </div>
+    </div>
+  </mat-step>
+  <mat-step label="Resultat" [editable]="false">
+    <h1>Resultat</h1>
+    <p>Hier folgt das Rechen-Resultat.</p>
+    <div>
+      <button mat-raised-button color="primary" matStepperPrevious>Zurück</button>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>

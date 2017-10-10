@@ -67,7 +67,7 @@ export class MeatConsumtionComponent implements OnInit {
 
   constructor() {
     this.gramFormControl.valueChanges.subscribe((val) => {
-      if (!this.gramFormControl.invalid) {
+      if (!this.gramFormControl.invalid && !isNaN(val)) {
         this.effectiveGramPerWeek = val;
       }
     });

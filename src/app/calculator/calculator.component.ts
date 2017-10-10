@@ -1,3 +1,5 @@
+import { FormControl, Validators } from '@angular/forms';
+import { SourceService } from './../services/source.service';
 import { CustomTitleService } from './../services/custom-title.service';
 import { Component } from '@angular/core';
 
@@ -9,32 +11,24 @@ const eatsMeatKey = 'eatsMeat';
   templateUrl: './calculator.component.html'
 })
 export class CalculatorComponent {
-  public mealsContainingMeat: number = 5;
+  public eatsMeatFormControl = new FormControl(undefined, Validators.required);
 
-  public set eatsMeat(value: boolean) {
-    if (this._eatsMeat === value) {
-      return;
-    }
-
-    this._eatsMeat = value;
-    localStorage.setItem(eatsMeatKey, value.toString());
-  }
-
-  public get eatsMeat(): boolean {
-    return this._eatsMeat;
-  }
-
-  private _eatsMeat: boolean;
-
-  constructor(title: CustomTitleService) {
+  constructor(public sourceService: SourceService, title: CustomTitleService) {
     title.detailTitle = 'Rechner';
     title.description = 'Berechnen Sie, wie Ihr Fleischkonsum die Umwelt belastet';
 
     const item = localStorage.getItem(eatsMeatKey);
     if (item === true.toString()) {
-      this._eatsMeat = true;
+      this.eatsMeatFormControl.setValue(true);
     } else if (item === false.toString()) {
-      this._eatsMeat = false;
+      this.eatsMeatFormControl.setValue(false);
     }
+
+    this.eatsMeatFormControl.valueChanges.subscribe(
+      (val) => {
+        if (val !== undefined) {
+          localStorage.setItem(eatsMeatKey, val.toString());
+        }
+      });
   }
 }

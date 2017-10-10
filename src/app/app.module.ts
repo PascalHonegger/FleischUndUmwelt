@@ -34,7 +34,8 @@ import {
   MatInputModule,
   MatExpansionModule,
   MatFormFieldModule,
-  MatSlideToggleModule
+  MatSlideToggleModule,
+  MatStepperModule
 } from '@angular/material';
 import 'hammerjs';
 
@@ -77,6 +78,7 @@ import '../styles/styles.scss';
     MatExpansionModule,
     MatFormFieldModule,
     MatSlideToggleModule,
+    MatStepperModule,
     FlexLayoutModule
   ],
   /**

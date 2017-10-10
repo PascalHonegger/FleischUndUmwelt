@@ -1,4 +1,4 @@
-<mat-expansion-panel>
+<mat-expansion-panel #expansionPanel [expanded]="true">
   <mat-expansion-panel-header>
     <mat-panel-title>
       {{meatName}}
@@ -21,7 +21,7 @@
       <h2>Wie viel Gramm {{meatName}} essen Sie pro Woche?</h2>
       <div>
         <mat-form-field fxFlex>
-          <input matInput required pattern="\d+" type="number" min="0" [max]="maxPortionsPerWeek * gramPerPortion" placeholder="Gramm {{meatName}}" [formControl]="gramFormControl">
+          <input matInput required pattern="\d*" type="number" [min]="0" [max]="maxPortionsPerWeek * gramPerPortion" placeholder="Gramm {{meatName}}" [formControl]="gramFormControl">
           <mat-error *ngIf="gramFormControl.hasError('required') || gramFormControl.hasError('pattern')">
             Geben Sie eine gültige Zahl ein
           </mat-error>
@@ -29,8 +29,8 @@
       </div>
     </ng-container>
     <ng-template #basicOptions>
-      <h2>Wie viele Portionen mit {{meatName}} essen Sie pro Woche?</h2>
-      <div class="meat-slider-div">
+      <h2>Wie viele <strong>Portionen</strong> mit {{meatName}} essen Sie pro Woche?</h2>
+      <div>
           <mat-slider fxFlex
             [max]="maxPortionsPerWeek"
             [min]="0"
@@ -41,5 +41,6 @@
           </mat-slider>
       </div>
     </ng-template>
+    <button mat-raised-button (click)="expansionPanel.close()">Schliessen</button>
   </div>
 </mat-expansion-panel>
