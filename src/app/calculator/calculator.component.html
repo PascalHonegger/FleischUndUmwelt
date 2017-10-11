@@ -1,8 +1,10 @@
 <mat-horizontal-stepper>
   <mat-step label="Daten">
-    <div fxLayout="column" fxLayoutGap="20px">
+    <div fxLayout="column" fxLayoutGap="20px" class="data-input-container">
       <h2>Wie viel Fleisch essen Sie pro Woche?</h2>
-      <mat-slide-toggle class="radio-box" [(ngModel)]="eatsNoMeat">Ich esse kein Fleisch</mat-slide-toggle>
+      <div fxLayoutAlign="end">
+        <mat-slide-toggle [(ngModel)]="eatsNoMeat">Ich esse kein Fleisch</mat-slide-toggle>
+      </div>
       <div fxLayout="column" *ngIf="!eatsNoMeat">
         <meat-consumtion meatName="Rindfleisch" [default]="250" [gramPerPortion]="sourceService.amountOfMeatPerLargePortion.value * 1000"></meat-consumtion>
         <meat-consumtion meatName="Schweinefleisch" [default]="1015" [gramPerPortion]="sourceService.amountOfMeatPerLargePortion.value * 1000"></meat-consumtion>

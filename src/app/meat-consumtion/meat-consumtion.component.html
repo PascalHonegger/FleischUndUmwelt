@@ -1,4 +1,4 @@
-<mat-expansion-panel #expansionPanel [expanded]="true">
+<mat-expansion-panel #expansionPanel>
   <mat-expansion-panel-header>
     <mat-panel-title>
       {{meatName}}
@@ -16,7 +16,9 @@
     </ng-template>
   </mat-expansion-panel-header>
   <div fxLayout="column" class="content">
-    <mat-slide-toggle [(ngModel)]="advancedMode">Exakt</mat-slide-toggle>
+    <div fxLayoutAlign="end">
+      <mat-slide-toggle [(ngModel)]="advancedMode">Exakt</mat-slide-toggle>
+    </div>
     <ng-container *ngIf="advancedMode; else basicOptions">
       <h2>Wie viel Gramm {{meatName}} essen Sie pro Woche?</h2>
       <div>
@@ -41,6 +43,8 @@
           </mat-slider>
       </div>
     </ng-template>
-    <button mat-raised-button (click)="expansionPanel.close()">Schliessen</button>
+    <div fxLayoutAlign="center">
+      <button mat-button (click)="expansionPanel.close()">Schliessen</button>
+    </div>
   </div>
 </mat-expansion-panel>
