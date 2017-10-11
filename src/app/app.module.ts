@@ -4,7 +4,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { RouterModule, PreloadAllModules } from '@angular/router';
 
 /*
@@ -88,7 +88,8 @@ import '../styles/styles.scss';
     ENV_PROVIDERS,
     Title,
     CustomTitleService,
-    SourceService
+    SourceService,
+    { provide: LOCALE_ID, useValue: 'de-CH' }
   ]
 })
 export class AppModule {

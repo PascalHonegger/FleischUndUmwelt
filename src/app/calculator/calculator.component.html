@@ -1,15 +1,14 @@
 <mat-horizontal-stepper>
   <mat-step label="Daten">
     <div fxLayout="column" fxLayoutGap="20px" class="data-input-container">
-      <h2>Wie viel Fleisch essen Sie pro Woche?</h2>
+      <h2>Wie viel Fleisch essen Sie durchschnittlich pro Woche?</h2>
       <div fxLayoutAlign="end">
         <mat-slide-toggle [(ngModel)]="eatsNoMeat">Ich esse kein Fleisch</mat-slide-toggle>
       </div>
       <div fxLayout="column" *ngIf="!eatsNoMeat">
-        <meat-consumtion meatName="Rindfleisch" [default]="250" [gramPerPortion]="sourceService.amountOfMeatPerLargePortion.value * 1000"></meat-consumtion>
-        <meat-consumtion meatName="Schweinefleisch" [default]="1015" [gramPerPortion]="sourceService.amountOfMeatPerLargePortion.value * 1000"></meat-consumtion>
-        <meat-consumtion meatName="Hähnchenfleisch" [default]="373" [gramPerPortion]="sourceService.amountOfWingedMeatPerLargePortion.value * 1000"></meat-consumtion>
-        <meat-consumtion meatName="Fisch" [default]="400" [gramPerPortion]="120"></meat-consumtion>
+        <meat-consumtion meatName="Rindfleisch" [default]="250" [gramPerPortion]="sourceService.kgOfMeatPerPortion.value * 1000"></meat-consumtion>
+        <meat-consumtion meatName="Schweinefleisch" [default]="1015" [gramPerPortion]="sourceService.kgOfMeatPerPortion.value * 1000"></meat-consumtion>
+        <meat-consumtion meatName="Pouletfleisch" [default]="373" [gramPerPortion]="sourceService.kgOfWingedMeatPerPortion.value * 1000"></meat-consumtion>
       </div>
       <div fxLayoutAlign="end">
         <button mat-raised-button color="primary" matStepperNext>Weiter</button>
