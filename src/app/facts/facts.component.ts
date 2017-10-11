@@ -1,9 +1,9 @@
-import { SourcesDataSource } from './../model/SourcesDataSource';
-import { ISource } from './../model/ISource';
+import { Component } from '@angular/core';
 import { DataSource } from '@angular/cdk/collections';
+
+import { SourcesDataSource } from './../model/sources-data-source.model';
 import { SourceService } from './../services/source.service';
 import { CustomTitleService } from './../services/custom-title.service';
-import { Component } from '@angular/core';
 
 @Component({
   selector: 'facts',

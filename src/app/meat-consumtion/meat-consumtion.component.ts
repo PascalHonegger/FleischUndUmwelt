@@ -1,5 +1,5 @@
 import { Component, Input, EventEmitter, OnInit, Output } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { FormControl } from '@angular/forms';
 
 const gramPerWeekKey = 'gramPerWeek';
 const advancedModeKey = 'advancedMode';
@@ -10,6 +10,9 @@ const advancedModeKey = 'advancedMode';
   templateUrl: './meat-consumtion.component.html'
 })
 export class MeatConsumtionComponent implements OnInit {
+  @Output()
+  public effectiveGramPerWeekChange: EventEmitter<number> = new EventEmitter();
+
   @Input() public meatName: string;
   @Input() public gramPerPortion: number;
   @Input() public default: number;
@@ -55,9 +58,6 @@ export class MeatConsumtionComponent implements OnInit {
   public get effectiveGramPerWeek(): number {
     return this._effectiveGramPerWeek;
   }
-
-  @Output()
-  public effectiveGramPerWeekChange: EventEmitter<number> = new EventEmitter();
 
   public gramFormControl = new FormControl(0);
 

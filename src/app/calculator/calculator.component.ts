@@ -1,7 +1,8 @@
-import { FormControl, Validators } from '@angular/forms';
+import { MeatType } from './../model/meat-type.model';
+import { Component } from '@angular/core';
+
 import { SourceService } from './../services/source.service';
 import { CustomTitleService } from './../services/custom-title.service';
-import { Component } from '@angular/core';
 
 const eatsNoMeatKey = 'eatsNoMeat';
 
@@ -11,6 +12,8 @@ const eatsNoMeatKey = 'eatsNoMeat';
   templateUrl: './calculator.component.html'
 })
 export class CalculatorComponent {
+  public meatTypes: MeatType[];
+
   public set eatsNoMeat(value: boolean) {
     if (this._eatsNoMeat === value) {
       return;
@@ -26,10 +29,48 @@ export class CalculatorComponent {
 
   private _eatsNoMeat: boolean;
 
-  constructor(public sourceService: SourceService, title: CustomTitleService) {
+  constructor(sourceService: SourceService, title: CustomTitleService) {
     title.detailTitle = 'Rechner';
     title.description = 'Berechnen Sie, wie Ihr Fleischkonsum die Umwelt belastet';
 
+    // Available meats
+    this.meatTypes = [
+      {
+        meatName: 'Rindfleisch',
+        animalName: 'Rind',
+        averageConsumtionPerWeek: sourceService.kgOfBeefPerPersonPerWeek.value,
+        effectiveConsumtionPerWeek: 0,
+        kgCo2PerKgWeight: sourceService.kgCo2PerPerKgBeef.value,
+        kgPerAnimal: sourceService.kgOfBeefPerCow.value,
+        kgPerPortion: sourceService.kgOfMeatPerPortion.value,
+        landUsagePerKgWeight: sourceService.landUsedPerKgBeef.value,
+        waterUsagePerKgWeight: sourceService.litersOfWaterPerKgBeef.value
+      },
+      {
+        meatName: 'Schweinefleisch',
+        animalName: 'Schwein',
+        averageConsumtionPerWeek: sourceService.kgOfPorkPerPersonPerWeek.value,
+        effectiveConsumtionPerWeek: 0,
+        kgCo2PerKgWeight: sourceService.kgCo2PerPerKgPork.value,
+        kgPerAnimal: sourceService.kgOfPorkPerPig.value,
+        kgPerPortion: sourceService.kgOfMeatPerPortion.value,
+        landUsagePerKgWeight: sourceService.landUsedPerKgPork.value,
+        waterUsagePerKgWeight: sourceService.litersOfWaterPerKgPork.value
+      },
+      {
+        meatName: 'Pouletfleisch',
+        animalName: 'Huhn',
+        averageConsumtionPerWeek: sourceService.kgOfChickenMeatPerPersonPerWeek.value,
+        effectiveConsumtionPerWeek: 0,
+        kgCo2PerKgWeight: sourceService.kgCo2PerPerKgChickenMeat.value,
+        kgPerAnimal: sourceService.kgOfChickenMeatPerChicken.value,
+        kgPerPortion: sourceService.kgOfMeatPerPortion.value,
+        landUsagePerKgWeight: sourceService.landUsedPerKgChickenMeat.value,
+        waterUsagePerKgWeight: sourceService.litersOfWaterPerKgChickenMeat.value
+      }
+    ];
+
+    // Load storage saved value
     const item = localStorage.getItem(eatsNoMeatKey);
     if (item === true.toString()) {
       this._eatsNoMeat = true;

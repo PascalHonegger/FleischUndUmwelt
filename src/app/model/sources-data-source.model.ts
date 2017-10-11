@@ -1,11 +1,13 @@
-import { ISource } from './ISource';
 import { DataSource, CollectionViewer } from '@angular/cdk/collections';
+
 import { Observable } from 'rxjs/Observable';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import 'rxjs/add/observable/merge';
 import 'rxjs/add/operator/map';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
-export class SourcesDataSource extends DataSource<ISource> {
+import { Source } from './source.model';
+
+export class SourcesDataSource extends DataSource<Source> {
     private _filter: string = '';
     private filterChanged: BehaviorSubject<string> = new BehaviorSubject('');
 
@@ -22,11 +24,11 @@ export class SourcesDataSource extends DataSource<ISource> {
         this.filterChanged.next(value);
     }
 
-    constructor(private sources: ISource[]) {
+    constructor(private sources: Source[]) {
         super();
     }
 
-    public connect(collectionViewer: CollectionViewer): Observable<ISource[]> {
+    public connect(collectionViewer: CollectionViewer): Observable<Source[]> {
         return Observable
             .merge(this.filterChanged)
             .map((filterString) =>

@@ -6,9 +6,7 @@
         <mat-slide-toggle [(ngModel)]="eatsNoMeat">Ich esse kein Fleisch</mat-slide-toggle>
       </div>
       <div fxLayout="column" *ngIf="!eatsNoMeat">
-        <meat-consumtion meatName="Rindfleisch" [default]="250" [gramPerPortion]="sourceService.kgOfMeatPerPortion.value * 1000"></meat-consumtion>
-        <meat-consumtion meatName="Schweinefleisch" [default]="1015" [gramPerPortion]="sourceService.kgOfMeatPerPortion.value * 1000"></meat-consumtion>
-        <meat-consumtion meatName="Pouletfleisch" [default]="373" [gramPerPortion]="sourceService.kgOfWingedMeatPerPortion.value * 1000"></meat-consumtion>
+        <meat-consumtion *ngFor="let meatType of meatTypes" (effectiveGramPerWeekChange)="meatType.effectiveConsumtionPerWeek = $event / 1000" [meatName]="meatType.meatName" [default]="meatType.averageConsumtionPerWeek * 1000" [gramPerPortion]="meatType.kgPerPortion * 1000"></meat-consumtion>
       </div>
       <div fxLayoutAlign="end">
         <button mat-raised-button color="primary" matStepperNext>Weiter</button>
@@ -17,7 +15,9 @@
   </mat-step>
   <mat-step label="Resultat" [editable]="false">
     <h1>Resultat</h1>
-    <p>Hier folgt das Rechen-Resultat.</p>
+    <div *ngFor="let meatType of meatTypes">
+      Durch das essen von {{meatType.meatName}} sterben Jährlich {{((meatType.effectiveConsumtionPerWeek * 52) / meatType.kgPerAnimal).toFixed(2)}} {{meatType.animalName}}
+    </div>
     <div>
       <button mat-raised-button color="primary" matStepperPrevious>Zurück</button>
     </div>
