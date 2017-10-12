@@ -1,27 +1,28 @@
-<ng-container *ngIf="showInputs; then thenTemplate; else elseTemplate"></ng-container>
-<ng-template #thenTemplate>
+<ng-container *ngIf="showInputs; then inputDataTemplate; else calculationResultTemplate"></ng-container>
+
+<ng-template #inputDataTemplate>
   <div fxLayout="column" fxLayoutGap="20px">
       <h2>Wie viel Fleisch essen Sie durchschnittlich pro Woche?</h2>
       <div fxLayoutAlign="end">
         <mat-slide-toggle [(ngModel)]="eatsNoMeat">Ich esse kein Fleisch</mat-slide-toggle>
       </div>
       <div fxLayout="column" *ngIf="!eatsNoMeat">
-        <meat-consumtion *ngFor="let meatType of meatTypes" (effectiveGramPerWeekChange)="meatType.effectiveConsumtionPerWeek = $event / 1000" [meatName]="meatType.meatName" [default]="meatType.averageConsumtionPerWeek * 1000" [gramPerPortion]="meatType.kgPerPortion * 1000"></meat-consumtion>
+        <meat-consumtion *ngFor="let meatType of meatTypes" [meatName]="meatType.meatName" [defaultInKg]="meatType.averageConsumtionPerWeek" [gramPerPortion]="meatType.kgPerPortion * 1000"></meat-consumtion>
       </div>
       <div fxLayoutAlign="end">
         <button mat-raised-button color="primary" (click)="showInputs = false">Weiter</button>
       </div>
     </div>
 </ng-template>
-<ng-template #elseTemplate>
+<ng-template #calculationResultTemplate>
   <div fxLayout="column" fxLayoutGap="20px">
       <!--
       <h1>Umwelteinfluss</h1>
-      <calculator-greenhouse-gases [meatTypes]="meatTypes"></calculator-greenhouse-gases>
-      <calculator-natural-ressources [meatTypes]="meatTypes"></calculator-natural-ressources>
+      <calculator-greenhouse-gases #calculateControl [meatTypes]="meatTypes"></calculator-greenhouse-gases>
+      <calculator-natural-ressources #calculateControl [meatTypes]="meatTypes"></calculator-natural-ressources>
       -->
       <h1>Geschlachtete Tiere</h1>
-      <calculator-animal *ngFor="let meatType of meatTypes" [meatType]="meatType"></calculator-animal>
+      <calculator-animal #calculateControl *ngFor="let meatType of meatTypes" [meatType]="meatType"></calculator-animal>
       <div>
         <button mat-raised-button color="primary" (click)="showInputs = true">Zurück</button>
       </div>

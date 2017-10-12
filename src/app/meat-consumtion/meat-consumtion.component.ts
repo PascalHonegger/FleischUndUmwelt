@@ -1,8 +1,7 @@
-import { Component, Input, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
-const gramPerWeekKey = 'gramPerWeek';
-const advancedModeKey = 'advancedMode';
+import { StorageService } from './../services/storage.service';
 
 @Component({
   selector: 'meat-consumtion',
@@ -10,12 +9,9 @@ const advancedModeKey = 'advancedMode';
   templateUrl: './meat-consumtion.component.html'
 })
 export class MeatConsumtionComponent implements OnInit {
-  @Output()
-  public effectiveGramPerWeekChange: EventEmitter<number> = new EventEmitter();
-
   @Input() public meatName: string;
   @Input() public gramPerPortion: number;
-  @Input() public default: number;
+  @Input() public defaultInKg: number;
   public readonly maxPortionsPerWeek: number = 21;
 
   public set advancedMode(value: boolean) {
@@ -29,7 +25,7 @@ export class MeatConsumtionComponent implements OnInit {
     }
 
     this._advancedMode = value;
-    localStorage.setItem(this.storageKey(advancedModeKey), value.toString());
+    this.storageService.setConsumtionIsAdvanced(this.meatName, value);
   }
 
   public get advancedMode(): boolean {
@@ -51,8 +47,7 @@ export class MeatConsumtionComponent implements OnInit {
       return;
     }
     this._effectiveGramPerWeek = value;
-    localStorage.setItem(this.storageKey(gramPerWeekKey), value.toString());
-    this.effectiveGramPerWeekChange.emit(value);
+    this.storageService.setConsumtionPerWeek(this.meatName, value / 1000);
   }
 
   public get effectiveGramPerWeek(): number {
@@ -65,7 +60,7 @@ export class MeatConsumtionComponent implements OnInit {
   private _mealsContainingMeat: number = 0;
   private _advancedMode: boolean = false;
 
-  constructor() {
+  constructor(private storageService: StorageService) {
     this.gramFormControl.valueChanges.subscribe((val) => {
       if (!this.gramFormControl.invalid && !isNaN(val)) {
         this.effectiveGramPerWeek = val;
@@ -74,19 +69,10 @@ export class MeatConsumtionComponent implements OnInit {
   }
 
   public ngOnInit() {
-    const gramPerWeek = localStorage.getItem(this.storageKey(gramPerWeekKey));
-    if (gramPerWeek) {
-      const parsedNumber = parseInt(gramPerWeek, 10);
-      if (isNaN(parsedNumber)) {
-          this.gramFormControl.setValue(this.default);
-      } else {
-        this.gramFormControl.setValue(parsedNumber);
-      }
-    } else {
-      this.gramFormControl.setValue(this.default);
-    }
+    const savedStoragePerWeek = this.storageService.consumtionPerWeek(this.meatName, this.defaultInKg);
+    this.gramFormControl.setValue(savedStoragePerWeek * 1000);
 
-    if (localStorage.getItem(this.storageKey(advancedModeKey)) === true.toString()) {
+    if (this.storageService.consumtionIsAdvanced(this.meatName, false)) {
       this._advancedMode = true;
     } else {
       this._advancedMode = false;
@@ -100,9 +86,5 @@ export class MeatConsumtionComponent implements OnInit {
 
   private setAdvancedBasedOnBasic() {
     this.gramFormControl.setValue(this.mealsContainingMeat * this.gramPerPortion);
-  }
-
-  private storageKey(subKey: string): string {
-    return `consumtion:${this.meatName}:${subKey}`;
   }
 }

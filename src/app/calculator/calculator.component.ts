@@ -1,18 +1,19 @@
+import { CalculateControl } from './calculate-control';
+import { StorageService } from './../services/storage.service';
 import { MeatType } from './../model/meat-type.model';
-import { Component } from '@angular/core';
+import { Component, ViewChildren, AfterViewInit, QueryList } from '@angular/core';
 
 import { SourceService } from './../services/source.service';
 import { CustomTitleService } from './../services/custom-title.service';
-
-const eatsNoMeatKey = 'eatsNoMeat';
-const showInputsKey = 'showInputs';
 
 @Component({
   selector: 'calculator',
   styleUrls: ['./calculator.component.css'],
   templateUrl: './calculator.component.html'
 })
-export class CalculatorComponent {
+export class CalculatorComponent implements AfterViewInit {
+  @ViewChildren('calculateControl') public calculateControls: QueryList<CalculateControl>;
+
   public meatTypes: MeatType[];
 
   public set showInputs(value: boolean) {
@@ -21,7 +22,13 @@ export class CalculatorComponent {
     }
 
     this._showInputs = value;
-    localStorage.setItem(showInputsKey, value.toString());
+    this.storageService.setShowInputs(value);
+
+    if (!value) {
+      setTimeout(() => {
+        this.runCalculateMethods();
+      });
+    }
   }
 
   public get showInputs(): boolean {
@@ -34,7 +41,7 @@ export class CalculatorComponent {
     }
 
     this._eatsNoMeat = value;
-    localStorage.setItem(eatsNoMeatKey, value.toString());
+    this.storageService.setEatsNoMeat(value);
   }
 
   public get eatsNoMeat(): boolean {
@@ -44,7 +51,9 @@ export class CalculatorComponent {
   private _showInputs: boolean;
   private _eatsNoMeat: boolean;
 
-  constructor(sourceService: SourceService, title: CustomTitleService) {
+  constructor(private storageService: StorageService,
+              sourceService: SourceService,
+              title: CustomTitleService) {
     title.detailTitle = 'Rechner';
     title.description = 'Berechnen Sie, wie Ihr Fleischkonsum die Umwelt belastet';
 
@@ -55,7 +64,6 @@ export class CalculatorComponent {
         animalName: 'Rind',
         animalNamePlural: 'Rinder',
         averageConsumtionPerWeek: sourceService.kgOfBeefPerPersonPerWeek.value,
-        effectiveConsumtionPerWeek: 0,
         kgCo2PerKgWeight: sourceService.kgCo2PerPerKgBeef.value,
         kgPerAnimal: sourceService.kgOfBeefPerCow.value,
         kgPerPortion: sourceService.kgOfMeatPerPortion.value,
@@ -67,7 +75,6 @@ export class CalculatorComponent {
         animalName: 'Schwein',
         animalNamePlural: 'Schweine',
         averageConsumtionPerWeek: sourceService.kgOfPorkPerPersonPerWeek.value,
-        effectiveConsumtionPerWeek: 0,
         kgCo2PerKgWeight: sourceService.kgCo2PerPerKgPork.value,
         kgPerAnimal: sourceService.kgOfPorkPerPig.value,
         kgPerPortion: sourceService.kgOfMeatPerPortion.value,
@@ -79,7 +86,6 @@ export class CalculatorComponent {
         animalName: 'Huhn',
         animalNamePlural: 'Hühner',
         averageConsumtionPerWeek: sourceService.kgOfChickenMeatPerPersonPerWeek.value,
-        effectiveConsumtionPerWeek: 0,
         kgCo2PerKgWeight: sourceService.kgCo2PerPerKgChickenMeat.value,
         kgPerAnimal: sourceService.kgOfChickenMeatPerChicken.value,
         kgPerPortion: sourceService.kgOfWingedMeatPerPortion.value,
@@ -89,18 +95,29 @@ export class CalculatorComponent {
     ];
 
     // Load storage saved value
-    const eatsMeatItem = localStorage.getItem(eatsNoMeatKey);
-    if (eatsMeatItem === true.toString()) {
-      this._eatsNoMeat = true;
-    } else {
-      this._eatsNoMeat = false;
-    }
+    this._eatsNoMeat = this.storageService.eatsNoMeat(false);
+  }
 
-    const showInputsItem = localStorage.getItem(showInputsKey);
-    if (showInputsItem === false.toString()) {
-      this._showInputs = false;
-    } else {
-      this._showInputs = true;
-    }
+  public ngAfterViewInit() {
+    setTimeout(() => {
+      if (this.storageService.showInputs(true)) {
+        this._showInputs = true;
+      } else {
+        this._showInputs = false;
+        this.runCalculateMethods();
+      }
+    });
+  }
+
+  private runCalculateMethods() {
+    this.calculateControls.forEach((control) => {
+      control.calculate();
+    });
+  }
+
+  private clearCalculateResults() {
+    this.calculateControls.forEach((control) => {
+      control.clear();
+    });
   }
 }

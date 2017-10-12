@@ -26,6 +26,7 @@ import { NoContentComponent } from './no-content/no-content.component';
 // Services
 import { CustomTitleService } from './services/custom-title.service';
 import { SourceService } from './services/source.service';
+import { StorageService } from './services/storage.service';
 
 // Material 2
 import {
@@ -95,6 +96,7 @@ import '../styles/styles.scss';
     Title,
     CustomTitleService,
     SourceService,
+    StorageService,
     { provide: LOCALE_ID, useValue: 'de-CH' }
   ]
 })
