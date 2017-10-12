@@ -5,6 +5,7 @@ import { SourceService } from './../services/source.service';
 import { CustomTitleService } from './../services/custom-title.service';
 
 const eatsNoMeatKey = 'eatsNoMeat';
+const showInputsKey = 'showInputs';
 
 @Component({
   selector: 'calculator',
@@ -13,6 +14,19 @@ const eatsNoMeatKey = 'eatsNoMeat';
 })
 export class CalculatorComponent {
   public meatTypes: MeatType[];
+
+  public set showInputs(value: boolean) {
+    if (this._showInputs === value) {
+      return;
+    }
+
+    this._showInputs = value;
+    localStorage.setItem(showInputsKey, value.toString());
+  }
+
+  public get showInputs(): boolean {
+    return this._showInputs;
+  }
 
   public set eatsNoMeat(value: boolean) {
     if (this._eatsNoMeat === value) {
@@ -27,6 +41,7 @@ export class CalculatorComponent {
     return this._eatsNoMeat;
   }
 
+  private _showInputs: boolean;
   private _eatsNoMeat: boolean;
 
   constructor(sourceService: SourceService, title: CustomTitleService) {
@@ -67,18 +82,25 @@ export class CalculatorComponent {
         effectiveConsumtionPerWeek: 0,
         kgCo2PerKgWeight: sourceService.kgCo2PerPerKgChickenMeat.value,
         kgPerAnimal: sourceService.kgOfChickenMeatPerChicken.value,
-        kgPerPortion: sourceService.kgOfMeatPerPortion.value,
+        kgPerPortion: sourceService.kgOfWingedMeatPerPortion.value,
         landUsagePerKgWeight: sourceService.landUsedPerKgChickenMeat.value,
         waterUsagePerKgWeight: sourceService.litersOfWaterPerKgChickenMeat.value
       }
     ];
 
     // Load storage saved value
-    const item = localStorage.getItem(eatsNoMeatKey);
-    if (item === true.toString()) {
+    const eatsMeatItem = localStorage.getItem(eatsNoMeatKey);
+    if (eatsMeatItem === true.toString()) {
       this._eatsNoMeat = true;
     } else {
       this._eatsNoMeat = false;
+    }
+
+    const showInputsItem = localStorage.getItem(showInputsKey);
+    if (showInputsItem === false.toString()) {
+      this._showInputs = false;
+    } else {
+      this._showInputs = true;
     }
   }
 }
