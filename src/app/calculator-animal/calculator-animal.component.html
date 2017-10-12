@@ -1,0 +1,12 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{meatType.animalName}}</mat-card-title>
+    <mat-card-subtitle>{{(meatType.effectiveConsumtionPerWeek * weeksPerYear).toFixed(0)}}kg {{meatType.meatName}} pro Jahr</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>Durch Ihren Konsum von {{meatType.meatName}} sterben Jährlich {{effectiveKilledAnimalsPerYear.toFixed(2)}} {{meatType.animalNamePlural}}</p>
+    <div [style.width.px]="imageBaseSize" [style.height.px]="imageBaseSize" class="crop-container" *ngFor="let image of animalImages(effectiveKilledAnimalsPerYear)" [style.margin-left.px]="-(imageBaseSize - (imageBaseSize / 100) * image.relativeWidth)">
+        <img [width]="imageBaseSize" [height]="imageBaseSize" [src]="image.imagePath" [style.margin-left.px]="imageBaseSize - (imageBaseSize / 100) * image.relativeWidth">
+    </div>
+  </mat-card-content>
+</mat-card>

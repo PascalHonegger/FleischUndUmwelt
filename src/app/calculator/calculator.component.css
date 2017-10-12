@@ -3,11 +3,11 @@
     padding-right: 0px !important;
 }
 
-div.data-input-container > * {
+div.mat-step-margin > * {
     margin-left: 3px;
     margin-right: 3px;
 }
 
-div.data-input-container > :last-child {
+div.mat-step-margin > :last-child {
     margin-bottom: 3px;
 }

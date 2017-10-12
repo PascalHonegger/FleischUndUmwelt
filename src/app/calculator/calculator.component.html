@@ -1,6 +1,6 @@
 <mat-horizontal-stepper>
   <mat-step label="Daten">
-    <div fxLayout="column" fxLayoutGap="20px" class="data-input-container">
+    <div fxLayout="column" fxLayoutGap="20px" class="mat-step-margin">
       <h2>Wie viel Fleisch essen Sie durchschnittlich pro Woche?</h2>
       <div fxLayoutAlign="end">
         <mat-slide-toggle [(ngModel)]="eatsNoMeat">Ich esse kein Fleisch</mat-slide-toggle>
@@ -14,12 +14,12 @@
     </div>
   </mat-step>
   <mat-step label="Resultat" [editable]="false">
-    <h1>Resultat</h1>
-    <div *ngFor="let meatType of meatTypes">
-      Durch das essen von {{meatType.meatName}} sterben Jährlich {{((meatType.effectiveConsumtionPerWeek * 52) / meatType.kgPerAnimal).toFixed(2)}} {{meatType.animalName}}
-    </div>
-    <div>
-      <button mat-raised-button color="primary" matStepperPrevious>Zurück</button>
+    <div fxLayout="column" fxLayoutGap="20px" class="mat-step-margin">
+      <h1>Geschlachtete Tiere</h1>
+      <calculator-animal *ngFor="let meatType of meatTypes" [meatType]="meatType"></calculator-animal>
+      <div>
+        <button mat-raised-button color="primary" matStepperPrevious>Zurück</button>
+      </div>
     </div>
   </mat-step>
 </mat-horizontal-stepper>

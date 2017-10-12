@@ -38,6 +38,7 @@ export class CalculatorComponent {
       {
         meatName: 'Rindfleisch',
         animalName: 'Rind',
+        animalNamePlural: 'Rinder',
         averageConsumtionPerWeek: sourceService.kgOfBeefPerPersonPerWeek.value,
         effectiveConsumtionPerWeek: 0,
         kgCo2PerKgWeight: sourceService.kgCo2PerPerKgBeef.value,
@@ -49,6 +50,7 @@ export class CalculatorComponent {
       {
         meatName: 'Schweinefleisch',
         animalName: 'Schwein',
+        animalNamePlural: 'Schweine',
         averageConsumtionPerWeek: sourceService.kgOfPorkPerPersonPerWeek.value,
         effectiveConsumtionPerWeek: 0,
         kgCo2PerKgWeight: sourceService.kgCo2PerPerKgPork.value,
@@ -60,6 +62,7 @@ export class CalculatorComponent {
       {
         meatName: 'Pouletfleisch',
         animalName: 'Huhn',
+        animalNamePlural: 'Hühner',
         averageConsumtionPerWeek: sourceService.kgOfChickenMeatPerPersonPerWeek.value,
         effectiveConsumtionPerWeek: 0,
         kgCo2PerKgWeight: sourceService.kgCo2PerPerKgChickenMeat.value,

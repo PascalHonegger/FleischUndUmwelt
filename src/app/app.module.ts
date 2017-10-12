@@ -17,6 +17,9 @@ import { AppComponent } from './app.component';
 import { FactsComponent } from './facts/facts.component';
 import { AboutComponent } from './about/about.component';
 import { CalculatorComponent } from './calculator/calculator.component';
+import {
+  CalculatorAnimalComponent
+} from './calculator-animal/calculator-animal.component';
 import { MeatConsumtionComponent } from './meat-consumtion/meat-consumtion.component';
 import { NoContentComponent } from './no-content/no-content.component';
 
@@ -35,7 +38,8 @@ import {
   MatExpansionModule,
   MatFormFieldModule,
   MatSlideToggleModule,
-  MatStepperModule
+  MatStepperModule,
+  MatCardModule
 } from '@angular/material';
 import 'hammerjs';
 
@@ -52,7 +56,8 @@ import '../styles/styles.scss';
     CalculatorComponent,
     FactsComponent,
     NoContentComponent,
-    MeatConsumtionComponent
+    MeatConsumtionComponent,
+    CalculatorAnimalComponent
   ],
   /**
    * Import Angular's modules.
@@ -79,6 +84,7 @@ import '../styles/styles.scss';
     MatFormFieldModule,
     MatSlideToggleModule,
     MatStepperModule,
+    MatCardModule,
     FlexLayoutModule
   ],
   /**

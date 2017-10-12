@@ -8,4 +8,5 @@ export interface MeatType {
     landUsagePerKgWeight: number;
     kgPerAnimal: number;
     animalName: string;
+    animalNamePlural: string;
 }
