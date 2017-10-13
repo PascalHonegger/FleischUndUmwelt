@@ -8,4 +8,5 @@ export interface MeatType {
     kgPerAnimal: number;
     animalName: string;
     animalNamePlural: string;
+    imageBaseName: string;
 }

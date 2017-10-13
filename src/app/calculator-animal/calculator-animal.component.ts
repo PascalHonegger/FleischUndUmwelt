@@ -21,7 +21,8 @@ export class CalculatorAnimalComponent implements CalculateControl {
   public averageKilledAnimalsPerYear: number;
 
   public animalImages: AnimalImage[];
-  public imageBaseSize: number = 50;
+  public imageWidth: number = 50;
+  public imageHeight: number = 28;
 
   public readonly weeksPerYear: number = 365 / 7;
 
@@ -48,11 +49,12 @@ export class CalculatorAnimalComponent implements CalculateControl {
 
   private calculateAnimalImages(amountOfAnimals: number): AnimalImage[] {
     const result: AnimalImage[] = [];
-    // tslint:disable-next-line:max-line-length
-    const imagePath = 'https://vignette.wikia.nocookie.net/hayday/images/4/47/Kuh.png/revision/latest?cb=20150703221620&path-prefix=de';
+    const imagePath = `/assets/img/${this.meatType.imageBaseName}.png`;
+    const outlineImagePath = `/assets/img/${this.meatType.imageBaseName}-outline.png`;
 
     const fullAnimalImage: AnimalImage = {
       imagePath,
+      outlineImagePath,
       relativeWidth: 100
     };
 
@@ -65,6 +67,7 @@ export class CalculatorAnimalComponent implements CalculateControl {
     if (amountOfAnimals > 0) {
       const partialAnimalImage: AnimalImage = {
         imagePath,
+        outlineImagePath,
         relativeWidth: overflow * 100
       };
 
