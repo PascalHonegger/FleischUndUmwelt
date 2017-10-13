@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, Validators } from '@angular/forms';
 
 import { StorageService } from './../services/storage.service';
 
@@ -12,7 +12,7 @@ export class MeatConsumtionComponent implements OnInit {
   @Input() public meatName: string;
   @Input() public gramPerPortion: number;
   @Input() public defaultInKg: number;
-  public readonly maxPortionsPerWeek: number = 21;
+  public readonly maxPortionsPerWeek: number = 25;
 
   public set advancedMode(value: boolean) {
     if (this._advancedMode === value) {
@@ -69,6 +69,11 @@ export class MeatConsumtionComponent implements OnInit {
   }
 
   public ngOnInit() {
+    this.gramFormControl.setValidators([
+      Validators.required,
+      Validators.pattern('\\d*'),
+      Validators.max(this.maxPortionsPerWeek * this.gramPerPortion)]);
+
     const consumtionInKg = this.storageService.consumtionPerWeek(this.meatName, this.defaultInKg);
     this.gramFormControl.setValue(consumtionInKg * 1000);
 
