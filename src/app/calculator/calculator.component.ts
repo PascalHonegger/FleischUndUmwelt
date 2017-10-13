@@ -15,6 +15,7 @@ export class CalculatorComponent implements AfterViewInit {
   @ViewChildren('calculateControl') public calculateControls: QueryList<CalculateControl>;
 
   public meatTypes: MeatType[];
+  public calculated: boolean = false;
 
   public set showInputs(value: boolean) {
     if (this._showInputs === value) {
@@ -25,6 +26,7 @@ export class CalculatorComponent implements AfterViewInit {
     this.storageService.setShowInputs(value);
 
     if (!value) {
+      this.calculated = false;
       setTimeout(() => {
         this.runCalculateMethods();
       });
@@ -116,6 +118,7 @@ export class CalculatorComponent implements AfterViewInit {
     this.calculateControls.forEach((control) => {
       control.calculate();
     });
+    this.calculated = true;
   }
 
   private clearCalculateResults() {

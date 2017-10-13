@@ -15,7 +15,12 @@
     </div>
 </ng-template>
 <ng-template #calculationResultTemplate>
-  <div fxLayout="column" fxLayoutGap="20px">
+  <div *ngIf="!calculated">
+    Berechne...
+
+    <mat-progress-bar color="primary" mode="indeterminate"></mat-progress-bar>
+  </div>
+  <div [fxHide]="!calculated" fxLayout="column" fxLayoutGap="20px">
       <!--
       <h1>Umwelteinfluss</h1>
       <calculator-greenhouse-gases #calculateControl [meatTypes]="meatTypes"></calculator-greenhouse-gases>
