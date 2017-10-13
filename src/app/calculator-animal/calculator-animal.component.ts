@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 import { CalculateControl } from './../calculator/calculate-control';
+import { Constants } from './../model/constants.model';
 import { MeatType } from './../model/meat-type.model';
 import { StorageService } from './../services/storage.service';
 import { FillableImage } from './../model/fillable-image.model';
@@ -14,17 +15,11 @@ export class CalculatorAnimalComponent implements CalculateControl {
   @Input() public meatType: MeatType;
 
   public calculated: boolean = false;
+  public effectiveKilledAnimals: number;
+  public averageKilledAnimals: number;
 
-  public effectiveConsumtionPerWeek: number;
-
-  public effectiveKilledAnimalsPerYear: number;
-  public averageKilledAnimalsPerYear: number;
-
-  public animalImages: FillableImage[];
-  public imageWidth: number = 50;
-  public imageHeight: number = 28;
-
-  public readonly weeksPerYear: number = 365 / 7;
+  public effectiveConsumtion: number;
+  public averageConsumtion: number;
 
   constructor(private storageService: StorageService) {
   }
@@ -33,52 +28,24 @@ export class CalculatorAnimalComponent implements CalculateControl {
     this.calculated = false;
   }
 
-  public calculate(): void {
+  public calculate(yearScale: number): void {
     const averageConsumtion = this.meatType.averageConsumtionPerWeek;
 
-    this.effectiveConsumtionPerWeek = this.storageService.eatsNoMeat()
+    const effectiveConsumtionPerWeek = this.storageService.eatsNoMeat()
       ? 0
       : this.storageService.consumtionPerWeek(this.meatType.meatName, averageConsumtion);
 
-    this.effectiveKilledAnimalsPerYear = this.killedAnimalsPerYear(this.effectiveConsumtionPerWeek);
-    this.averageKilledAnimalsPerYear = this.killedAnimalsPerYear(averageConsumtion);
+    const kgPerAnimal = this.meatType.kgPerAnimal;
 
-    this.animalImages = this.calculateAnimalImages(this.effectiveKilledAnimalsPerYear);
+    const effectiveConsumtionPerYear = effectiveConsumtionPerWeek * Constants.weeksPerYear;
+    const averageConsumtionPerYear = averageConsumtion * Constants.weeksPerYear;
+
+    this.effectiveConsumtion = effectiveConsumtionPerYear * yearScale;
+    this.averageConsumtion = averageConsumtionPerYear * yearScale;
+
+    this.effectiveKilledAnimals = this.effectiveConsumtion / kgPerAnimal;
+    this.averageKilledAnimals = this.averageConsumtion / kgPerAnimal;
 
     this.calculated = true;
-  }
-
-  private calculateAnimalImages(amountOfAnimals: number): FillableImage[] {
-    const result: FillableImage[] = [];
-    const imagePath = `/assets/img/${this.meatType.imageBaseName}.png`;
-    const outlineImagePath = `/assets/img/${this.meatType.imageBaseName}-outline.png`;
-
-    const fullAnimalImage: FillableImage = {
-      imagePath,
-      outlineImagePath,
-      relativeWidth: 100
-    };
-
-    for (let i = 0; i < Math.floor(amountOfAnimals); i++) {
-        result.push(fullAnimalImage);
-    }
-
-    const overflow = amountOfAnimals % 1;
-
-    if (amountOfAnimals > 0) {
-      const partialAnimalImage: FillableImage = {
-        imagePath,
-        outlineImagePath,
-        relativeWidth: overflow * 100
-      };
-
-      result.push(partialAnimalImage);
-    }
-
-    return result;
-  }
-
-  private killedAnimalsPerYear(consumtionPerWeek: number): number {
-    return (consumtionPerWeek * this.weeksPerYear) / this.meatType.kgPerAnimal;
   }
 }

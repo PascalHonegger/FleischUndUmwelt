@@ -21,15 +21,26 @@
     <mat-progress-bar color="primary" mode="indeterminate"></mat-progress-bar>
   </div>
   <div [fxHide]="!calculated" fxLayout="column" fxLayoutGap="20px">
-      <!--
-      <h1>Umwelteinfluss</h1>
-      <calculator-greenhouse-gases #calculateControl [meatTypes]="meatTypes"></calculator-greenhouse-gases>
-      <calculator-natural-ressources #calculateControl [meatTypes]="meatTypes"></calculator-natural-ressources>
-      -->
-      <h2>Geschlachtete Tiere</h2>
-      <calculator-animal #calculateControl *ngFor="let meatType of meatTypes" [meatType]="meatType"></calculator-animal>
-      <div>
-        <button mat-raised-button color="primary" (click)="showInputs = true">Zurück</button>
-      </div>
+    <div>
+      Diese Berechnungen basieren darauf, dass Sie 
+      <mat-form-field>
+        <mat-select [(ngModel)]="yearScale">
+          <mat-option [value]="1">ein Jahr</mat-option>
+          <mat-option [value]="5">fünf Jahre</mat-option>
+          <mat-option [value]="10">zehn Jahre</mat-option>
+        </mat-select>
+      </mat-form-field>
+      Fleisch essen.
     </div>
+    <h2>Umwelteinfluss</h2>
+    <calculator-greenhouse-gases #calculateControl [meatTypes]="meatTypes"></calculator-greenhouse-gases>
+    <!--
+    <calculator-natural-ressources #calculateControl [meatTypes]="meatTypes"></calculator-natural-ressources>
+    -->
+    <h2>Geschlachtete Tiere</h2>
+    <calculator-animal #calculateControl *ngFor="let meatType of meatTypes" [meatType]="meatType"></calculator-animal>
+    <div>
+      <button mat-raised-button color="primary" (click)="showInputs = true">Zurück</button>
+    </div>
+  </div>
 </ng-template>

@@ -9,6 +9,7 @@ export class StorageService {
     private readonly advancedModeKey = 'advancedMode';
     private readonly eatsNoMeatKey = 'eatsNoMeat';
     private readonly showInputsKey = 'showInputs';
+    private readonly yearScaleKey = 'yearScale';
 
     public eatsNoMeat(): boolean {
         return this.getBoolean(this.eatsNoMeatKey, false);
@@ -29,6 +30,13 @@ export class StorageService {
     }
     public setConsumtionPerWeek(meatName: string, value: number) {
         return localStorage.setItem(this.consumtionPerWeekKey(meatName), value.toString());
+    }
+
+    public yearScale(fallback: number): number {
+        return this.getNumber(this.yearScaleKey, fallback);
+    }
+    public setYearScale(value: number) {
+        return localStorage.setItem(this.yearScaleKey, value.toString());
     }
 
     public consumtionIsAdvanced(meatName: string, fallback: boolean): boolean {

@@ -1,4 +1,4 @@
 export interface CalculateControl {
-    calculate(): void;
+    calculate(yearScale: number): void;
     clear(): void;
 }

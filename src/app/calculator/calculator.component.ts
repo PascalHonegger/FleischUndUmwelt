@@ -17,6 +17,25 @@ export class CalculatorComponent implements AfterViewInit {
   public meatTypes: MeatType[];
   public calculated: boolean = false;
 
+  public get yearScale(): number {
+    return this._yearScale;
+  }
+  public set yearScale(value: number) {
+    if (this._yearScale === value) {
+      return;
+    }
+
+    this._yearScale = value;
+    this.storageService.setYearScale(value);
+    this.calculated = false;
+    setTimeout(() => {
+      this.runCalculateMethods();
+    });
+  }
+
+  public get showInputs(): boolean {
+    return this._showInputs;
+  }
   public set showInputs(value: boolean) {
     if (this._showInputs === value) {
       return;
@@ -33,10 +52,9 @@ export class CalculatorComponent implements AfterViewInit {
     }
   }
 
-  public get showInputs(): boolean {
-    return this._showInputs;
+  public get eatsNoMeat(): boolean {
+    return this._eatsNoMeat;
   }
-
   public set eatsNoMeat(value: boolean) {
     if (this._eatsNoMeat === value) {
       return;
@@ -46,12 +64,9 @@ export class CalculatorComponent implements AfterViewInit {
     this.storageService.setEatsNoMeat(value);
   }
 
-  public get eatsNoMeat(): boolean {
-    return this._eatsNoMeat;
-  }
-
   private _showInputs: boolean;
   private _eatsNoMeat: boolean;
+  private _yearScale: number;
 
   constructor(private storageService: StorageService,
               sourceService: SourceService,
@@ -101,6 +116,7 @@ export class CalculatorComponent implements AfterViewInit {
 
     // Load storage saved value
     this._eatsNoMeat = this.storageService.eatsNoMeat();
+    this._yearScale = this.storageService.yearScale(1);
   }
 
   public ngAfterViewInit() {
@@ -116,9 +132,11 @@ export class CalculatorComponent implements AfterViewInit {
 
   private runCalculateMethods() {
     this.calculateControls.forEach((control) => {
-      control.calculate();
+      control.calculate(this.yearScale);
     });
-    this.calculated = true;
+    setTimeout(() => {
+      this.calculated = true;
+    });
   }
 
   private clearCalculateResults() {

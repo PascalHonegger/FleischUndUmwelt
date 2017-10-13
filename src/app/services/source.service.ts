@@ -109,9 +109,9 @@ export class SourceService {
         13469000,
         (val) => `Ein Personenwagen in der Schweiz legt durchschnittlich ${val * this.tenToThePower(-3)} Kilometer pro Jahr zurück`
     );
-    public kgCo2PerKilometer = new Fact(
-        0.130,
-        (val) => `In der Schweiz zugelassene Personnenwagen erreichen durchschnittlich ${val * this.tenToThePower(3)} Gramm CO₂ pro Kilometer`
+    public kgCo2PerMeter = new Fact(
+        0.00013,
+        (val) => `In der Schweiz zugelassene Personnenwagen erreichen durchschnittlich ${val * this.tenToThePower(6)} Gramm CO₂ pro Kilometer`
     );
     //#endregion
 
@@ -184,7 +184,7 @@ export class SourceService {
             url: 'https://www.astra.admin.ch/astra/de/home/fachleute/fahrzeuge/homologation/co2-emissionen-von-personenwagen.html',
             description: 'Bundesamt für Strassen',
             facts: [
-                 this.kgCo2PerKilometer
+                 this.kgCo2PerMeter
              ]
         },
         {

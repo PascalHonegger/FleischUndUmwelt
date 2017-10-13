@@ -19,6 +19,9 @@ import {
   CalculatorAnimalComponent
 } from './calculator-animal/calculator-animal.component';
 import {
+  CalculatorGreenhouseGasesComponent
+} from './calculator-greenhouse-gases/calculator-greenhouse-gases.component';
+import {
   FillableImageDisplayComponent
 } from './fillable-image-display/fillable-image-display.component';
 import { MeatConsumtionComponent } from './meat-consumtion/meat-consumtion.component';
@@ -34,15 +37,14 @@ import {
   MatButtonModule,
   MatToolbarModule,
   MatSliderModule,
-  MatRadioModule,
   MatTableModule,
   MatInputModule,
   MatExpansionModule,
   MatFormFieldModule,
   MatSlideToggleModule,
-  MatStepperModule,
   MatCardModule,
-  MatProgressBarModule
+  MatProgressBarModule,
+  MatSelectModule
 } from '@angular/material';
 import 'hammerjs';
 
@@ -61,7 +63,8 @@ import '../styles/styles.scss';
     NoContentComponent,
     MeatConsumtionComponent,
     FillableImageDisplayComponent,
-    CalculatorAnimalComponent
+    CalculatorAnimalComponent,
+    CalculatorGreenhouseGasesComponent
   ],
   /**
    * Import Angular's modules.
@@ -78,15 +81,14 @@ import '../styles/styles.scss';
     MatButtonModule,
     MatToolbarModule,
     MatSliderModule,
-    MatRadioModule,
     MatTableModule,
     MatInputModule,
     MatExpansionModule,
     MatFormFieldModule,
     MatSlideToggleModule,
-    MatStepperModule,
     MatCardModule,
     MatProgressBarModule,
+    MatSelectModule,
     FlexLayoutModule
   ],
   /**
