@@ -3,7 +3,7 @@ import { Component, Input } from '@angular/core';
 import { CalculateControl } from './../calculator/calculate-control';
 import { MeatType } from './../model/meat-type.model';
 import { StorageService } from './../services/storage.service';
-import { AnimalImage } from './../model/animal-image.model';
+import { FillableImage } from './../model/fillable-image.model';
 
 @Component({
   selector: 'calculator-animal',
@@ -20,7 +20,7 @@ export class CalculatorAnimalComponent implements CalculateControl {
   public effectiveKilledAnimalsPerYear: number;
   public averageKilledAnimalsPerYear: number;
 
-  public animalImages: AnimalImage[];
+  public animalImages: FillableImage[];
   public imageWidth: number = 50;
   public imageHeight: number = 28;
 
@@ -48,12 +48,12 @@ export class CalculatorAnimalComponent implements CalculateControl {
     this.calculated = true;
   }
 
-  private calculateAnimalImages(amountOfAnimals: number): AnimalImage[] {
-    const result: AnimalImage[] = [];
+  private calculateAnimalImages(amountOfAnimals: number): FillableImage[] {
+    const result: FillableImage[] = [];
     const imagePath = `/assets/img/${this.meatType.imageBaseName}.png`;
     const outlineImagePath = `/assets/img/${this.meatType.imageBaseName}-outline.png`;
 
-    const fullAnimalImage: AnimalImage = {
+    const fullAnimalImage: FillableImage = {
       imagePath,
       outlineImagePath,
       relativeWidth: 100
@@ -66,7 +66,7 @@ export class CalculatorAnimalComponent implements CalculateControl {
     const overflow = amountOfAnimals % 1;
 
     if (amountOfAnimals > 0) {
-      const partialAnimalImage: AnimalImage = {
+      const partialAnimalImage: FillableImage = {
         imagePath,
         outlineImagePath,
         relativeWidth: overflow * 100

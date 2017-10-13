@@ -18,6 +18,9 @@ import { CalculatorComponent } from './calculator/calculator.component';
 import {
   CalculatorAnimalComponent
 } from './calculator-animal/calculator-animal.component';
+import {
+  FillableImageDisplayComponent
+} from './fillable-image-display/fillable-image-display.component';
 import { MeatConsumtionComponent } from './meat-consumtion/meat-consumtion.component';
 import { NoContentComponent } from './no-content/no-content.component';
 
@@ -38,7 +41,8 @@ import {
   MatFormFieldModule,
   MatSlideToggleModule,
   MatStepperModule,
-  MatCardModule
+  MatCardModule,
+  MatProgressBarModule
 } from '@angular/material';
 import 'hammerjs';
 
@@ -56,6 +60,7 @@ import '../styles/styles.scss';
     FactsComponent,
     NoContentComponent,
     MeatConsumtionComponent,
+    FillableImageDisplayComponent,
     CalculatorAnimalComponent
   ],
   /**
@@ -81,6 +86,7 @@ import '../styles/styles.scss';
     MatSlideToggleModule,
     MatStepperModule,
     MatCardModule,
+    MatProgressBarModule,
     FlexLayoutModule
   ],
   /**

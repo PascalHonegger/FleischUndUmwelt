@@ -1,0 +1,19 @@
+div.container-container {
+    display: inline-block;
+    margin-right: 3px;
+}
+
+div.image-container {
+    background-origin: border-box;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* Not supported in Edge -> http://caniuse.com/css-crisp-edges */
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    image-rendering: -moz-crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor;
+}
+
+div.outline-image {
+    position: absolute;
+}

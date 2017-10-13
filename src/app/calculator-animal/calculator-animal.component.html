@@ -13,21 +13,8 @@
           Das sind {{(averageKilledAnimalsPerYear - effectiveKilledAnimalsPerYear).toFixed(2)}} weniger als der Durchschnitt :)
       </p>
     </div>
-    <div *ngFor="let image of animalImages" class="container-container">
-      <ng-container *ngIf="image.relativeWidth === 100; else croppedImageTemplate">
-        <div [style.width.px]="imageWidth" [style.height.px]="imageHeight" [style.background-image]="'url(' + image.imagePath + ')'" class="image-container"></div>
-      </ng-container>
-      <ng-template #croppedImageTemplate>
-        <div [style.width.px]="imageWidth" [style.height.px]="imageHeight" [style.background-image]="'url(' + image.outlineImagePath + ')'" class="image-container outline-image"></div>
-        <div [style.width.px]="(imageWidth / 100) * image.relativeWidth" [style.height.px]="imageHeight" [style.background-image]="'url(' + image.imagePath + ')'" class="image-container"></div>
-
-        <!--
-        <img [style.margin-bottom.px]="-imageHeight" [src]="image.outlineImagePath" [width]="imageWidth" [height]="imageHeight">
-        <div [style.width.px]="imageWidth" [style.height.px]="imageHeight" class="crop-container" [style.margin-left.px]="-(imageWidth - (imageWidth / 100) * image.relativeWidth)">
-          <img [src]="image.imagePath" [width]="imageWidth" [height]="imageHeight" [style.margin-left.px]="imageWidth - (imageWidth / 100) * image.relativeWidth">
-        </div>
-      -->
-      </ng-template>
+    <div>
+      <fillable-image-display [imageWidth]="50" [imageHeight]="28" [amountOfImages]="effectiveKilledAnimalsPerYear" [imageName]="meatType.imageBaseName"></fillable-image-display>
     </div>
   </mat-card-content>
 </mat-card>
