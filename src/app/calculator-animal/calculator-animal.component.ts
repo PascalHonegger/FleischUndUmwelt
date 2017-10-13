@@ -36,8 +36,9 @@ export class CalculatorAnimalComponent implements CalculateControl {
   public calculate(): void {
     const averageConsumtion = this.meatType.averageConsumtionPerWeek;
 
-    this.effectiveConsumtionPerWeek =
-      this.storageService.consumtionPerWeek(this.meatType.meatName, averageConsumtion);
+    this.effectiveConsumtionPerWeek = this.storageService.eatsNoMeat()
+      ? 0
+      : this.storageService.consumtionPerWeek(this.meatType.meatName, averageConsumtion);
 
     this.effectiveKilledAnimalsPerYear = this.killedAnimalsPerYear(this.effectiveConsumtionPerWeek);
     this.averageKilledAnimalsPerYear = this.killedAnimalsPerYear(averageConsumtion);

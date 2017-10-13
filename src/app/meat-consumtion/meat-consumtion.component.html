@@ -11,7 +11,7 @@
     </ng-template>
     <ng-template #basicDescription>
       <mat-panel-description>
-        {{mealsContainingMeat}} Portionen
+        {{mealsContainingMeat}} {{ mealsContainingMeat === 1 ? 'Portion' : 'Portionen' }}
       </mat-panel-description>
     </ng-template>
   </mat-expansion-panel-header>

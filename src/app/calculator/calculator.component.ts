@@ -98,7 +98,7 @@ export class CalculatorComponent implements AfterViewInit {
     ];
 
     // Load storage saved value
-    this._eatsNoMeat = this.storageService.eatsNoMeat(false);
+    this._eatsNoMeat = this.storageService.eatsNoMeat();
   }
 
   public ngAfterViewInit() {

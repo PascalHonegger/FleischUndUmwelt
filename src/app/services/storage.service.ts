@@ -10,8 +10,8 @@ export class StorageService {
     private readonly eatsNoMeatKey = 'eatsNoMeat';
     private readonly showInputsKey = 'showInputs';
 
-    public eatsNoMeat(fallback: boolean): boolean {
-        return this.getBoolean(this.eatsNoMeatKey, fallback);
+    public eatsNoMeat(): boolean {
+        return this.getBoolean(this.eatsNoMeatKey, false);
     }
     public setEatsNoMeat(value: boolean) {
         return localStorage.setItem(this.eatsNoMeatKey, value.toString());
