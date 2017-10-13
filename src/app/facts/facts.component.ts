@@ -16,7 +16,7 @@ export class FactsComponent {
 
   constructor(public sourceService: SourceService, title: CustomTitleService) {
     title.detailTitle = 'Fakten';
-    title.description = 'Erfahren Sie mehr rund um den Fleischkonsum';
+    title.description = 'Erfahren Sie mehr rund um den Fleischrechner';
     this.dataSource = new SourcesDataSource(sourceService.sources);
   }
 }

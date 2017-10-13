@@ -1,4 +1,11 @@
 <div fxLayout="column">
+  <h2>Umsetzung</h2>
+  <p>
+    Diese Website führt alle Berechnungen lokal auf Ihrem Gerät aus!
+    Daher kann diese Website auch ohne Internetverbindung verwendet werden.
+    Der Quellcode kann frei auf <a rel="nofollow" href="https://github.com/PascalHonegger/FleischUndUmwelt">GitHub</a> eingesehen werden.
+  </p>
+  <h2>Quellen</h2>
   <div>
     <div>
       <mat-form-field fxFlex floatPlaceholder="never">
@@ -31,7 +38,7 @@
       </ng-container>
 
       <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-      <mat-row [ngClass.xs]="['row-no-padding']" *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      <mat-row [ngClass.xs]="['row-small-padding']" *matRowDef="let row; columns: displayedColumns;"></mat-row>
     </mat-table>
   </div>
 </div>

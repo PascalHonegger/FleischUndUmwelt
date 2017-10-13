@@ -6,12 +6,12 @@
   <mat-card-content>
     <div>
       Durch Ihren Konsum von {{meatType.meatName}} sterben Jährlich {{effectiveKilledAnimalsPerYear.toFixed(2)}} {{meatType.animalNamePlural}}.
-      <div *ngIf="effectiveKilledAnimalsPerYear - averageKilledAnimalsPerYear > 0.009">
+      <p *ngIf="effectiveKilledAnimalsPerYear - averageKilledAnimalsPerYear > 0.009">
         Das sind {{(effectiveKilledAnimalsPerYear - averageKilledAnimalsPerYear).toFixed(2)}} mehr als der Durchschnitt :(
-      </div>
-      <div *ngIf="averageKilledAnimalsPerYear - effectiveKilledAnimalsPerYear > 0.009">
+      </p>
+      <p *ngIf="averageKilledAnimalsPerYear - effectiveKilledAnimalsPerYear > 0.009">
           Das sind {{(averageKilledAnimalsPerYear - effectiveKilledAnimalsPerYear).toFixed(2)}} weniger als der Durchschnitt :)
-      </div>
+      </p>
     </div>
     <div *ngFor="let image of animalImages" class="container-container">
       <ng-container *ngIf="image.relativeWidth === 100; else croppedImageTemplate">
