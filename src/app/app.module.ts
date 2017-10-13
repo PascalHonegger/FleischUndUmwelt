@@ -1,5 +1,3 @@
-import { AdsenseModule } from 'ng2-adsense';
-
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -71,9 +69,6 @@ import '../styles/styles.scss';
     RouterModule.forRoot(ROUTES, {
       useHash: Boolean(history.pushState) === false,
       preloadingStrategy: PreloadAllModules
-    }),
-    AdsenseModule.forRoot({
-      adClient: 'ca-pub-5587044720123310'
     }),
     MatButtonModule,
     MatToolbarModule,

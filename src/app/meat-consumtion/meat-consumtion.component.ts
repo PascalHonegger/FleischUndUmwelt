@@ -69,8 +69,8 @@ export class MeatConsumtionComponent implements OnInit {
   }
 
   public ngOnInit() {
-    const savedStoragePerWeek = this.storageService.consumtionPerWeek(this.meatName, this.defaultInKg);
-    this.gramFormControl.setValue(savedStoragePerWeek * 1000);
+    const consumtionInKg = this.storageService.consumtionPerWeek(this.meatName, this.defaultInKg);
+    this.gramFormControl.setValue(consumtionInKg * 1000);
 
     if (this.storageService.consumtionIsAdvanced(this.meatName, false)) {
       this._advancedMode = true;
