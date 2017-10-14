@@ -1,9 +1,16 @@
-<div *ngFor="let image of fillableImages" class="container-container">
-  <ng-container *ngIf="image.relativeWidth === 100; else croppedImageTemplate">
-    <div [style.width.px]="imageWidth" [style.height.px]="imageHeight" [style.background-image]="'url(' + image.imagePath + ')'" class="image-container"></div>
-  </ng-container>
-  <ng-template #croppedImageTemplate>
-    <div [style.width.px]="imageWidth" [style.height.px]="imageHeight" [style.background-image]="'url(' + image.outlineImagePath + ')'" class="image-container outline-image"></div>
-    <div [style.margin-right.px]="imageWidth - ((imageWidth / 100) * image.relativeWidth)" [style.width.px]="(imageWidth / 100) * image.relativeWidth" [style.height.px]="imageHeight" [style.background-image]="'url(' + image.imagePath + ')'" class="image-container"></div>
-  </ng-template>
+<div *ngFor="let _ of arrayWithLength" class="container-container">
+  <div [style.width.px]="imageWidth" [style.height.px]="imageHeight" [style.background-image]="'url(' + imagePath + ')'" class="image-container"></div>
+</div>
+
+<div class="container-container" *ngIf="partialImageWidth">
+  <div  [style.width.px]="imageWidth"
+        [style.height.px]="imageHeight"
+        [style.background-image]="'url(' + outlineImagePath + ')'"
+        class="image-container outline-image"></div>
+  
+  <div  [style.width.px]="(imageWidth / 100) * partialImageWidth" 
+        [style.height.px]="imageHeight" 
+        [style.margin-right.px]="imageWidth - ((imageWidth / 100) * partialImageWidth)"
+        [style.background-image]="'url(' + imagePath + ')'"
+        class="image-container"></div>
 </div>

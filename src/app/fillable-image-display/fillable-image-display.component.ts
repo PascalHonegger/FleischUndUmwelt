@@ -11,36 +11,24 @@ import { FillableImage } from './../model/fillable-image.model';
 export class FillableImageDisplayComponent {
   @Input() public imageWidth: number;
   @Input() public imageHeight: number;
-  @Input() public amountOfImages: number;
-  @Input() public imageName: string;
 
-  public get fillableImages(): FillableImage[] {
-    const result: FillableImage[] = [];
-    const imagePath = `/assets/img/${this.imageName}.png`;
-    const outlineImagePath = `/assets/img/${this.imageName}-outline.png`;
+  @Input()
+  public set amountOfImages(value: number) {
+    this.arrayWithLength = new Array(Math.floor(value));
 
-    const fullAnimalImage: FillableImage = {
-      imagePath,
-      outlineImagePath,
-      relativeWidth: 100
-    };
+    const overflow = value % 1;
 
-    for (let i = 0; i < Math.floor(this.amountOfImages); i++) {
-        result.push(fullAnimalImage);
-    }
-
-    const overflow = this.amountOfImages % 1;
-
-    if (this.amountOfImages > 0) {
-      const partialAnimalImage: FillableImage = {
-        imagePath,
-        outlineImagePath,
-        relativeWidth: overflow * 100
-      };
-
-      result.push(partialAnimalImage);
-    }
-
-    return result;
+    this.partialImageWidth = overflow > 0.009 ? overflow * 100 : null;
   }
+
+  @Input() public set imageName(value: string) {
+    this.imagePath = `/assets/img/${value}.png`;
+    this.outlineImagePath = `/assets/img/${value}-outline.png`;
+  }
+
+  public imagePath: string;
+  public outlineImagePath: string;
+
+  public arrayWithLength: void[];
+  public partialImageWidth: number | null;
 }
