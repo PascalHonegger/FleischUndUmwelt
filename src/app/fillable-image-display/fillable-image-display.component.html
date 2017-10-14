@@ -1,16 +1,18 @@
-<div *ngFor="let _ of arrayWithLength" class="container-container">
-  <div [style.width.px]="imageWidth" [style.height.px]="imageHeight" [style.background-image]="'url(' + imagePath + ')'" class="image-container"></div>
-</div>
+<ng-container *ngFor="let _ of arrayWithLength">
+  <div class="display-container">
+    <div [style.width.px]="imageWidth" [style.height.px]="imageHeight" [style.background-image]="'url(' + imagePath + ')'" class="image-container"></div>
+  </div>
+</ng-container>
 
-<div class="container-container" *ngIf="partialImageWidth">
+<div [style.width.px]="imageWidth" class="display-container" *ngIf="partialImageWidth">
   <div  [style.width.px]="imageWidth"
         [style.height.px]="imageHeight"
         [style.background-image]="'url(' + outlineImagePath + ')'"
         class="image-container outline-image"></div>
-  
+
   <div  [style.width.px]="(imageWidth / 100) * partialImageWidth" 
-        [style.height.px]="imageHeight" 
+        [style.height.px]="imageHeight"
         [style.margin-right.px]="imageWidth - ((imageWidth / 100) * partialImageWidth)"
         [style.background-image]="'url(' + imagePath + ')'"
-        class="image-container"></div>
+        class="image-container main-image"></div>
 </div>

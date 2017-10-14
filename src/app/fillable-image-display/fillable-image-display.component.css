@@ -1,6 +1,5 @@
-div.container-container {
+div.display-container {
     display: inline-block;
-    margin-right: 3px;
 }
 
 div.image-container {
@@ -16,4 +15,10 @@ div.image-container {
 
 div.outline-image {
     position: absolute;
+    z-index: 2;
+}
+
+div.main-image {
+    position: relative;
+    z-index: 3;
 }
