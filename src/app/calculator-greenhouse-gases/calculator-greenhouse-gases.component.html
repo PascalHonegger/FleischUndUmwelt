@@ -5,10 +5,13 @@
   </mat-card-header>
   <mat-card-content>
     <p>
-      Sie produzieren durch Ihren Fleischkonsum gleich viel CO₂ wie ein Durchschnittsfahrer mit einem Auto in {{comparableOutputOfCars.toFixed(2)}} Jahren!
+      Sie produzieren durch Ihren Fleischkonsum gleich viel CO₂ wie ein Durchschnittsauto in {{(comparableDrivenMeters / 1000).toFixed(0)}} Kilometer!
+    </p>
+    <p>
+      Ein Durchschnittsfahrer würde dafür {{comparableAmountOfCarDays.toFixed(0)}} Tage ({{comparableAmountOfCarYears.toFixed(1)}} Jahre) benötigen!
     </p>
     <div>
-      <fillable-image-display [imageWidth]="50" [imageHeight]="28" [amountOfImages]="comparableOutputOfCars" [imageName]="'car'"></fillable-image-display>
+      <fillable-image-display [imageWidth]="50" [imageHeight]="28" [amountOfImages]="comparableAmountOfCarYears" [imageName]="'car'"></fillable-image-display>
     </div>
   </mat-card-content>
 </mat-card>

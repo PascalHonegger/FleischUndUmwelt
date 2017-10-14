@@ -16,7 +16,12 @@ export class CalculatorGreenhouseGasesComponent implements CalculateControl {
   @Input() public meatTypes: MeatType[];
 
   public kgCo2: number;
-  public comparableOutputOfCars: number;
+  public comparableDrivenMeters: number;
+  public comparableAmountOfCarYears: number;
+
+  public get comparableAmountOfCarDays(): number {
+    return this.comparableAmountOfCarYears * Constants.daysPerYear;
+  }
 
   public calculated: boolean = false;
 
@@ -46,12 +51,13 @@ export class CalculatorGreenhouseGasesComponent implements CalculateControl {
 
     this.kgCo2 = totalKgCo2PerYear * yearScale;
 
-    const metersDrivenPerYear = this.sourceService.metersDrivenPerYear.value;
     const kgCo2PerMeter = this.sourceService.kgCo2PerMeter.value;
 
-    const kgCo2PerCarPerYear = metersDrivenPerYear * kgCo2PerMeter;
+    this.comparableDrivenMeters = this.kgCo2 / kgCo2PerMeter;
 
-    this.comparableOutputOfCars = (totalKgCo2PerYear * yearScale) / kgCo2PerCarPerYear;
+    const metersDrivenPerYear = this.sourceService.metersDrivenPerYear.value;
+
+    this.comparableAmountOfCarYears = this.comparableDrivenMeters / metersDrivenPerYear;
 
     this.calculated = true;
   }

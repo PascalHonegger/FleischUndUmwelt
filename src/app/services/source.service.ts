@@ -21,7 +21,7 @@ export class SourceService {
     );
     public kgOfWingedMeatPerPortion = new Fact(
         0.150,
-        (val) => `Eine Portion Schweinefleisch umfasst ${val * this.tenToThePower(3)}g`
+        (val) => `Eine Portion Geflügelfleisch umfasst ${val * this.tenToThePower(3)}g`
     );
     public kgOfFishPerPortion = new Fact(
         0.200,
