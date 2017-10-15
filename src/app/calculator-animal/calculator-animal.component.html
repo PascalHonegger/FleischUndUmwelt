@@ -5,7 +5,7 @@
   </mat-card-header>
   <mat-card-content>
     <div>
-      Durch Ihren Konsum von {{meatType.meatName}} sterben {{effectiveKilledAnimals | number:'1.0-2'}} {{meatType.animalNamePlural}}.
+      Durch Ihren Konsum von {{meatType.meatName}} sterben {{effectiveKilledAnimals | number:'1.1-2'}} {{meatType.animalNamePlural}}.
       <p *ngIf="effectiveKilledAnimals - averageKilledAnimals >= 0.005">
         Das sind {{effectiveKilledAnimals - averageKilledAnimals | number:'1.0-2'}} mehr als der Durchschnitt :(
       </p>
@@ -14,7 +14,10 @@
       </p>
     </div>
     <div>
-      <fillable-image-display *ngIf="effectiveKilledAnimals >= 0.005" [imageWidth]="50" [imageHeight]="28" [amountOfImages]="effectiveKilledAnimals" [imageName]="meatType.imageBaseName"></fillable-image-display>
+      <fillable-image-display *ngIf="effectiveKilledAnimals >= 0.005"
+        [imageWidth]="50" [imageHeight]="28"
+        [amountOfImages]="effectiveKilledAnimals" [imageName]="meatType.imageBaseName"
+        describingTitle="{{effectiveKilledAnimals | number:'1.1-1'}} {{meatType.animalNamePlural}} werden getötet"></fillable-image-display>
     </div>
   </mat-card-content>
 </mat-card>

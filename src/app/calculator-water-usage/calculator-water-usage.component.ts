@@ -17,7 +17,8 @@ export class CalculatorWaterUsageComponent implements CalculateControl {
 
   public litersUsed: number;
   public averageLitersUsed: number;
-  public comparableAmountOfTodos: number;
+  public comparableAmountOfHoursShowered: number;
+  public comparableAmountOfMonthsShowered: number;
 
   public calculated: boolean = false;
 
@@ -52,9 +53,11 @@ export class CalculatorWaterUsageComponent implements CalculateControl {
     this.litersUsed = totalLitersPerYear * yearScale;
     this.averageLitersUsed = totalAverageLitersPerYear * yearScale;
 
-    const todosPerLiter = this.sourceService.tennisFieldArea.value;
+    const showerLitersPerMinute = this.sourceService.showerWaterUsagesPerMinute.value;
 
-    this.comparableAmountOfTodos = this.litersUsed / todosPerLiter;
+    this.comparableAmountOfHoursShowered = this.litersUsed / showerLitersPerMinute / 60;
+    const daysShowered = this.comparableAmountOfHoursShowered / 24;
+    this.comparableAmountOfMonthsShowered = daysShowered / Constants.monthsPerYear;
 
     this.calculated = true;
   }

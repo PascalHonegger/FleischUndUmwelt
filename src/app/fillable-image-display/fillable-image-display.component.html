@@ -1,3 +1,9 @@
+<div class="titel-chip">
+  <mat-chip-list [selectable]="false">
+    <mat-chip [selectable]="false">{{describingTitle}}</mat-chip>
+  </mat-chip-list>
+</div>
+
 <ng-container *ngFor="let _ of arrayWithLength">
   <div class="display-container">
     <div [style.width.px]="imageWidth" [style.height.px]="imageHeight" [style.background-image]="'url(' + imagePath + ')'" class="image-container"></div>

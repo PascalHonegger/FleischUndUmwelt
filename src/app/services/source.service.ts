@@ -104,10 +104,17 @@ export class SourceService {
     );
     //#endregion
 
-    //#region
+    //#region Tennis
     public tennisFieldArea = new Fact(
         261,
         (val) => `Ein Tennisplatz (Doppelspiel) hat eine Fläche von ${val}m²`
+    );
+    //#endregion
+
+    //#region Tennis
+    public showerWaterUsagesPerMinute = new Fact(
+        12,
+        (val) => `Eine durchschnittliche Dusche verbraucht pro Minute ${val} Liter`
     );
     //#endregion
 
@@ -200,6 +207,14 @@ export class SourceService {
             description: 'Schweizer Tennisklub',
             facts: [
                  this.tennisFieldArea
+             ]
+        },
+        {
+            title: 'Saxoboard',
+            url: 'https:// www.saxoboard.net/wasserverbrauch-duschen.html',
+            description: 'Ein europaweit fertigender Hersteller für bodengleiche Duschsysteme und Wellnessanlagen',
+            facts: [
+                 this.showerWaterUsagesPerMinute
              ]
         },
         {

@@ -4,14 +4,14 @@
     <mat-card-subtitle>{{litersUsed | number:'1.0-0'}} Liter (Durchschnitt: {{averageLitersUsed | number:'1.0-0'}} Liter)</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
-    Hier folgt ein sinnvoller Vergleich
-    <!--
     <p>
-      Sie verbrauchen durch Ihren Fleischkonsum gleich viel Landfläche wie {{comparableAmountOfTennisFields | number:'1.0-1'}} Tennisfelder!
+      Sie verbrauchen durch Ihren Fleischkonsum gleich viel Wasser wie eine laufende Dusche in {{comparableAmountOfHoursShowered | number:'1.0-0'}} Stunden ({{comparableAmountOfMonthsShowered | number:'1.0-1'}} Monate)!
     </p>
     <div>
-      <fillable-image-display *ngIf="comparableAmountOfTennisFields >= 0.05" [imageWidth]="50" [imageHeight]="28" [amountOfImages]="comparableAmountOfTennisFields" [imageName]="'tennis-field'"></fillable-image-display>
+      <fillable-image-display *ngIf="comparableAmountOfMonthsShowered >= 0.05"
+        [imageWidth]="50" [imageHeight]="28"
+        [amountOfImages]="comparableAmountOfMonthsShowered" imageName="shower"
+        describingTitle="{{comparableAmountOfMonthsShowered | number:'1.1-1'}} Duschen verbrauchen das selbe Wasser, wenn diese einem Monat durchlaufen"></fillable-image-display>
     </div>
-  -->
   </mat-card-content>
 </mat-card>

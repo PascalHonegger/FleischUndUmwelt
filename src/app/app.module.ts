@@ -50,7 +50,8 @@ import {
   MatSlideToggleModule,
   MatCardModule,
   MatProgressBarModule,
-  MatSelectModule
+  MatSelectModule,
+  MatChipsModule
 } from '@angular/material';
 import 'hammerjs';
 
@@ -97,6 +98,7 @@ import '../styles/styles.scss';
     MatCardModule,
     MatProgressBarModule,
     MatSelectModule,
+    MatChipsModule,
     FlexLayoutModule
   ],
   /**

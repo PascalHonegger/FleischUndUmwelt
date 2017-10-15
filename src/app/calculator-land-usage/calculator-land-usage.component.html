@@ -5,10 +5,13 @@
   </mat-card-header>
   <mat-card-content>
     <p>
-      Sie verbrauchen durch Ihren Fleischkonsum gleich viel Landfläche wie {{comparableAmountOfTennisFields | number:'1.0-1'}} Tennisfelder!
+      Sie verbrauchen durch Ihren Fleischkonsum gleich viel Landfläche wie {{comparableAmountOfTennisFields | number:'1.1-1'}} Tennisfelder!
     </p>
     <div>
-      <fillable-image-display *ngIf="comparableAmountOfTennisFields >= 0.05" [imageWidth]="50" [imageHeight]="28" [amountOfImages]="comparableAmountOfTennisFields" [imageName]="'tennis-field'"></fillable-image-display>
+      <fillable-image-display *ngIf="comparableAmountOfTennisFields >= 0.05"
+        [imageWidth]="50" [imageHeight]="28"
+        [amountOfImages]="comparableAmountOfTennisFields" imageName="tennis-field"
+        describingTitle="Der Platzverbrauch ist gleich gross wie {{comparableAmountOfTennisFields | number:'1.1-1'}} Tennisfeldern"></fillable-image-display>
     </div>
   </mat-card-content>
 </mat-card>

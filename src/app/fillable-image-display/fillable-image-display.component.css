@@ -22,3 +22,7 @@ div.main-image {
     position: relative;
     z-index: 3;
 }
+
+div.titel-chip {
+    margin-bottom: 8px;
+}

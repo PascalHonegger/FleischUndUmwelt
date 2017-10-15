@@ -11,6 +11,7 @@ import { FillableImage } from './../model/fillable-image.model';
 export class FillableImageDisplayComponent {
   @Input() public imageWidth: number;
   @Input() public imageHeight: number;
+  @Input() public describingTitle: number;
 
   @Input()
   public set amountOfImages(value: number) {
@@ -19,6 +20,7 @@ export class FillableImageDisplayComponent {
     const overflow = value % 1;
 
     this.partialImageWidth = overflow > 0.009 ? overflow * 100 : null;
+    this.fullAmountOfImages = value;
   }
 
   @Input() public set imageName(value: string) {
@@ -28,6 +30,7 @@ export class FillableImageDisplayComponent {
 
   public imagePath: string;
   public outlineImagePath: string;
+  public fullAmountOfImages: number;
 
   public arrayWithLength: void[];
   public partialImageWidth: number | null;
