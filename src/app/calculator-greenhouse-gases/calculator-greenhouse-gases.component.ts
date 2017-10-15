@@ -16,6 +16,7 @@ export class CalculatorGreenhouseGasesComponent implements CalculateControl {
   @Input() public meatTypes: MeatType[];
 
   public kgCo2: number;
+  public averageKgCo2: number;
   public comparableDrivenMeters: number;
   public comparableAmountOfCarYears: number;
 
@@ -36,6 +37,7 @@ export class CalculatorGreenhouseGasesComponent implements CalculateControl {
     const eatsNoMeat = this.storageService.eatsNoMeat();
 
     let totalKgCo2PerYear: number = 0;
+    let totalAverageKgCo2PerYear: number = 0;
 
     for (const meatType of this.meatTypes) {
       const effectiveConsumtionPerWeek = eatsNoMeat
@@ -43,13 +45,17 @@ export class CalculatorGreenhouseGasesComponent implements CalculateControl {
       : this.storageService.consumtionPerWeek(meatType.meatName, meatType.averageConsumtionPerWeek);
 
       const effectiveConsumtionPerYear = effectiveConsumtionPerWeek * Constants.weeksPerYear;
+      const averageConsumtionPerYear = meatType.averageConsumtionPerWeek * Constants.weeksPerYear;
 
       const kgCo2Produced = effectiveConsumtionPerYear * meatType.kgCo2PerKgWeight;
+      const averageKgCo2Produced = averageConsumtionPerYear * meatType.kgCo2PerKgWeight;
 
       totalKgCo2PerYear += kgCo2Produced;
+      totalAverageKgCo2PerYear += averageKgCo2Produced;
     }
 
     this.kgCo2 = totalKgCo2PerYear * yearScale;
+    this.averageKgCo2 = totalAverageKgCo2PerYear * yearScale;
 
     const kgCo2PerMeter = this.sourceService.kgCo2PerMeter.value;
 

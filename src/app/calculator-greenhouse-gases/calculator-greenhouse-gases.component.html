@@ -1,14 +1,14 @@
 <mat-card *ngIf="calculated">
   <mat-card-header>
     <mat-card-title>Treibhausgase aufgrund Fleischkonsum</mat-card-title>
-    <mat-card-subtitle>{{(kgCo2).toFixed(0)}}kg CO₂</mat-card-subtitle>
+    <mat-card-subtitle>{{kgCo2 | number:'1.0-0'}}kg CO₂ (Durchschnitt: {{averageKgCo2 | number:'1.0-0'}}kg)</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
     <p>
-      Sie produzieren durch Ihren Fleischkonsum gleich viel CO₂ wie ein Durchschnittsauto in {{(comparableDrivenMeters / 1000).toFixed(0)}} Kilometer!
+      Sie produzieren durch Ihren Fleischkonsum gleich viel CO₂ wie ein Durchschnittsauto in {{comparableDrivenMeters / 1000 | number:'1.0-0'}} Kilometer!
     </p>
     <p>
-      Ein Durchschnittsfahrer würde dafür {{comparableAmountOfCarDays.toFixed(0)}} Tage ({{comparableAmountOfCarYears.toFixed(1)}} Jahre) benötigen!
+      Ein Durchschnittsfahrer würde dafür {{comparableAmountOfCarDays | number:'1.0-0'}} Tage ({{comparableAmountOfCarYears | number:'1.0-2'}} Jahre) benötigen!
     </p>
     <div>
       <fillable-image-display [imageWidth]="50" [imageHeight]="28" [amountOfImages]="comparableAmountOfCarYears" [imageName]="'car'"></fillable-image-display>
