@@ -3,7 +3,7 @@
   <p>
     Diese Website führt alle Berechnungen lokal auf Ihrem Gerät aus!
     Daher kann diese Website auch ohne Internetverbindung verwendet werden.
-    Der Quellcode kann frei auf <a rel="nofollow" href="https://github.com/PascalHonegger/FleischUndUmwelt">GitHub</a> eingesehen werden.
+    Der Quellcode kann frei auf <a rel="nofollow" target="_blank" href="https://github.com/PascalHonegger/FleischUndUmwelt">GitHub</a> eingesehen werden.
   </p>
   <h2>Quellen</h2>
   <div>
@@ -20,7 +20,7 @@
         <mat-header-cell *matHeaderCellDef>Quelle</mat-header-cell>
         <mat-cell *matCellDef="let row">
           <ng-container *ngIf="row.url; else elseTemplate">
-            <a [href]="row.url" rel="nofollow">{{row.title}}</a>
+            <a [href]="row.url" rel="nofollow" target="_blank">{{row.title}}</a>
           </ng-container>
           <ng-template #elseTemplate>
             {{row.title}}
