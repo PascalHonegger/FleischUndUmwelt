@@ -104,6 +104,13 @@ export class SourceService {
     );
     //#endregion
 
+    //#region
+    public tennisFieldArea = new Fact(
+        261,
+        (val) => `Ein Tennisplatz (Doppelspiel) hat eine Fläche von ${val}m²`
+    );
+    //#endregion
+
     //#region Car industry
     public metersDrivenPerYear = new Fact(
         13469000,
@@ -185,6 +192,14 @@ export class SourceService {
             description: 'Bundesamt für Strassen',
             facts: [
                  this.kgCo2PerMeter
+             ]
+        },
+        {
+            title: 'Swiss Tennis',
+            url: 'https://www.swisstennis.ch/play-tennis/allgemein/pl%C3%A4tze-und-infrastruktur',
+            description: 'Schweizer Tennisklub',
+            facts: [
+                 this.tennisFieldArea
              ]
         },
         {

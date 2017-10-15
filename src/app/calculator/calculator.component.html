@@ -34,9 +34,7 @@
     </div>
     <h2>Umwelteinfluss</h2>
     <calculator-greenhouse-gases #calculateControl [meatTypes]="meatTypes"></calculator-greenhouse-gases>
-    <!--
-    <calculator-natural-ressources #calculateControl [meatTypes]="meatTypes"></calculator-natural-ressources>
-    -->
+    <calculator-land-usage #calculateControl [meatTypes]="meatTypes"></calculator-land-usage>
     <h2>Geschlachtete Tiere</h2>
     <calculator-animal #calculateControl *ngFor="let meatType of meatTypes" [meatType]="meatType"></calculator-animal>
     <div>

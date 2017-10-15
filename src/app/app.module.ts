@@ -22,6 +22,9 @@ import {
   CalculatorGreenhouseGasesComponent
 } from './calculator-greenhouse-gases/calculator-greenhouse-gases.component';
 import {
+  CalculatorLandUsageComponent
+} from './calculator-land-usage/calculator-land-usage.component';
+import {
   FillableImageDisplayComponent
 } from './fillable-image-display/fillable-image-display.component';
 import { MeatConsumtionComponent } from './meat-consumtion/meat-consumtion.component';
@@ -64,7 +67,8 @@ import '../styles/styles.scss';
     MeatConsumtionComponent,
     FillableImageDisplayComponent,
     CalculatorAnimalComponent,
-    CalculatorGreenhouseGasesComponent
+    CalculatorGreenhouseGasesComponent,
+    CalculatorLandUsageComponent
   ],
   /**
    * Import Angular's modules.
