@@ -1,6 +1,5 @@
 $content-padding: 16px;
 $title-padding: 20px;
-$menu-margin: 4px;
 
 .app-toolbar {
   color: white !important;
@@ -17,11 +16,6 @@ a.active-link {
 .app-title {
   text-align: left;
   font-weight: bold;
-}
-
-.menu-link {
-  margin-left: $menu-margin;
-  margin-right: $menu-margin;
 }
 
 .has-icon {
