@@ -1,10 +1,8 @@
 import { Component, Input } from '@angular/core';
 
-import { CalculateControl } from './../calculator/calculate-control';
-import { Constants } from './../model/constants.model';
+import { CalculateControl } from './../calculator-result/calculate-control';
 import { MeatType } from './../model/meat-type.model';
-import { StorageService } from './../services/storage.service';
-import { FillableImage } from './../model/fillable-image.model';
+import { CalculationService } from './../services/calculation.service';
 
 @Component({
   selector: 'calculator-animal',
@@ -21,7 +19,7 @@ export class CalculatorAnimalComponent implements CalculateControl {
   public effectiveConsumtion: number;
   public averageConsumtion: number;
 
-  constructor(private storageService: StorageService) {
+  constructor(private readonly calculationService: CalculationService) {
   }
 
   public clear(): void {
@@ -29,19 +27,12 @@ export class CalculatorAnimalComponent implements CalculateControl {
   }
 
   public calculate(yearScale: number): void {
-    const averageConsumtion = this.meatType.averageConsumtionPerWeek;
+    const consumtionPerYear = this.calculationService.consumtionPerYear(this.meatType);
 
-    const effectiveConsumtionPerWeek = this.storageService.eatsNoMeat()
-      ? 0
-      : this.storageService.consumtionPerWeek(this.meatType.meatName, averageConsumtion);
+    this.effectiveConsumtion = consumtionPerYear.effective * yearScale;
+    this.averageConsumtion = consumtionPerYear.average * yearScale;
 
     const kgPerAnimal = this.meatType.kgPerAnimal;
-
-    const effectiveConsumtionPerYear = effectiveConsumtionPerWeek * Constants.weeksPerYear;
-    const averageConsumtionPerYear = averageConsumtion * Constants.weeksPerYear;
-
-    this.effectiveConsumtion = effectiveConsumtionPerYear * yearScale;
-    this.averageConsumtion = averageConsumtionPerYear * yearScale;
 
     this.effectiveKilledAnimals = this.effectiveConsumtion / kgPerAnimal;
     this.averageKilledAnimals = this.averageConsumtion / kgPerAnimal;

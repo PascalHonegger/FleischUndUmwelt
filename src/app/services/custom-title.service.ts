@@ -9,7 +9,7 @@ export class CustomTitleService {
     public description: string;
     private _detailTitle: string;
 
-    constructor(private browserTitle: Title) {
+    constructor(private readonly browserTitle: Title) {
     }
 
     public set detailTitle(detailText: string) {

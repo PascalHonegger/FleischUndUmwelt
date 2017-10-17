@@ -1,5 +1,6 @@
-import { CustomTitleService } from './../services/custom-title.service';
 import { Component } from '@angular/core';
+
+import { CustomTitleService } from './../services/custom-title.service';
 
 @Component({
   selector: 'no-content',

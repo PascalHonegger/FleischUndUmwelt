@@ -1,45 +1,12 @@
-<ng-container *ngIf="showInputs; then inputDataTemplate; else calculationResultTemplate"></ng-container>
-
-<ng-template #inputDataTemplate>
-  <div fxLayout="column" fxLayoutGap="20px">
-      <h2>Wie viel Fleisch essen Sie durchschnittlich pro Woche?</h2>
-      <div fxLayoutAlign="end">
-        <mat-slide-toggle [(ngModel)]="eatsNoMeat">Ich esse kein Fleisch</mat-slide-toggle>
-      </div>
-      <div fxLayout="column" *ngIf="!eatsNoMeat">
-        <meat-consumtion *ngFor="let meatType of meatTypes" [meatName]="meatType.meatName" [defaultInKg]="meatType.averageConsumtionPerWeek" [gramPerPortion]="meatType.kgPerPortion * 1000"></meat-consumtion>
-      </div>
-      <div fxLayoutAlign="end">
-        <button mat-raised-button color="primary" (click)="showInputs = false">Weiter</button>
-      </div>
-    </div>
-</ng-template>
-<ng-template #calculationResultTemplate>
-  <div *ngIf="!calculated">
-    Berechne...
-
-    <mat-progress-bar color="primary" mode="indeterminate"></mat-progress-bar>
+<div fxLayout="column" fxLayoutGap="20px">
+  <h2>Wie viel Fleisch essen Sie durchschnittlich pro Woche?</h2>
+  <div fxLayoutAlign="end">
+    <mat-slide-toggle [(ngModel)]="calculationService.eatsNoMeat">Ich esse kein Fleisch</mat-slide-toggle>
   </div>
-  <div [fxHide]="!calculated" fxLayout="column" fxLayoutGap="20px">
-    <div>
-      Diese Berechnungen basieren darauf, dass Sie 
-      <mat-form-field>
-        <mat-select [(ngModel)]="yearScale">
-          <mat-option [value]="1">ein Jahr</mat-option>
-          <mat-option [value]="5">fünf Jahre</mat-option>
-          <mat-option [value]="10">zehn Jahre</mat-option>
-        </mat-select>
-      </mat-form-field>
-      Fleisch essen.
-    </div>
-    <h2>Umwelteinfluss</h2>
-    <calculator-greenhouse-gases #calculateControl [meatTypes]="meatTypes"></calculator-greenhouse-gases>
-    <calculator-land-usage #calculateControl [meatTypes]="meatTypes"></calculator-land-usage>
-    <calculator-water-usage #calculateControl [meatTypes]="meatTypes"></calculator-water-usage>
-    <h2>Geschlachtete Tiere</h2>
-    <calculator-animal #calculateControl *ngFor="let meatType of meatTypes" [meatType]="meatType"></calculator-animal>
-    <div>
-      <button mat-raised-button color="primary" (click)="showInputs = true">Zurück</button>
-    </div>
+  <div fxLayout="column" *ngIf="!calculationService.eatsNoMeat">
+    <meat-consumtion *ngFor="let meatType of calculationService.meatTypes" [meatName]="meatType.meatName" [defaultInKg]="meatType.averageConsumtionPerWeek" [gramPerPortion]="meatType.kgPerPortion * 1000"></meat-consumtion>
   </div>
-</ng-template>
+  <div fxLayoutAlign="end">
+    <button mat-raised-button color="primary" routerLink="/result">Resultat</button>
+  </div>
+</div>

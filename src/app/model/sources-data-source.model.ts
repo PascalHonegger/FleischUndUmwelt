@@ -24,7 +24,7 @@ export class SourcesDataSource extends DataSource<Source> {
         this.filterChanged.next(value);
     }
 
-    constructor(private sources: Source[]) {
+    constructor(private readonly sources: Source[]) {
         super();
     }
 

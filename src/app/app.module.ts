@@ -12,9 +12,20 @@ import { ENV_PROVIDERS } from './environment';
 import { ROUTES } from './app.routes';
 // App is our top level component
 import { AppComponent } from './app.component';
+
+// Different sites
 import { FactsComponent } from './facts/facts.component';
 import { AboutComponent } from './about/about.component';
 import { CalculatorComponent } from './calculator/calculator.component';
+import { CalculatorResultComponent } from './calculator-result/calculator-result.component';
+
+// Others
+import { MeatConsumtionComponent } from './meat-consumtion/meat-consumtion.component';
+import {
+  FillableImageDisplayComponent
+} from './fillable-image-display/fillable-image-display.component';
+
+// Sub-Calculators
 import {
   CalculatorAnimalComponent
 } from './calculator-animal/calculator-animal.component';
@@ -27,16 +38,15 @@ import {
 import {
   CalculatorWaterUsageComponent
 } from './calculator-water-usage/calculator-water-usage.component';
-import {
-  FillableImageDisplayComponent
-} from './fillable-image-display/fillable-image-display.component';
-import { MeatConsumtionComponent } from './meat-consumtion/meat-consumtion.component';
+
+// 404 not found page
 import { NoContentComponent } from './no-content/no-content.component';
 
 // Services
 import { CustomTitleService } from './services/custom-title.service';
 import { SourceService } from './services/source.service';
 import { StorageService } from './services/storage.service';
+import { CalculationService } from './services/calculation.service';
 
 // Material 2
 import {
@@ -66,6 +76,7 @@ import '../styles/styles.scss';
     AppComponent,
     AboutComponent,
     CalculatorComponent,
+    CalculatorResultComponent,
     FactsComponent,
     NoContentComponent,
     MeatConsumtionComponent,
@@ -110,6 +121,7 @@ import '../styles/styles.scss';
     CustomTitleService,
     SourceService,
     StorageService,
+    CalculationService,
     { provide: LOCALE_ID, useValue: 'de-CH' }
   ]
 })

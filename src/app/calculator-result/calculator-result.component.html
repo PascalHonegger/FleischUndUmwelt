@@ -1,0 +1,26 @@
+<div *ngIf="!calculated">
+  Berechne...
+  <mat-progress-bar color="primary" mode="indeterminate"></mat-progress-bar>
+</div>
+<div [fxHide]="!calculated" fxLayout="column" fxLayoutGap="20px">
+  <div>
+    Diese Berechnungen basieren darauf, dass Sie 
+    <mat-form-field>
+      <mat-select [(ngModel)]="yearScale">
+        <mat-option [value]="1">ein Jahr</mat-option>
+        <mat-option [value]="5">fünf Jahre</mat-option>
+        <mat-option [value]="10">zehn Jahre</mat-option>
+      </mat-select>
+    </mat-form-field>
+    Fleisch essen.
+  </div>
+  <h2>Umwelteinfluss</h2>
+  <calculator-greenhouse-gases #calculateControl [meatTypes]="calculationService.meatTypes"></calculator-greenhouse-gases>
+  <calculator-land-usage #calculateControl [meatTypes]="calculationService.meatTypes"></calculator-land-usage>
+  <calculator-water-usage #calculateControl [meatTypes]="calculationService.meatTypes"></calculator-water-usage>
+  <h2>Geschlachtete Tiere</h2>
+  <calculator-animal #calculateControl *ngFor="let meatType of calculationService.meatTypes" [meatType]="meatType"></calculator-animal>
+  <div>
+    <button mat-raised-button color="primary" routerLink="/">Fleischkonsum anpassen</button>
+  </div>
+</div>

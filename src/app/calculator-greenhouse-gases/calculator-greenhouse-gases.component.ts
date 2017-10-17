@@ -1,11 +1,10 @@
 import { Component, Input } from '@angular/core';
 
-import { CalculateControl } from './../calculator/calculate-control';
+import { CalculateControl } from './../calculator-result/calculate-control';
 import { Constants } from './../model/constants.model';
 import { MeatType } from './../model/meat-type.model';
-import { FillableImage } from './../model/animal-image.model';
-import { StorageService } from './../services/storage.service';
 import { SourceService } from './../services/source.service';
+import { CalculationService } from './../services/calculation.service';
 
 @Component({
   selector: 'calculator-greenhouse-gases',
@@ -26,7 +25,8 @@ export class CalculatorGreenhouseGasesComponent implements CalculateControl {
 
   public calculated: boolean = false;
 
-  constructor(private storageService: StorageService, private sourceService: SourceService) {
+  constructor(private readonly calculationService: CalculationService,
+              private readonly sourceService: SourceService) {
   }
 
   public clear(): void {
@@ -34,21 +34,14 @@ export class CalculatorGreenhouseGasesComponent implements CalculateControl {
   }
 
   public calculate(yearScale: number): void {
-    const eatsNoMeat = this.storageService.eatsNoMeat();
-
     let totalKgCo2PerYear: number = 0;
     let totalAverageKgCo2PerYear: number = 0;
 
     for (const meatType of this.meatTypes) {
-      const effectiveConsumtionPerWeek = eatsNoMeat
-      ? 0
-      : this.storageService.consumtionPerWeek(meatType.meatName, meatType.averageConsumtionPerWeek);
+      const consumtionPerYear = this.calculationService.consumtionPerYear(meatType);
 
-      const effectiveConsumtionPerYear = effectiveConsumtionPerWeek * Constants.weeksPerYear;
-      const averageConsumtionPerYear = meatType.averageConsumtionPerWeek * Constants.weeksPerYear;
-
-      const kgCo2Produced = effectiveConsumtionPerYear * meatType.kgCo2PerKgWeight;
-      const averageKgCo2Produced = averageConsumtionPerYear * meatType.kgCo2PerKgWeight;
+      const kgCo2Produced = consumtionPerYear.effective * meatType.kgCo2PerKgWeight;
+      const averageKgCo2Produced = consumtionPerYear.average * meatType.kgCo2PerKgWeight;
 
       totalKgCo2PerYear += kgCo2Produced;
       totalAverageKgCo2PerYear += averageKgCo2Produced;

@@ -1,7 +1,5 @@
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 
-import { FillableImage } from './../model/fillable-image.model';
-
 @Component({
   selector: 'fillable-image-display',
   styleUrls: ['./fillable-image-display.component.css'],

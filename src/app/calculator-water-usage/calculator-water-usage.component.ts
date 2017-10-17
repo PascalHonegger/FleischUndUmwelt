@@ -1,11 +1,10 @@
 import { Component, Input } from '@angular/core';
 
-import { CalculateControl } from './../calculator/calculate-control';
+import { CalculateControl } from './../calculator-result/calculate-control';
 import { Constants } from './../model/constants.model';
 import { MeatType } from './../model/meat-type.model';
-import { FillableImage } from './../model/animal-image.model';
-import { StorageService } from './../services/storage.service';
 import { SourceService } from './../services/source.service';
+import { CalculationService } from './../services/calculation.service';
 
 @Component({
   selector: 'calculator-water-usage',
@@ -22,7 +21,8 @@ export class CalculatorWaterUsageComponent implements CalculateControl {
 
   public calculated: boolean = false;
 
-  constructor(private storageService: StorageService, private sourceService: SourceService) {
+  constructor(private readonly calculationService: CalculationService,
+              private readonly sourceService: SourceService) {
   }
 
   public clear(): void {
@@ -30,21 +30,14 @@ export class CalculatorWaterUsageComponent implements CalculateControl {
   }
 
   public calculate(yearScale: number): void {
-    const eatsNoMeat = this.storageService.eatsNoMeat();
-
     let totalLitersPerYear: number = 0;
     let totalAverageLitersPerYear: number = 0;
 
     for (const meatType of this.meatTypes) {
-      const effectiveConsumtionPerWeek = eatsNoMeat
-      ? 0
-      : this.storageService.consumtionPerWeek(meatType.meatName, meatType.averageConsumtionPerWeek);
+      const consumtionPerYear = this.calculationService.consumtionPerYear(meatType);
 
-      const effectiveConsumtionPerYear = effectiveConsumtionPerWeek * Constants.weeksPerYear;
-      const averageConsumtionPerYear = meatType.averageConsumtionPerWeek * Constants.weeksPerYear;
-
-      const litersUsed = effectiveConsumtionPerYear * meatType.waterUsagePerKgWeight;
-      const averageLitersUsed = averageConsumtionPerYear * meatType.waterUsagePerKgWeight;
+      const litersUsed = consumtionPerYear.effective * meatType.waterUsagePerKgWeight;
+      const averageLitersUsed = consumtionPerYear.average * meatType.waterUsagePerKgWeight;
 
       totalLitersPerYear += litersUsed;
       totalAverageLitersPerYear += averageLitersUsed;

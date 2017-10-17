@@ -1,14 +1,10 @@
 import { Injectable } from '@angular/core';
 
-import { Fact } from './../model/fact.model';
-import { Source } from './../model/source.model';
-
 @Injectable()
 export class StorageService {
     private readonly gramPerWeekKey = 'kgPerWeek';
     private readonly advancedModeKey = 'advancedMode';
     private readonly eatsNoMeatKey = 'eatsNoMeat';
-    private readonly showInputsKey = 'showInputs';
     private readonly yearScaleKey = 'yearScale';
 
     public eatsNoMeat(): boolean {
@@ -18,13 +14,6 @@ export class StorageService {
         return localStorage.setItem(this.eatsNoMeatKey, value.toString());
     }
 
-    public showInputs(fallback: boolean): boolean {
-        return this.getBoolean(this.showInputsKey, fallback);
-    }
-    public setShowInputs(value: boolean) {
-        return localStorage.setItem(this.showInputsKey, value.toString());
-    }
-
     public consumtionPerWeek(meatName: string, fallback: number): number {
         return this.getNumber(this.consumtionPerWeekKey(meatName), fallback);
     }
@@ -32,8 +21,8 @@ export class StorageService {
         return localStorage.setItem(this.consumtionPerWeekKey(meatName), value.toString());
     }
 
-    public yearScale(fallback: number): number {
-        return this.getNumber(this.yearScaleKey, fallback);
+    public yearScale(): number {
+        return this.getNumber(this.yearScaleKey, 1);
     }
     public setYearScale(value: number) {
         return localStorage.setItem(this.yearScaleKey, value.toString());

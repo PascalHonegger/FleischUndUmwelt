@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { DataSource } from '@angular/cdk/collections';
 
 import { SourcesDataSource } from './../model/sources-data-source.model';
 import { SourceService } from './../services/source.service';
@@ -14,7 +13,8 @@ export class FactsComponent {
   public dataSource: SourcesDataSource;
   public displayedColumns: string[] = ['source', 'facts'];
 
-  constructor(public sourceService: SourceService, title: CustomTitleService) {
+  constructor(public readonly sourceService: SourceService,
+              title: CustomTitleService) {
     title.detailTitle = 'Fakten';
     title.description = 'Erfahren Sie mehr rund um den Fleischrechner';
     this.dataSource = new SourcesDataSource(sourceService.sources);
