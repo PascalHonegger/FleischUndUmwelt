@@ -3,14 +3,14 @@ import { FormControl, Validators } from '@angular/forms';
 
 import { StorageService } from './../services/storage.service';
 
-const maxPortionsPerWeek: number = 20;
-
 @Component({
   selector: 'meat-consumtion',
   styleUrls: ['./meat-consumtion.component.css'],
   templateUrl: './meat-consumtion.component.html'
 })
 export class MeatConsumtionComponent implements OnInit {
+  public readonly maxPortionsPerWeek: number = 20;
+
   @Input() public meatName: string;
   @Input() public gramPerPortion: number;
   @Input() public defaultInKg: number;
@@ -73,7 +73,7 @@ export class MeatConsumtionComponent implements OnInit {
     this.gramFormControl.setValidators([
       Validators.required,
       Validators.pattern('\\d*'),
-      Validators.max(maxPortionsPerWeek * this.gramPerPortion)]);
+      Validators.max(this.maxPortionsPerWeek * this.gramPerPortion)]);
 
     const consumtionInKg = this.storageService.consumtionPerWeek(this.meatName, this.defaultInKg);
     this.gramFormControl.setValue(consumtionInKg * 1000);
