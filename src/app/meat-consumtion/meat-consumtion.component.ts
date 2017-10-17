@@ -12,7 +12,7 @@ export class MeatConsumtionComponent implements OnInit {
   @Input() public meatName: string;
   @Input() public gramPerPortion: number;
   @Input() public defaultInKg: number;
-  public readonly maxPortionsPerWeek: number = 25;
+  public readonly maxPortionsPerWeek: number = 20;
 
   public set advancedMode(value: boolean) {
     if (this._advancedMode === value) {
