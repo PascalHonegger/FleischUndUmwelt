@@ -3,6 +3,9 @@
   xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" >
   <url>
     <loc>https://www.fleischundumwelt.org/</loc>
+  </url>
+  <url>
+    <loc>https://www.fleischundumwelt.org/result</loc>
     <image:image>
        <image:loc>https://www.fleischundumwelt.org/assets/img/cow.png</image:loc>
        <image:caption>Kuh</image:caption>
@@ -42,6 +45,14 @@
     <image:image>
        <image:loc>https://www.fleischundumwelt.org/assets/img/tennis-field-outline.png</image:loc>
        <image:caption>Tennisplatz Umriss</image:caption>
+    </image:image>
+    <image:image>
+       <image:loc>https://www.fleischundumwelt.org/assets/img/shower.png</image:loc>
+       <image:caption>Dusche</image:caption>
+    </image:image>
+    <image:image>
+       <image:loc>https://www.fleischundumwelt.org/assets/img/shower-outline.png</image:loc>
+       <image:caption>Dusche Umriss</image:caption>
     </image:image>
   </url>
   <url>
