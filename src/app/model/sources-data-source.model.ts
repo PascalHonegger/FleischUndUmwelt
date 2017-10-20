@@ -3,7 +3,7 @@ import { DataSource, CollectionViewer } from '@angular/cdk/collections';
 import { Observable } from 'rxjs/Observable';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import 'rxjs/add/observable/merge';
-import 'rxjs/add/operator/map';
+import { map } from 'rxjs/operators/map';
 
 import { Source } from './source.model';
 
@@ -31,7 +31,8 @@ export class SourcesDataSource extends DataSource<Source> {
     public connect(collectionViewer: CollectionViewer): Observable<Source[]> {
         return Observable
             .merge(this.filterChanged)
-            .map((filterString) =>
+            .pipe(
+                map((filterString) =>
                 this.sources.filter((s) => {
                     if (!filterString) {
                         return true;
@@ -40,7 +41,7 @@ export class SourcesDataSource extends DataSource<Source> {
                     return s.title.toUpperCase().includes(upperFilter) ||
                         s.description.toUpperCase().includes(upperFilter) ||
                         s.facts.some((f) => f.description.toUpperCase().includes(upperFilter));
-                }));
+                })));
     }
 
     public disconnect(collectionViewer: CollectionViewer): void {
