@@ -7,13 +7,6 @@ import { Source } from './../model/source.model';
 
 @Injectable()
 export class SourceService {
-    //#region Natural ressource Land
-    public meatIndustryDeforestation = new Fact(
-        550000000000,
-        (val) => `Aufgrund der Viehwirtschaft wurden ${val * this.tenToThePower(-9)} Milliarden m² Regenwald gerodeter`
-    );
-    //#endregion
-
     //#region Meat per portion
     public kgOfMeatPerPortion = new Fact(
         0.200,
@@ -22,10 +15,6 @@ export class SourceService {
     public kgOfWingedMeatPerPortion = new Fact(
         0.150,
         (val) => `Eine Portion Geflügelfleisch umfasst ${val * this.tenToThePower(3)}g`
-    );
-    public kgOfFishPerPortion = new Fact(
-        0.200,
-        (val) => `Ein Fischfilet umfasst ${val * this.tenToThePower(3)}g`
     );
     //#endregion
 
@@ -131,21 +120,12 @@ export class SourceService {
 
     public sources: Source[] = [
         {
-            title: 'Cowspiracy: The Sustainability Secret',
-            url: 'https://static1.squarespace.com/static/544dc5a1e4b07e8995e3effa/t/54e4d927e4b0aaf066abfcf0/1424283943008/Cowspiracy-Infographic-Metric.png',
-            description: 'Ein Dokumentarfilm (2014), welcher sich mit dem Einfluss der Fleischindustrie auf die Umwelt beschäftigt',
-            facts: [
-                 this.meatIndustryDeforestation
-             ]
-        },
-        {
             title: 'kochenOHNE',
             url: 'https://www.kochenohne.de/ratgeber/portionsgroessen-tabelle/',
             description: 'Ein Rezeptportal für Menschen mit Allergien',
             facts: [
                  this.kgOfMeatPerPortion,
-                 this.kgOfWingedMeatPerPortion,
-                 this.kgOfFishPerPortion
+                 this.kgOfWingedMeatPerPortion
              ]
         },
         {
