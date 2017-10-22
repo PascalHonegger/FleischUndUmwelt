@@ -1,6 +1,6 @@
 {
   "name": "fleisch-und-umwelt",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "private": true,
   "description": "Eine Angular Webapplikation, welche den Zusammenhang zwischen Fleisch und der Umwelt darstellt",
   "keywords": [
@@ -11,7 +11,7 @@
     "typescript"
   ],
   "author": "Pascal Honegger <pascal.honegger@bluewin.ch>",
-  "homepage": "https://github.com/PascalHonegger/FleischUndUmwelt",
+  "homepage": "https://www.fleischundumwelt.org/",
   "license": "MIT",
   "scripts": {
     "build:aot:prod": "npm run clean:dist && npm run clean:aot && cross-env BUILD_AOT=1 npm run webpack -- --config config/webpack.prod.js  --progress --profile --bail",
@@ -129,7 +129,7 @@
     "url": "https://github.com/PascalHonegger/FleischUndUmwelt/issues"
   },
   "engines": {
-    "node": ">= 8.5.0",
-    "npm": ">= 5.4.2"
+    "node": ">= 8.7.0",
+    "npm": ">= 5.5.1"
   }
 }
