@@ -39,7 +39,9 @@ export class CalculationService {
               kgPerAnimal: sourceService.kgOfBeefPerCow.value,
               kgPerPortion: sourceService.kgOfMeatPerPortion.value,
               landUsagePerKgWeight: sourceService.landUsedPerKgBeef.value,
-              waterUsagePerKgWeight: sourceService.litersOfWaterPerKgBeef.value
+              waterUsagePerKgWeight: sourceService.litersOfWaterPerKgBeef.value,
+              imageWidth: 153,
+              imageHeight: 92.4
             },
             {
               meatName: 'Schweinefleisch',
@@ -51,7 +53,9 @@ export class CalculationService {
               kgPerAnimal: sourceService.kgOfPorkPerPig.value,
               kgPerPortion: sourceService.kgOfMeatPerPortion.value,
               landUsagePerKgWeight: sourceService.landUsedPerKgPork.value,
-              waterUsagePerKgWeight: sourceService.litersOfWaterPerKgPork.value
+              waterUsagePerKgWeight: sourceService.litersOfWaterPerKgPork.value,
+              imageWidth: 110.55,
+              imageHeight: 56.7
             },
             {
               meatName: 'Pouletfleisch',
@@ -63,7 +67,9 @@ export class CalculationService {
               kgPerAnimal: sourceService.kgOfChickenMeatPerChicken.value,
               kgPerPortion: sourceService.kgOfWingedMeatPerPortion.value,
               landUsagePerKgWeight: sourceService.landUsedPerKgChickenMeat.value,
-              waterUsagePerKgWeight: sourceService.litersOfWaterPerKgChickenMeat.value
+              waterUsagePerKgWeight: sourceService.litersOfWaterPerKgChickenMeat.value,
+              imageWidth: 49.335,
+              imageHeight: 60.83
             }
           ];
     }

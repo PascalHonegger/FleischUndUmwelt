@@ -9,4 +9,6 @@ export interface MeatType {
     animalName: string;
     animalNamePlural: string;
     imageBaseName: string;
+    imageWidth: number;
+    imageHeight: number;
 }
