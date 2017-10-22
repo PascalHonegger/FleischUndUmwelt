@@ -287,7 +287,9 @@ module.exports = function (env) {
         ],
         externals: [
           'https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css',
-          'https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js'
+          'https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js',
+          'https://avatars1.githubusercontent.com/u/14067784?v=4',
+          'https://avatars3.githubusercontent.com/u/14068276?v=4'
         ],
         ServiceWorker: {
           events: true
