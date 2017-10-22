@@ -1,15 +1,14 @@
 <mat-card *ngIf="calculated">
   <mat-card-header>
-    <mat-card-title>Wasserverbrauch durch Fleischkonsum</mat-card-title>
+    <mat-card-title>Wasserverbrauch</mat-card-title>
     <mat-card-subtitle>{{litersUsed | number:'1.0-0'}} Liter (Durchschnitt: {{averageLitersUsed | number:'1.0-0'}} Liter)</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
     <p>
-      Sie verbrauchen durch Ihren Fleischkonsum gleich viel Wasser wie eine laufende Dusche in {{comparableAmountOfHoursShowered | number:'1.0-0'}} Stunden ({{comparableAmountOfMonthsShowered | number:'1.0-1'}} Monate)!
+      Sie verbrauchen durch Ihren Fleischkonsum gleich viel Wasser wie eine laufende Dusche in {{comparableAmountOfDaysShowered | number:'1.0-0'}} Tagen
     </p>
     <div>
-      <fillable-image-display *ngIf="comparableAmountOfMonthsShowered >= 0.05"
-        [imageWidth]="50" [imageHeight]="28"
+      <fillable-image-display [imageWidth]="50" [imageHeight]="28"
         [amountOfImages]="comparableAmountOfMonthsShowered" imageName="shower"
         describingTitle="{{comparableAmountOfMonthsShowered | number:'1.1-1'}} Duschen verbrauchen das selbe Wasser, wenn diese einem Monat durchlaufen"></fillable-image-display>
     </div>

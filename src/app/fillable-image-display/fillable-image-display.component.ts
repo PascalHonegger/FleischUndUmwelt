@@ -17,7 +17,7 @@ export class FillableImageDisplayComponent {
 
     const overflow = value % 1;
 
-    this.partialImageWidth = overflow > 0.009 ? overflow * 100 : null;
+    this.partialImageWidth = overflow >= 0.05 ? overflow * 100 : null;
     this.fullAmountOfImages = value;
   }
 

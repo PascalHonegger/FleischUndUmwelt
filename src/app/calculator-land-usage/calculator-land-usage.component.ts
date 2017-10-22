@@ -16,6 +16,7 @@ export class CalculatorLandUsageComponent implements CalculateControl {
   public metersSquared: number;
   public averageMetersSquared: number;
   public comparableAmountOfTennisFields: number;
+  public averageAmountOfTennisFields: number;
 
   public calculated: boolean = false;
 
@@ -47,6 +48,7 @@ export class CalculatorLandUsageComponent implements CalculateControl {
     const tennisFieldMetersSquared = this.sourceService.tennisFieldArea.value;
 
     this.comparableAmountOfTennisFields = this.metersSquared / tennisFieldMetersSquared;
+    this.averageAmountOfTennisFields = this.averageMetersSquared / tennisFieldMetersSquared;
 
     this.calculated = true;
   }

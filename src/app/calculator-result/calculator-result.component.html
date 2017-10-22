@@ -2,18 +2,17 @@
   Berechne...
   <mat-progress-bar color="primary" mode="indeterminate"></mat-progress-bar>
 </div>
-<div [fxHide]="!calculated" fxLayout="column" fxLayoutGap="20px">
-  <div>
-    Diese Berechnungen basieren darauf, dass Sie 
-    <mat-form-field>
+<div [fxHide]="!calculated" fxLayout="column" fxLayoutGap="15px">
+  <h1>
+    Auswirkungen Ihres Fleischkonsums in
+    <mat-form-field class="year-scale-input">
       <mat-select [(ngModel)]="yearScale">
-        <mat-option [value]="1">ein Jahr</mat-option>
-        <mat-option [value]="5">fünf Jahre</mat-option>
-        <mat-option [value]="10">zehn Jahre</mat-option>
+        <mat-option [value]="1">einem Jahr</mat-option>
+        <mat-option [value]="5">fünf Jahren</mat-option>
+        <mat-option [value]="10">zehn Jahren</mat-option>
       </mat-select>
     </mat-form-field>
-    Fleisch essen.
-  </div>
+  </h1>
   <h2>Umwelteinfluss</h2>
   <calculator-greenhouse-gases #calculateControl [meatTypes]="calculationService.meatTypes"></calculator-greenhouse-gases>
   <calculator-land-usage #calculateControl [meatTypes]="calculationService.meatTypes"></calculator-land-usage>

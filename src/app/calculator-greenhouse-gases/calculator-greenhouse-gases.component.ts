@@ -17,11 +17,9 @@ export class CalculatorGreenhouseGasesComponent implements CalculateControl {
   public kgCo2: number;
   public averageKgCo2: number;
   public comparableDrivenMeters: number;
+  public averageDrivenMeters: number;
   public comparableAmountOfCarYears: number;
-
-  public get comparableAmountOfCarDays(): number {
-    return this.comparableAmountOfCarYears * Constants.daysPerYear;
-  }
+  public comparableAmountOfCarDays: number;
 
   public calculated: boolean = false;
 
@@ -53,10 +51,12 @@ export class CalculatorGreenhouseGasesComponent implements CalculateControl {
     const kgCo2PerMeter = this.sourceService.kgCo2PerMeter.value;
 
     this.comparableDrivenMeters = this.kgCo2 / kgCo2PerMeter;
+    this.averageDrivenMeters = this.averageKgCo2 / kgCo2PerMeter;
 
     const metersDrivenPerYear = this.sourceService.metersDrivenPerYear.value;
 
     this.comparableAmountOfCarYears = this.comparableDrivenMeters / metersDrivenPerYear;
+    this.comparableAmountOfCarDays = this.comparableAmountOfCarYears * Constants.daysPerYear;
 
     this.calculated = true;
   }
