@@ -1,5 +1,8 @@
-import { CustomTitleService } from './services/custom-title.service';
 import { Component, isDevMode } from '@angular/core';
+
+import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
+
+import { CustomTitleService } from './services/custom-title.service';
 import { Link } from './model/link.model';
 
 @Component({
@@ -22,7 +25,9 @@ export class AppComponent {
     content: 'Kontakt'
   }];
 
-  constructor(public titleService: CustomTitleService) {
+  // Injection required by Angulartics2
+  constructor(angulartics2GoogleAnalytics: Angulartics2GoogleAnalytics,
+              public titleService: CustomTitleService) {
     if (isDevMode()) {
       // No caching in dev mode
       return;

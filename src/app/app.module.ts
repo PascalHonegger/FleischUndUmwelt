@@ -2,7 +2,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NgModule, LOCALE_ID } from '@angular/core';
+import { NgModule, LOCALE_ID, ErrorHandler } from '@angular/core';
 import { RouterModule, PreloadAllModules } from '@angular/router';
 
 /*
@@ -47,6 +47,11 @@ import { CustomTitleService } from './services/custom-title.service';
 import { SourceService } from './services/source.service';
 import { StorageService } from './services/storage.service';
 import { CalculationService } from './services/calculation.service';
+import { GlobalErrorHandler } from './services/global-error-handler';
+
+// Google Analytics
+import { Angulartics2Module } from 'angulartics2';
+import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
 
 // Material 2
 import {
@@ -98,6 +103,7 @@ import '../styles/styles.scss';
       useHash: Boolean(history.pushState) === false,
       preloadingStrategy: PreloadAllModules
     }),
+    Angulartics2Module.forRoot([Angulartics2GoogleAnalytics]),
     MatButtonModule,
     MatToolbarModule,
     MatSliderModule,
@@ -122,7 +128,8 @@ import '../styles/styles.scss';
     SourceService,
     StorageService,
     CalculationService,
-    { provide: LOCALE_ID, useValue: 'de-CH' }
+    { provide: LOCALE_ID, useValue: 'de-CH' },
+    { provide: ErrorHandler, useClass: GlobalErrorHandler }
   ]
 })
 export class AppModule {
