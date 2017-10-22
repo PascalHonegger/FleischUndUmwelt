@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { Fact } from './../model/fact.model';
 import { Source } from './../model/source.model';
+import { Constants } from './../model/constants.model';
 
 // tslint:disable:max-line-length
 
@@ -20,15 +21,15 @@ export class SourceService {
 
     //#region Water per meat
     public litersOfWaterPerKgBeef = new Fact(
-        15415,
+        15400,
         (val) => `Ein Kg Rindfleisch verbraucht bei der Erzeugung ${val} Liter Wasser`
     );
     public litersOfWaterPerKgPork = new Fact(
-        5988,
+        6000,
         (val) => `Ein Kg Schweinefleisch verbraucht bei der Erzeugung ${val} Liter Wasser`
     );
     public litersOfWaterPerKgChickenMeat = new Fact(
-        4325,
+        4300,
         (val) => `Ein Kg Pouletfleisch verbraucht bei der Erzeugung ${val} Liter Wasser`
     );
     //#endregion
@@ -58,8 +59,8 @@ export class SourceService {
         (val) => `Ein Schwein liefert ${val}kg Schweinefleisch`
     );
     public kgOfChickenMeatPerChicken = new Fact(
-        0.600,
-        (val) => `Ein Huhn liefert ${val * this.tenToThePower(3)}g Pouletfleisch`
+        2,
+        (val) => `Ein Huhn liefert ${val}kg Pouletfleisch`
     );
     //#endregion
 
@@ -73,7 +74,7 @@ export class SourceService {
         (val) => `Ein Deutscher verzehrt pro Woche ${val}kg Schweinefleisch`
     );
     public kgOfChickenMeatPerPersonPerWeek = new Fact(
-        0.373,
+        12 / Constants.weeksPerYear,
         (val) => `Eine Deutscher verzehrt pro Woche ${val * this.tenToThePower(3)}g Pouletfleisch`
     );
     //#endregion
@@ -124,9 +125,9 @@ export class SourceService {
             url: 'https://www.kochenohne.de/ratgeber/portionsgroessen-tabelle/',
             description: 'Ein Rezeptportal für Menschen mit Allergien',
             facts: [
-                 this.kgOfMeatPerPortion,
-                 this.kgOfWingedMeatPerPortion
-             ]
+                this.kgOfMeatPerPortion,
+                this.kgOfWingedMeatPerPortion
+            ]
         },
         {
             title: 'Lebensmittellexikon',
@@ -135,75 +136,73 @@ export class SourceService {
             facts: [
                 this.kgOfBeefPerCow,
                 this.kgOfPorkPerPig
-             ]
+            ]
         },
         {
             title: 'blitzrechner',
             url: 'https://www.blitzrechner.de/fleisch',
             description: 'Rechenportal rund um Alltagsfragen',
             facts: [
-                 this.litersOfWaterPerKgBeef,
-                 this.litersOfWaterPerKgPork,
-                 this.litersOfWaterPerKgChickenMeat,
-                 this.landUsedPerKgBeef,
-                 this.landUsedPerKgPork,
-                 this.landUsedPerKgChickenMeat,
-                 this.kgCo2PerPerKgBeef,
-                 this.kgCo2PerPerKgPork,
-                 this.kgCo2PerPerKgChickenMeat,
-                 this.kgOfBeefPerPersonPerWeek,
-                 this.kgOfPorkPerPersonPerWeek,
-                 this.kgOfChickenMeatPerPersonPerWeek
-             ]
+                this.kgCo2PerPerKgBeef,
+                this.kgCo2PerPerKgPork,
+                this.kgCo2PerPerKgChickenMeat,
+                this.kgOfBeefPerPersonPerWeek,
+                this.kgOfPorkPerPersonPerWeek
+            ]
+        },
+        {
+            title: 'Landwirtschaft.ch',
+            url: 'https://www.landwirtschaft.ch/',
+            description: 'Informationen rund um die Schweizer Landwirtschaft',
+            facts: [
+                this.kgOfChickenMeatPerChicken,
+                this.kgOfChickenMeatPerPersonPerWeek
+            ]
         },
         {
             title: 'Swissveg',
             url: 'https://www.swissveg.ch/umwelt',
-            description: 'Ein Nachschlagewerk im deutschsprachigen Raum mit Begriffen zu alltäglichen und exotischen Lebensmitteln',
+            description: 'Die grösste Interessenvertretung vegetarisch und vegan lebender Menschen in der Schweiz',
             facts: [
-                this.kgOfBeefPerCow,
-                this.kgOfPorkPerPig
-             ]
+                this.landUsedPerKgBeef,
+                this.landUsedPerKgPork,
+                this.landUsedPerKgChickenMeat,
+                this.litersOfWaterPerKgBeef,
+                this.litersOfWaterPerKgPork,
+                this.litersOfWaterPerKgChickenMeat,
+            ]
         },
         {
             title: 'NZZ',
             url: 'https://www.nzz.ch/newzzD5GEZYDI-12-1.419614',
             description: 'Neue Zürcher Zeitung',
             facts: [
-                 this.metersDrivenPerYear
-             ]
+                this.metersDrivenPerYear
+            ]
         },
         {
             title: 'ASTRA',
             url: 'https://www.astra.admin.ch/astra/de/home/fachleute/fahrzeuge/homologation/co2-emissionen-von-personenwagen.html',
             description: 'Bundesamt für Strassen',
             facts: [
-                 this.kgCo2PerMeter
-             ]
+                this.kgCo2PerMeter
+            ]
         },
         {
             title: 'Swiss Tennis',
             url: 'https://www.swisstennis.ch/play-tennis/allgemein/pl%C3%A4tze-und-infrastruktur',
             description: 'Schweizer Tennisklub',
             facts: [
-                 this.tennisFieldArea
-             ]
+                this.tennisFieldArea
+            ]
         },
         {
             title: 'Saxoboard',
             url: 'https:// www.saxoboard.net/wasserverbrauch-duschen.html',
             description: 'Ein europaweit fertigender Hersteller für bodengleiche Duschsysteme und Wellnessanlagen',
             facts: [
-                 this.showerWaterUsagesPerMinute
-             ]
-        },
-        {
-            title: 'Pascals Gehirn',
-            url: null,
-            description: 'Aus der Luft gegriffene oder schnell zusammengesuchte Zahlen, welche noch recherchiert werden müssen',
-            facts: [
-                 this.kgOfChickenMeatPerChicken
-             ]
+                this.showerWaterUsagesPerMinute
+            ]
         }
     ];
 
