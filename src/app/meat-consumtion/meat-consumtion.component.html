@@ -25,7 +25,7 @@
         <mat-form-field fxFlex>
           <input matInput required pattern="\d*" type="number" [min]="0" [max]="maxPortionsPerWeek * gramPerPortion" placeholder="Gramm {{meatName}}" [formControl]="gramFormControl">
           <mat-error *ngIf="gramFormControl.hasError('required') || gramFormControl.hasError('pattern')">
-            Geben Sie eine einge ganze Zahl ein
+            Geben Sie eine eine ganze Zahl ein
           </mat-error>
           <mat-error *ngIf="gramFormControl.hasError('max')">
             Geben Sie eine kleinere Zahl ein
