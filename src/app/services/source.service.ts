@@ -36,26 +36,26 @@ export class SourceService {
 
     //#region Land per meat
     public landUsedPerKgBeef = new Fact(
-        33,
+        33.1,
         (val) => `Ein Kg Rindfleisch verbraucht bei der Erzeugung ${val}m² Land (Tierhaltung & Nahrung für die Tiere)`
     );
     public landUsedPerKgPork = new Fact(
-        9,
+        9.1,
         (val) => `Ein Kg Schweinefleisch verbraucht bei der Erzeugung ${val}m² Land (Tierhaltung & Nahrung für die Tiere)`
     );
     public landUsedPerKgChickenMeat = new Fact(
-        9,
+        5.8,
         (val) => `Ein Kg Pouletfleisch verbraucht bei der Erzeugung ${val}m² Land (Tierhaltung & Nahrung für die Tiere)`
     );
     //#endregion
 
     //#region Meat per animal
     public kgOfBeefPerCow = new Fact(
-        515,
+        256.8,
         (val) => `Eine Rind liefert ${val}kg Rindfleisch`
     );
     public kgOfPorkPerPig = new Fact(
-        100,
+        87.8,
         (val) => `Ein Schwein liefert ${val}kg Schweinefleisch`
     );
     public kgOfChickenMeatPerChicken = new Fact(
@@ -66,16 +66,16 @@ export class SourceService {
 
     //#region Meat per person
     public kgOfBeefPerPersonPerWeek = new Fact(
-        0.250,
-        (val) => `Ein Deutscher verzehrt pro Woche ${val * this.tenToThePower(3)}g Rindfleisch`
+        (11.28 + 2.71) / Constants.weeksPerYear,
+        (val) => `Ein Deutscher verzehrt pro Woche ${Math.round(val * this.tenToThePower(3))}g Rindfleisch`
     );
     public kgOfPorkPerPersonPerWeek = new Fact(
-        1.015,
-        (val) => `Ein Deutscher verzehrt pro Woche ${val}kg Schweinefleisch`
+        22.49 / Constants.weeksPerYear,
+        (val) => `Ein Deutscher verzehrt pro Woche ${Math.round(val * this.tenToThePower(3))}g  Schweinefleisch`
     );
     public kgOfChickenMeatPerPersonPerWeek = new Fact(
-        12 / Constants.weeksPerYear,
-        (val) => `Eine Deutscher verzehrt pro Woche ${val * this.tenToThePower(3)}g Pouletfleisch`
+        12.04 / Constants.weeksPerYear,
+        (val) => `Eine Deutscher verzehrt pro Woche ${Math.round(val * this.tenToThePower(3))}g  Pouletfleisch`
     );
     //#endregion
 
@@ -130,9 +130,9 @@ export class SourceService {
             ]
         },
         {
-            title: 'Lebensmittellexikon',
-            url: 'https://www.lebensmittellexikon.de/',
-            description: 'Ein Nachschlagewerk im deutschsprachigen Raum mit Begriffen zu alltäglichen und exotischen Lebensmitteln',
+            title: 'Schweizer Bauernverband',
+            url: 'https://www.sbv-usp.ch/de/',
+            description: 'Dachverband der Schweizer Bäuerinnen und Bauern, welcher die Interessen der Landwirte und Landwirtinnen vertritt',
             facts: [
                 this.kgOfBeefPerCow,
                 this.kgOfPorkPerPig
@@ -145,9 +145,7 @@ export class SourceService {
             facts: [
                 this.kgCo2PerPerKgBeef,
                 this.kgCo2PerPerKgPork,
-                this.kgCo2PerPerKgChickenMeat,
-                this.kgOfBeefPerPersonPerWeek,
-                this.kgOfPorkPerPersonPerWeek
+                this.kgCo2PerPerKgChickenMeat
             ]
         },
         {
@@ -155,7 +153,16 @@ export class SourceService {
             url: 'https://www.landwirtschaft.ch/',
             description: 'Informationen rund um die Schweizer Landwirtschaft',
             facts: [
-                this.kgOfChickenMeatPerChicken,
+                this.kgOfChickenMeatPerChicken
+            ]
+        },
+        {
+            title: 'Proviande',
+            url: 'https://www.proviande.ch/',
+            description: 'Die Branchenorganisation der Schweizer Fleischwirtschaft',
+            facts: [
+                this.kgOfBeefPerPersonPerWeek,
+                this.kgOfPorkPerPersonPerWeek,
                 this.kgOfChickenMeatPerPersonPerWeek
             ]
         },
@@ -164,18 +171,25 @@ export class SourceService {
             url: 'https://www.swissveg.ch/umwelt',
             description: 'Die grösste Interessenvertretung vegetarisch und vegan lebender Menschen in der Schweiz',
             facts: [
-                this.landUsedPerKgBeef,
-                this.landUsedPerKgPork,
-                this.landUsedPerKgChickenMeat,
                 this.litersOfWaterPerKgBeef,
                 this.litersOfWaterPerKgPork,
-                this.litersOfWaterPerKgChickenMeat,
+                this.litersOfWaterPerKgChickenMeat
             ]
         },
         {
-            title: 'NZZ',
-            url: 'https://www.nzz.ch/newzzD5GEZYDI-12-1.419614',
-            description: 'Neue Zürcher Zeitung',
+            title: 'DESTATIS',
+            url: 'https://www.destatis.de/DE/Publikationen/Thematisch/UmweltoekonomischeGesamtrechnungen/FachberichtFlaechenbelegung5385101109004.pdf?__blob=publicationFile',
+            description: 'Statistisches Bundesamt Deutschland',
+            facts: [
+                this.landUsedPerKgBeef,
+                this.landUsedPerKgPork,
+                this.landUsedPerKgChickenMeat
+            ]
+        },
+        {
+            title: 'Der Bundesrat',
+            url: 'https://www.admin.ch/gov/de/start/dokumentation/medienmitteilungen.msg-id-2019.html',
+            description: 'Das Portal der Schweizer Regierung',
             facts: [
                 this.metersDrivenPerYear
             ]
