@@ -283,7 +283,8 @@ module.exports = function (env) {
           '**/sitemap.xml',
           '**/humans.txt',
           '**/google*.html',
-          '**/CNAME'
+          '**/CNAME',
+          '**/node_modules/**'
         ],
         externals: [
           'https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css',
@@ -297,7 +298,11 @@ module.exports = function (env) {
         cacheMaps: [
           {
             match: function(requestUrl) {
-              return new URL('/', location);
+              if (requestUrl.href.endsWith('.txt') || requestUrl.href.endsWith('.html') || requestUrl.href.endsWith('.xml')) {
+                return new URL(requestUrl, location);
+              } else {
+                return new URL('/', location);
+              }
             },
             requestTypes: ['navigate']
           }
