@@ -7,51 +7,51 @@
   <url>
     <loc>https://www.fleischundumwelt.org/result</loc>
     <image:image>
-       <image:loc>https://www.fleischundumwelt.org/assets/img/cow.png</image:loc>
+       <image:loc>https://www.fleischundumwelt.org/assets/img/cow.jpg</image:loc>
        <image:caption>Kuh</image:caption>
     </image:image>
     <image:image>
-       <image:loc>https://www.fleischundumwelt.org/assets/img/cow-outline.png</image:loc>
+       <image:loc>https://www.fleischundumwelt.org/assets/img/cow-outline.jpg</image:loc>
        <image:caption>Kuh Umriss</image:caption>
     </image:image>
     <image:image>
-       <image:loc>https://www.fleischundumwelt.org/assets/img/pig.png</image:loc>
+       <image:loc>https://www.fleischundumwelt.org/assets/img/pig.jpg</image:loc>
        <image:caption>Schwein</image:caption>
     </image:image>
     <image:image>
-       <image:loc>https://www.fleischundumwelt.org/assets/img/pig-outline.png</image:loc>
+       <image:loc>https://www.fleischundumwelt.org/assets/img/pig-outline.jpg</image:loc>
        <image:caption>Schwein Umriss</image:caption>
     </image:image>
     <image:image>
-       <image:loc>https://www.fleischundumwelt.org/assets/img/chicken.png</image:loc>
+       <image:loc>https://www.fleischundumwelt.org/assets/img/chicken.jpg</image:loc>
        <image:caption>Huhn</image:caption>
     </image:image>
     <image:image>
-       <image:loc>https://www.fleischundumwelt.org/assets/img/chicken-outline.png</image:loc>
+       <image:loc>https://www.fleischundumwelt.org/assets/img/chicken-outline.jpg</image:loc>
        <image:caption>Huhn Umriss</image:caption>
     </image:image>
     <image:image>
-       <image:loc>https://www.fleischundumwelt.org/assets/img/car.png</image:loc>
+       <image:loc>https://www.fleischundumwelt.org/assets/img/car.jpg</image:loc>
        <image:caption>Auto</image:caption>
     </image:image>
     <image:image>
-       <image:loc>https://www.fleischundumwelt.org/assets/img/car-outline.png</image:loc>
+       <image:loc>https://www.fleischundumwelt.org/assets/img/car-outline.jpg</image:loc>
        <image:caption>Auto Umriss</image:caption>
     </image:image>
     <image:image>
-       <image:loc>https://www.fleischundumwelt.org/assets/img/tennis-field.png</image:loc>
+       <image:loc>https://www.fleischundumwelt.org/assets/img/tennis-field.jpg</image:loc>
        <image:caption>Tennisplatz</image:caption>
     </image:image>
     <image:image>
-       <image:loc>https://www.fleischundumwelt.org/assets/img/tennis-field-outline.png</image:loc>
+       <image:loc>https://www.fleischundumwelt.org/assets/img/tennis-field-outline.jpg</image:loc>
        <image:caption>Tennisplatz Umriss</image:caption>
     </image:image>
     <image:image>
-       <image:loc>https://www.fleischundumwelt.org/assets/img/shower.png</image:loc>
+       <image:loc>https://www.fleischundumwelt.org/assets/img/shower.jpg</image:loc>
        <image:caption>Dusche</image:caption>
     </image:image>
     <image:image>
-       <image:loc>https://www.fleischundumwelt.org/assets/img/shower-outline.png</image:loc>
+       <image:loc>https://www.fleischundumwelt.org/assets/img/shower-outline.jpg</image:loc>
        <image:caption>Dusche Umriss</image:caption>
     </image:image>
   </url>

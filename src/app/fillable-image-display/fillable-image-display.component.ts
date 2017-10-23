@@ -22,8 +22,8 @@ export class FillableImageDisplayComponent {
   }
 
   @Input() public set imageName(value: string) {
-    this.imagePath = `/assets/img/${value}.png`;
-    this.outlineImagePath = `/assets/img/${value}-outline.png`;
+    this.imagePath = `/assets/img/${value}.jpg`;
+    this.outlineImagePath = `/assets/img/${value}-outline.jpg`;
   }
 
   public imagePath: string;
