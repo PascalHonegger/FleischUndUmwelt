@@ -46,8 +46,12 @@ module.exports = {
     { rel: 'manifest', href: '/assets/manifest.json' }
   ],
   meta: [
-    { name: 'msapplication-TileColor', content: '#00bcd4' },
+    { name: 'msapplication-TileColor', content: '#3f51b5' },
     { name: 'msapplication-TileImage', content: '/assets/icon/ms-icon-144x144.png', '=content': true },
-    { name: 'theme-color', content: '#00bcd4' }
+    { name: 'theme-color', content: '#3f51b5' },
+    { name: 'apple-mobile-web-app-status-bar-style', content: 'light' },
+    { name: 'apple-mobile-web-app-title', content: 'Fleisch&amp;U' },
+    { name: 'apple-mobile-web-app-capable', content: 'yes' },
+    { name: 'mobile-web-app-capable', content: 'yes' }
   ]
 };
