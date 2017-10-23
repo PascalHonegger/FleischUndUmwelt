@@ -1,5 +1,5 @@
 CACHE MANIFEST
-#ver:2017-10-23 14:23:27
+#ver:2017-10-23 14:38:00
 #plugin:4.8.4
 
 CACHE:
@@ -7,12 +7,12 @@ CACHE:
 /012cf6a10129e2275d79d6adac7f3b02.woff
 /e79bfd88537def476913f3ed52f4f4b3.eot
 /570eb83859dc23dd0eec423a49e147fe.woff2
-/polyfills.70ee075798dbc69ed01b.bundle.js
+/polyfills.8aeb7e89777dc7aa387b.bundle.js
 /main.3d0f3d5e3517c3233676.bundle.js
 /main.33efaf3644bd7a4609f912c7947ad34b.css
 /assets/icon/android-icon-144x144.png
-/assets/icon/android-icon-192x192.png
 /assets/icon/android-icon-36x36.png
+/assets/icon/android-icon-192x192.png
 /assets/icon/android-icon-48x48.png
 /assets/icon/android-icon-72x72.png
 /assets/icon/android-icon-96x96.png
@@ -36,15 +36,15 @@ CACHE:
 /assets/icon/ms-icon-150x150.png
 /assets/icon/ms-icon-310x310.png
 /assets/icon/ms-icon-70x70.png
-/assets/img/car-outline.png
 /assets/img/car.png
+/assets/img/car-outline.png
 /assets/img/chicken-outline.png
 /assets/img/cow-outline.png
-/assets/img/pig-outline.png
 /assets/img/cow.png
-/assets/img/pig.png
-/assets/img/shower-outline.png
+/assets/img/pig-outline.png
 /assets/img/chicken.png
+/assets/img/shower-outline.png
+/assets/img/pig.png
 /assets/img/shower.png
 /assets/img/tennis-field-outline.png
 /assets/img/tennis-field.png
