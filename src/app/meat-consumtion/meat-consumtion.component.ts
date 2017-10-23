@@ -76,7 +76,7 @@ export class MeatConsumtionComponent implements OnInit {
       Validators.max(this.maxPortionsPerWeek * this.gramPerPortion)]);
 
     const consumtionInKg = this.storageService.consumtionPerWeek(this.meatName, this.defaultInKg);
-    this.gramFormControl.setValue(consumtionInKg * 1000);
+    this.gramFormControl.setValue(Math.round(consumtionInKg * 1000));
 
     if (this.storageService.consumtionIsAdvanced(this.meatName, false)) {
       this._advancedMode = true;
