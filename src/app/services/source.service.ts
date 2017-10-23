@@ -67,15 +67,15 @@ export class SourceService {
     //#region Meat per person
     public kgOfBeefPerPersonPerWeek = new Fact(
         (11.28 + 2.71) / Constants.weeksPerYear,
-        (val) => `Ein Deutscher verzehrt pro Woche ${Math.round(val * this.tenToThePower(3))}g Rindfleisch`
+        (val) => `Ein Schweizer verzehrt pro Woche ${Math.round(val * this.tenToThePower(3))}g Rindfleisch`
     );
     public kgOfPorkPerPersonPerWeek = new Fact(
         22.49 / Constants.weeksPerYear,
-        (val) => `Ein Deutscher verzehrt pro Woche ${Math.round(val * this.tenToThePower(3))}g  Schweinefleisch`
+        (val) => `Ein Schweizer verzehrt pro Woche ${Math.round(val * this.tenToThePower(3))}g  Schweinefleisch`
     );
     public kgOfChickenMeatPerPersonPerWeek = new Fact(
         12.04 / Constants.weeksPerYear,
-        (val) => `Eine Deutscher verzehrt pro Woche ${Math.round(val * this.tenToThePower(3))}g  Pouletfleisch`
+        (val) => `Eine Schweizer verzehrt pro Woche ${Math.round(val * this.tenToThePower(3))}g  Pouletfleisch`
     );
     //#endregion
 
@@ -104,18 +104,18 @@ export class SourceService {
     //#region Tennis
     public showerWaterUsagesPerMinute = new Fact(
         12,
-        (val) => `Eine durchschnittliche Dusche verbraucht pro Minute ${val} Liter`
+        (val) => `Eine Dusche verbraucht pro Minute ${val} Liter`
     );
     //#endregion
 
     //#region Car industry
     public metersDrivenPerYear = new Fact(
         13469000,
-        (val) => `Ein Personenwagen in der Schweiz legt durchschnittlich ${val * this.tenToThePower(-3)} Kilometer pro Jahr zurück`
+        (val) => `Ein Personenwagen in der Schweiz legt ${val * this.tenToThePower(-3)} Kilometer pro Jahr zurück`
     );
     public kgCo2PerMeter = new Fact(
         0.00013,
-        (val) => `In der Schweiz zugelassene Personnenwagen erreichen durchschnittlich ${val * this.tenToThePower(6)} Gramm CO₂ pro Kilometer`
+        (val) => `In der Schweiz zugelassene Personnenwagen emittieren ${val * this.tenToThePower(6)} Gramm CO₂ pro Kilometer`
     );
     //#endregion
 
