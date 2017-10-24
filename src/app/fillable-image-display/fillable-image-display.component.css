@@ -1,23 +1,23 @@
-div.display-container {
+.display-container {
     display: inline-block;
 }
 
-div.image-container {
+.image-container {
     background-origin: border-box;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-div.outline-image {
+.outline-image {
     position: absolute;
     z-index: 2;
 }
 
-div.main-image {
+.main-image {
     position: relative;
     z-index: 3;
 }
 
-div.titel-chip {
+.titel-chip {
     margin-bottom: 8px;
 }

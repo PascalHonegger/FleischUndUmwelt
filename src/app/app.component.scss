@@ -23,8 +23,12 @@ a.active-link {
   margin-left: $menu-margin;
 }
 
-.has-icon {
+.has-icon-min-width {
   min-width: 150px;
+}
+
+.smaller-menu {
+  font-size: small;
 }
 
 .nav-flex-div {
