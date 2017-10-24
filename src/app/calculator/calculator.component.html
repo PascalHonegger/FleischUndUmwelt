@@ -7,6 +7,6 @@
     <meat-consumtion *ngFor="let meatType of calculationService.meatTypes" [meatName]="meatType.meatName" [defaultInKg]="meatType.averageConsumtionPerWeek" [gramPerPortion]="meatType.kgPerPortion * 1000"></meat-consumtion>
   </div>
   <div fxLayoutAlign="end">
-    <button mat-raised-button color="primary" routerLink="/result">Resultat</button>
+    <a mat-raised-button color="primary" routerLink="/result">Resultat</a>
   </div>
 </div>

@@ -1,3 +1,4 @@
 .year-scale-input {
-    width: 160px;
+    width: auto;
+    max-width: 300px;
 }
