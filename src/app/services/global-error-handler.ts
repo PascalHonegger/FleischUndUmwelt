@@ -8,11 +8,15 @@ export class GlobalErrorHandler implements ErrorHandler {
     }
 
     public handleError(error: any): void {
-        this.injector.get(Angulartics2GoogleAnalytics)
-            .exceptionTrack({
-                fatal: true,
-                description: error.message ? error.message : error.toString()
-            });
+        try {
+            this.injector.get(Angulartics2GoogleAnalytics)
+                .exceptionTrack({
+                    fatal: true,
+                    description: error.message ? error.message : error.toString()
+                });
+        } catch (err) {
+            console.error('Error pushing error to google analytics', err);
+        }
 
         throw error;
     }
