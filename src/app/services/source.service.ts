@@ -66,16 +66,16 @@ export class SourceService {
 
     //#region Meat per person
     public kgOfBeefPerPersonPerWeek = new Fact(
-        (11.28 + 2.71) / Constants.weeksPerYear,
+        13.99 / Constants.weeksPerYear,
         (val) => `Ein Schweizer verzehrt pro Woche ${Math.round(val * this.tenToThePower(3))}g Rindfleisch`
     );
     public kgOfPorkPerPersonPerWeek = new Fact(
         22.49 / Constants.weeksPerYear,
-        (val) => `Ein Schweizer verzehrt pro Woche ${Math.round(val * this.tenToThePower(3))}g  Schweinefleisch`
+        (val) => `Ein Schweizer verzehrt pro Woche ${Math.round(val * this.tenToThePower(3))}g Schweinefleisch`
     );
     public kgOfChickenMeatPerPersonPerWeek = new Fact(
         12.04 / Constants.weeksPerYear,
-        (val) => `Eine Schweizer verzehrt pro Woche ${Math.round(val * this.tenToThePower(3))}g  Pouletfleisch`
+        (val) => `Eine Schweizer verzehrt pro Woche ${Math.round(val * this.tenToThePower(3))}g Geflügelfleisch`
     );
     //#endregion
 
