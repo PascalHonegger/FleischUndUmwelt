@@ -1,6 +1,6 @@
 <mat-card *ngIf="calculated">
   <mat-card-header>
-    <mat-card-title>Treibhausgase</mat-card-title>
+    <mat-card-title>Treibhausgas CO₂</mat-card-title>
     <mat-card-subtitle>{{kgCo2 | number:'1.0-0'}}kg CO₂ (Durchschnitt: {{averageKgCo2 | number:'1.0-0'}}kg)</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
@@ -9,6 +9,9 @@
     </p>
     <p>
       Ein Durchschnittsfahrer würde dafür {{comparableAmountOfCarDays | number:'1.0-0'}} Tage benötigen
+    </p>
+    <p>
+      <i>Hinweis: Emissionen von Methan und Lachgas belasten die Umwelt zusätzlich, sind hier jedoch nicht berücksichtigt</i>
     </p>
     <div>
       <fillable-image-display [imageWidth]="142.8125" [imageHeight]="48.75"
