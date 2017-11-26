@@ -5,10 +5,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule, LOCALE_ID, ErrorHandler } from '@angular/core';
 import { RouterModule, PreloadAllModules } from '@angular/router';
 
+import { registerLocaleData } from '@angular/common';
+import localeDeCh from '@angular/common/locales/de-ch';
+
+registerLocaleData(localeDeCh);
+
 /*
  * Platform and Environment providers/directives/pipes
  */
-import { ENV_PROVIDERS } from './environment';
+import { environment } from 'environments/environment';
 import { ROUTES } from './app.routes';
 // App is our top level component
 import { AppComponent } from './app.component';
@@ -122,7 +127,7 @@ import '../styles/styles.scss';
    * Expose our Services and Providers into Angular's dependency injection.
    */
   providers: [
-    ENV_PROVIDERS,
+    environment.ENV_PROVIDERS,
     Title,
     CustomTitleService,
     SourceService,

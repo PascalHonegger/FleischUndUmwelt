@@ -3,7 +3,7 @@ import { DataSource, CollectionViewer } from '@angular/cdk/collections';
 import { Observable } from 'rxjs/Observable';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import 'rxjs/add/observable/merge';
-import { map } from 'rxjs/operators/map';
+import { map } from 'rxjs/operators';
 
 import { Source } from './source.model';
 
