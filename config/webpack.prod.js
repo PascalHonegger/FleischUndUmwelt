@@ -172,12 +172,14 @@ module.exports = function (env) {
        * NOTE: To debug prod builds uncomment //debug lines and comment //prod lines
        */
       new UglifyJsPlugin({
+        parallel: true,
         uglifyOptions: getUglifyOptions(supportES2015)
       }),
 
       // it's always better if OfflinePlugin is the last plugin added
       new OfflinePlugin({
         publicPath: '/',
+        appShell: '/',
         caches: 'all',
         excludes: [
           '**/.*',
@@ -196,22 +198,7 @@ module.exports = function (env) {
           'https://avatars1.githubusercontent.com/u/14067784?v=4',
           'https://avatars3.githubusercontent.com/u/14068276?v=4'
         ],
-        ServiceWorker: {
-          events: true
-        },
-        version: () => null,
-        cacheMaps: [
-          {
-            match: function(requestUrl) {
-              if (requestUrl.href.contains('.txt') || requestUrl.href.contains('.html') || requestUrl.href.contains('.xml') || requestUrl.href.contains('.js')) {
-                return new URL(requestUrl, location);
-              } else {
-                return new URL('/', location);
-              }
-            },
-            requestTypes: ['navigate']
-          }
-        ]
+        version: () => null
       }),
 
       /**
