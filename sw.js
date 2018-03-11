@@ -5,50 +5,50 @@ var __wpo = {
       "/012cf6a10129e2275d79d6adac7f3b02.woff",
       "/e79bfd88537def476913f3ed52f4f4b3.eot",
       "/570eb83859dc23dd0eec423a49e147fe.woff2",
-      "/polyfills.766307356d13527fa88a.bundle.js",
-      "/main.4a3b370b17e44db07ad0.bundle.js",
-      "/inline.df1d2bcbd4a69b4f5057.bundle.js",
-      "/main.60cf8850e01466713dc2dffb1fe75d1e.css",
+      "/polyfills.3926546cc8f18d4b88dc.bundle.js",
+      "/main.2209dbe74dfc17e5f284.bundle.js",
+      "/inline.f54e94d509e2e036e447.bundle.js",
+      "/main.fe83c55d2f1ab2d72c0b25dd8b13c04f.css",
+      "/404.html",
       "/assets/icon/android-icon-144x144.png",
-      "/assets/icon/android-icon-192x192.png",
-      "/assets/icon/android-icon-72x72.png",
-      "/assets/icon/apple-icon-114x114.png",
       "/assets/icon/android-icon-36x36.png",
-      "/assets/icon/apple-icon-144x144.png",
+      "/assets/icon/android-icon-192x192.png",
       "/assets/icon/android-icon-48x48.png",
-      "/assets/icon/apple-icon-120x120.png",
-      "/assets/icon/apple-icon-152x152.png",
-      "/assets/icon/apple-icon-180x180.png",
-      "/assets/icon/apple-icon-57x57.png",
+      "/assets/icon/android-icon-72x72.png",
       "/assets/icon/android-icon-96x96.png",
+      "/assets/icon/apple-icon-114x114.png",
+      "/assets/icon/apple-icon-144x144.png",
+      "/assets/icon/apple-icon-152x152.png",
+      "/assets/icon/apple-icon-120x120.png",
+      "/assets/icon/apple-icon-180x180.png",
       "/assets/icon/apple-icon-60x60.png",
+      "/assets/icon/apple-icon-57x57.png",
       "/assets/icon/apple-icon-72x72.png",
-      "/assets/icon/apple-icon-precomposed.png",
+      "/assets/icon/apple-icon-76x76.png",
       "/assets/icon/apple-icon.png",
+      "/assets/icon/apple-icon-precomposed.png",
       "/assets/icon/browserconfig.xml",
       "/assets/icon/favicon-16x16.png",
-      "/assets/icon/apple-icon-76x76.png",
       "/assets/icon/favicon-96x96.png",
       "/assets/icon/ms-icon-144x144.png",
+      "/assets/icon/favicon.ico",
       "/assets/icon/ms-icon-150x150.png",
       "/assets/icon/ms-icon-70x70.png",
-      "/assets/icon/ms-icon-310x310.png",
-      "/assets/icon/favicon.ico",
       "/assets/img/car-outline.jpg",
+      "/assets/icon/favicon-32x32.png",
       "/assets/img/car.jpg",
       "/assets/img/cow-outline.jpg",
-      "/assets/img/cow.jpg",
-      "/assets/icon/favicon-32x32.png",
-      "/assets/img/chicken-outline.jpg",
-      "/assets/img/pig.jpg",
+      "/assets/icon/ms-icon-310x310.png",
       "/assets/img/pig-outline.jpg",
+      "/assets/img/cow.jpg",
+      "/assets/img/pig.jpg",
+      "/assets/img/chicken-outline.jpg",
       "/assets/img/chicken.jpg",
       "/assets/img/shower-outline.jpg",
       "/assets/img/shower.jpg",
       "/assets/manifest.json",
       "/assets/img/tennis-field-outline.jpg",
       "/assets/img/tennis-field.jpg",
-      "/404.html",
       "/",
       "https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css",
       "https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js",
@@ -69,51 +69,51 @@ var __wpo = {
     "c6c953c2ccb2ca9abb21db8dbf473b5a435f0082": "/012cf6a10129e2275d79d6adac7f3b02.woff",
     "26fb8cecb5512223277b4d290a24492a0f09ede1": "/e79bfd88537def476913f3ed52f4f4b3.eot",
     "09963592e8c953cc7e14e3fb0a5b05d5042e8435": "/570eb83859dc23dd0eec423a49e147fe.woff2",
-    "53012c7da34e0baa922482840e0d8fc0c4317ecd": "/polyfills.766307356d13527fa88a.bundle.js",
-    "56f7655e5b7efe9d92db6aeed642168110e63fde": "/main.4a3b370b17e44db07ad0.bundle.js",
-    "4c636cb05368cc939ccbbdaf663f199e3bf33f2e": "/inline.df1d2bcbd4a69b4f5057.bundle.js",
-    "2ce4d96908555352fdc85ea45c6d1ccbd10ca350": "/main.60cf8850e01466713dc2dffb1fe75d1e.css",
+    "f5326852fc1e2c719c3998c6d84756562d24372a": "/polyfills.3926546cc8f18d4b88dc.bundle.js",
+    "d2849f8872aed954d661a5e9b0d743b15a1b197f": "/main.2209dbe74dfc17e5f284.bundle.js",
+    "dc14b53ea7eedf63a18bbdaa21f397f994d024a1": "/inline.f54e94d509e2e036e447.bundle.js",
+    "0ae90775b91736c47ea90fe37abcafd8350c93cd": "/main.fe83c55d2f1ab2d72c0b25dd8b13c04f.css",
+    "702c2da5e52002a826009bf9acbfd5c136bdbe03": "/404.html",
     "e8b75cb9e15b44ea1e83085dc648ec2f18f8b9e6": "/assets/icon/ms-icon-144x144.png",
-    "f72f393c0ffa4e1b72f53aa0fb0b7f5c111c3cd6": "/assets/icon/apple-icon.png",
-    "7ceb5d7ebc76d2e6a0ef868f1cd37a164bf3dd58": "/assets/icon/apple-icon-72x72.png",
-    "0d96e4d511c766c3bacdce968d0b1aca9a9c4936": "/assets/icon/apple-icon-114x114.png",
     "34ef0f269770698a37c2287d90ca6341ec70c31f": "/assets/icon/android-icon-36x36.png",
+    "f72f393c0ffa4e1b72f53aa0fb0b7f5c111c3cd6": "/assets/icon/apple-icon-precomposed.png",
     "bfce0d3c7bfceac28af10accd76a5c36f969f2a3": "/assets/icon/android-icon-48x48.png",
-    "15df0eb198ef48bd8d952210424b4662bb7c6f06": "/assets/icon/apple-icon-120x120.png",
-    "b4cf5563d4de89bc2fd78c637348a1bf7aa89ffb": "/assets/icon/apple-icon-152x152.png",
-    "1824f0aab23311fbc8ff6b664c4befdee27f829b": "/assets/icon/apple-icon-180x180.png",
-    "a4c6bd2da5a6add271a3807d2690ca4958224139": "/assets/icon/apple-icon-57x57.png",
+    "7ceb5d7ebc76d2e6a0ef868f1cd37a164bf3dd58": "/assets/icon/apple-icon-72x72.png",
     "10d25795fecf2d06a4337fc849599593cc80bf48": "/assets/icon/favicon-96x96.png",
+    "0d96e4d511c766c3bacdce968d0b1aca9a9c4936": "/assets/icon/apple-icon-114x114.png",
+    "b4cf5563d4de89bc2fd78c637348a1bf7aa89ffb": "/assets/icon/apple-icon-152x152.png",
+    "15df0eb198ef48bd8d952210424b4662bb7c6f06": "/assets/icon/apple-icon-120x120.png",
+    "1824f0aab23311fbc8ff6b664c4befdee27f829b": "/assets/icon/apple-icon-180x180.png",
     "ff5cf8ff0e2b61d4d115d8b12dbf995665ce3d83": "/assets/icon/apple-icon-60x60.png",
+    "a4c6bd2da5a6add271a3807d2690ca4958224139": "/assets/icon/apple-icon-57x57.png",
+    "cd3bb8671ac90bd078ab92a5e3b3915491c5e33b": "/assets/icon/apple-icon-76x76.png",
     "283be1464dd9b69ce5a43d95b96b78fd5078df83": "/assets/icon/browserconfig.xml",
     "2f98675dfe967d1c2d6bdf1399fc145e47512a73": "/assets/icon/favicon-16x16.png",
-    "cd3bb8671ac90bd078ab92a5e3b3915491c5e33b": "/assets/icon/apple-icon-76x76.png",
+    "69147d76a4e9dbea00171f5a36d8db6b26034063": "/assets/icon/favicon.ico",
     "cc585fbc923a4766ea7125997634c39f769de452": "/assets/icon/ms-icon-150x150.png",
     "a1af057b8a46e67fefe0399a0a040ca646629d02": "/assets/icon/ms-icon-70x70.png",
-    "8111a3ae4c3f73ab9a85206c65c858e66745ae59": "/assets/icon/ms-icon-310x310.png",
-    "69147d76a4e9dbea00171f5a36d8db6b26034063": "/assets/icon/favicon.ico",
     "8de62974e80cef04adbd9b7c52e2ec6e1cf88b10": "/assets/img/car-outline.jpg",
+    "bfb9840c38b7d01ff7c8e1f08ef9282480c618de": "/assets/icon/favicon-32x32.png",
     "5b98b873a8273924d57d26c5af87c7882125c72d": "/assets/img/car.jpg",
     "58113125e30acddb326016c93940a9cde7b6f55f": "/assets/img/cow-outline.jpg",
-    "f617220da818f6553435db25050905f80c495552": "/assets/img/cow.jpg",
-    "bfb9840c38b7d01ff7c8e1f08ef9282480c618de": "/assets/icon/favicon-32x32.png",
-    "52dbfe9f2141437f114ebaf5cac1b303d9fa8585": "/assets/img/chicken-outline.jpg",
-    "a7c76f1985f3079adddc578cabaf67ae6f3aca51": "/assets/img/pig.jpg",
+    "8111a3ae4c3f73ab9a85206c65c858e66745ae59": "/assets/icon/ms-icon-310x310.png",
     "7248c47fa26f1750cada1f7060d87facb577ee53": "/assets/img/pig-outline.jpg",
+    "f617220da818f6553435db25050905f80c495552": "/assets/img/cow.jpg",
+    "a7c76f1985f3079adddc578cabaf67ae6f3aca51": "/assets/img/pig.jpg",
+    "52dbfe9f2141437f114ebaf5cac1b303d9fa8585": "/assets/img/chicken-outline.jpg",
     "3a65c1f56e31d9c05f24ae1686c5b4fa24d6bec0": "/assets/img/chicken.jpg",
     "450ca99048fa6a46138789c2d3f8666ba810538c": "/assets/img/shower-outline.jpg",
     "e8cae64d4225531e19f6085604432e0f5a9670a0": "/assets/img/shower.jpg",
-    "9c578456dda3dce85e0e18e834b58415beb7a7ae": "/assets/manifest.json",
+    "70b2b02208a7e1641fa7722d358159279c00b77e": "/assets/manifest.json",
     "f4e089f9099b01bbed2e40eb81fef7c15eb7e26f": "/assets/img/tennis-field-outline.jpg",
     "81e963ff9043252518dcf464dc9f31180e36856f": "/assets/img/tennis-field.jpg",
-    "702c2da5e52002a826009bf9acbfd5c136bdbe03": "/404.html",
-    "4eb349c65dce91290b555c908c881708d86155bc": "/"
+    "46881425e9ec66d06bfc23384e52d1b5e7571aad": "/"
   },
   "strategy": "changed",
   "responseStrategy": "cache-first",
   "version": null,
   "name": "webpack-offline",
-  "pluginVersion": "4.8.4",
+  "pluginVersion": "4.9.0",
   "relativePaths": false
 };
 
@@ -179,19 +179,12 @@ var __wpo = {
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "icv0");
+/******/ 	return __webpack_require__(__webpack_require__.s = "+bZf");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "/oeJ":
-/***/ (function(module, exports) {
-
-
-
-/***/ }),
-
-/***/ "icv0":
+/***/ "+bZf":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -246,8 +239,12 @@ if (typeof DEBUG === 'undefined') {
 function WebpackServiceWorker(params, helpers) {
   var loaders = helpers.loaders;
   var cacheMaps = helpers.cacheMaps;
+  // navigationPreload: true, { map: (URL) => URL, test: (URL) => boolean }
+  var navigationPreload = helpers.navigationPreload;
 
+  // (update)strategy: changed, all
   var strategy = params.strategy;
+  // responseStrategy: cache-first, network-first
   var responseStrategy = params.responseStrategy;
 
   var assets = params.assets;
@@ -256,22 +253,21 @@ function WebpackServiceWorker(params, helpers) {
   var hashesMap = params.hashesMap;
   var externals = params.externals;
 
-  // Not used yet
-  // const alwaysRevalidate = params.alwaysRevalidate;
-  // const ignoreSearch = params.ignoreSearch;
-  // const preferOnline = params.preferOnline;
-
   var CACHE_PREFIX = params.name;
   var CACHE_TAG = params.version;
   var CACHE_NAME = CACHE_PREFIX + ':' + CACHE_TAG;
 
+  var PRELOAD_CACHE_NAME = CACHE_PREFIX + '$preload';
   var STORED_DATA_KEY = '__offline_webpack__data';
 
   mapAssets();
 
   var allAssets = [].concat(assets.main, assets.additional, assets.optional);
+
+  // Deprecated {
   var navigateFallbackURL = params.navigateFallbackURL;
   var navigateFallbackForRedirects = params.navigateFallbackForRedirects;
+  // }
 
   self.addEventListener('install', function (event) {
     console.log('[SW]:', 'Install event');
@@ -301,6 +297,10 @@ function WebpackServiceWorker(params, helpers) {
         return self.clients.claim();
       }
     });
+
+    if (navigationPreload && self.registration.navigationPreload) {
+      activation = Promise.all([activation, self.registration.navigationPreload.enable()]);
+    }
 
     event.waitUntil(activation);
   });
@@ -503,12 +503,34 @@ function WebpackServiceWorker(params, helpers) {
 
     if (!assetMatches && isGET) {
       // If isn't a cached asset and is a navigation request,
-      // fallback to navigateFallbackURL if available
+      // perform network request and fallback to navigateFallbackURL if available.
+      //
+      // Requesting with fetchWithPreload().
+      // Preload is used only if navigationPreload is enabled and
+      // navigationPreload mapping is not used.
       if (navigateFallbackURL && isNavigateRequest(event.request)) {
-        event.respondWith(handleNavigateFallback(fetch(event.request)));
+        event.respondWith(handleNavigateFallback(fetchWithPreload(event)));
 
         return;
       }
+
+      if (navigationPreload === true) {
+        event.respondWith(fetchWithPreload(event));
+        return;
+      }
+
+      // Something else, positive, but not `true`
+      if (navigationPreload) {
+        var preloadedResponse = retrivePreloadedResponse(event);
+
+        if (preloadedResponse) {
+          event.respondWith(preloadedResponse);
+          return;
+        }
+      }
+
+      // Logic exists here if no cache match, or no preload
+      return;
     }
 
     if (!assetMatches || !isGET) {
@@ -517,18 +539,18 @@ function WebpackServiceWorker(params, helpers) {
         event.respondWith(fetch(event.request));
       }
 
+      // Logic exists here if no cache match
       return;
     }
 
-    // Logic of caching / fetching is here
-    // * urlString -- url to match from the CACHE_NAME
-    // * event.request -- original Request to perform fetch() if necessary
+    // Cache handling/storing/fetching starts here
+
     var resource = undefined;
 
     if (responseStrategy === 'network-first') {
       resource = networkFirstResponse(event, urlString, cacheUrl);
     }
-    // 'cache-first'
+    // 'cache-first' otherwise
     // (responseStrategy has been validated before)
     else {
         resource = cacheFirstResponse(event, urlString, cacheUrl);
@@ -554,6 +576,8 @@ function WebpackServiceWorker(params, helpers) {
   });
 
   function cacheFirstResponse(event, urlString, cacheUrl) {
+    handleNavigationPreload(event);
+
     return cachesMatch(cacheUrl, CACHE_NAME).then(function (response) {
       if (response) {
         if (DEBUG) {
@@ -598,7 +622,7 @@ function WebpackServiceWorker(params, helpers) {
   }
 
   function networkFirstResponse(event, urlString, cacheUrl) {
-    return fetch(event.request).then(function (response) {
+    return fetchWithPreload(event).then(function (response) {
       if (response.ok) {
         if (DEBUG) {
           console.log('[SW]:', 'URL [' + urlString + '] from network');
@@ -618,6 +642,116 @@ function WebpackServiceWorker(params, helpers) {
       }
 
       return cachesMatch(cacheUrl, CACHE_NAME);
+    });
+  }
+
+  function handleNavigationPreload(event) {
+    if (navigationPreload && typeof navigationPreload.map === 'function' &&
+    // Use request.mode === 'navigate' instead of isNavigateRequest
+    // because everything what supports navigationPreload supports
+    // 'navigate' request.mode
+    event.preloadResponse && event.request.mode === 'navigate') {
+      var mapped = navigationPreload.map(new URL(event.request.url), event.request);
+
+      if (mapped) {
+        storePreloadedResponse(mapped, event);
+      }
+    }
+  }
+
+  // Temporary in-memory store for faster access
+  var navigationPreloadStore = new Map();
+
+  function storePreloadedResponse(_url, event) {
+    var url = new URL(_url, location);
+    var preloadResponsePromise = event.preloadResponse;
+
+    navigationPreloadStore.set(preloadResponsePromise, {
+      url: url,
+      response: preloadResponsePromise
+    });
+
+    var isSamePreload = function isSamePreload() {
+      return navigationPreloadStore.has(preloadResponsePromise);
+    };
+
+    var storing = preloadResponsePromise.then(function (res) {
+      // Return if preload isn't enabled or hasn't happened
+      if (!res) return;
+
+      // If navigationPreloadStore already consumed
+      // or navigationPreloadStore already contains another preload,
+      // then do not store anything and return
+      if (!isSamePreload()) {
+        return;
+      }
+
+      var clone = res.clone();
+
+      // Storing the preload response for later consume (hasn't yet been consumed)
+      return caches.open(PRELOAD_CACHE_NAME).then(function (cache) {
+        if (!isSamePreload()) return;
+
+        return cache.put(url, clone).then(function () {
+          if (!isSamePreload()) {
+            return caches.open(PRELOAD_CACHE_NAME).then(function (cache) {
+              return cache['delete'](url);
+            });
+          }
+        });
+      });
+    });
+
+    event.waitUntil(storing);
+  }
+
+  function retriveInMemoryPreloadedResponse(url) {
+    if (!navigationPreloadStore) {
+      return;
+    }
+
+    var foundResponse = undefined;
+    var foundKey = undefined;
+
+    navigationPreloadStore.forEach(function (store, key) {
+      if (store.url.href === url.href) {
+        foundResponse = store.response;
+        foundKey = key;
+      }
+    });
+
+    if (foundResponse) {
+      navigationPreloadStore['delete'](foundKey);
+      return foundResponse;
+    }
+  }
+
+  function retrivePreloadedResponse(event) {
+    var url = new URL(event.request.url);
+
+    if (self.registration.navigationPreload && navigationPreload && navigationPreload.test && navigationPreload.test(url, event.request)) {} else {
+      return;
+    }
+
+    var fromMemory = retriveInMemoryPreloadedResponse(url);
+    var request = event.request;
+
+    if (fromMemory) {
+      event.waitUntil(caches.open(PRELOAD_CACHE_NAME).then(function (cache) {
+        return cache['delete'](request);
+      }));
+
+      return fromMemory;
+    }
+
+    return cachesMatch(request, PRELOAD_CACHE_NAME).then(function (response) {
+      if (response) {
+        event.waitUntil(caches.open(PRELOAD_CACHE_NAME).then(function (cache) {
+          return cache['delete'](request);
+        }));
+      }
+
+      return response || fetch(event.request);
     });
   }
 
@@ -761,7 +895,7 @@ function WebpackServiceWorker(params, helpers) {
 
     var requestType = undefined;
 
-    if (request.mode === 'navigate') {
+    if (isNavigateRequest(request)) {
       requestType = 'navigate';
     } else if (url.origin === location.origin) {
       requestType = 'same-origin';
@@ -790,6 +924,16 @@ function WebpackServiceWorker(params, helpers) {
       }
     }
   }
+
+  function fetchWithPreload(event) {
+    if (!event.preloadResponse || navigationPreload !== true) {
+      return fetch(event.request);
+    }
+
+    return event.preloadResponse.then(function (response) {
+      return response || fetch(event.request);
+    });
+  }
 }
 
 function cachesMatch(request, cacheName) {
@@ -816,33 +960,6 @@ function cachesMatch(request, cacheName) {
 function applyCacheBust(asset, key) {
   var hasQuery = asset.indexOf('?') !== -1;
   return asset + (hasQuery ? '&' : '?') + '__uncache=' + encodeURIComponent(key);
-}
-
-function getClientsURLs() {
-  if (!self.clients) {
-    return Promise.resolve([]);
-  }
-
-  return self.clients.matchAll({
-    includeUncontrolled: true
-  }).then(function (clients) {
-    if (!clients.length) return [];
-
-    var result = [];
-
-    clients.forEach(function (client) {
-      var url = new URL(client.url);
-      url.search = '';
-      url.hash = '';
-      var urlString = url.toString();
-
-      if (!result.length || result.indexOf(urlString) === -1) {
-        result.push(urlString);
-      }
-    });
-
-    return result;
-  });
 }
 
 function isNavigateRequest(request) {
@@ -889,20 +1006,24 @@ function logGroup(title, assets) {
 loaders: {},
 cacheMaps: [
       {
-      match: function (requestUrl) {
-              if (requestUrl.href.contains('.txt') || requestUrl.href.contains('.html') || requestUrl.href.contains('.xml') || requestUrl.href.contains('.js')) {
-                return new URL(requestUrl, location);
-              } else {
-                return new URL('/', location);
-              }
-            },
+      match: function anonymous() {
+return new URL("/", location);
+},
       to: null,
       requestTypes: ["navigate"],
     }
     ],
+navigationPreload: false,
 });
         module.exports = __webpack_require__("/oeJ")
       
+
+/***/ }),
+
+/***/ "/oeJ":
+/***/ (function(module, exports) {
+
+
 
 /***/ })
 
