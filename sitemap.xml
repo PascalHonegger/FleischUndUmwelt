@@ -2,63 +2,63 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" >
   <url>
-    <loc>https://www.fleischundumwelt.org/</loc>
+    <loc>https://pascalhonegger.github.io/FleischUndUmwelt/</loc>
   </url>
   <url>
-    <loc>https://www.fleischundumwelt.org/result</loc>
+    <loc>https://pascalhonegger.github.io/FleischUndUmwelt/result</loc>
     <image:image>
-       <image:loc>https://www.fleischundumwelt.org/assets/img/cow.jpg</image:loc>
+       <image:loc>https://pascalhonegger.github.io/FleischUndUmwelt/assets/img/cow.jpg</image:loc>
        <image:caption>Kuh</image:caption>
     </image:image>
     <image:image>
-       <image:loc>https://www.fleischundumwelt.org/assets/img/cow-outline.jpg</image:loc>
+       <image:loc>https://pascalhonegger.github.io/FleischUndUmwelt/assets/img/cow-outline.jpg</image:loc>
        <image:caption>Kuh Umriss</image:caption>
     </image:image>
     <image:image>
-       <image:loc>https://www.fleischundumwelt.org/assets/img/pig.jpg</image:loc>
+       <image:loc>https://pascalhonegger.github.io/FleischUndUmwelt/assets/img/pig.jpg</image:loc>
        <image:caption>Schwein</image:caption>
     </image:image>
     <image:image>
-       <image:loc>https://www.fleischundumwelt.org/assets/img/pig-outline.jpg</image:loc>
+       <image:loc>https://pascalhonegger.github.io/FleischUndUmwelt/assets/img/pig-outline.jpg</image:loc>
        <image:caption>Schwein Umriss</image:caption>
     </image:image>
     <image:image>
-       <image:loc>https://www.fleischundumwelt.org/assets/img/chicken.jpg</image:loc>
+       <image:loc>https://pascalhonegger.github.io/FleischUndUmwelt/assets/img/chicken.jpg</image:loc>
        <image:caption>Huhn</image:caption>
     </image:image>
     <image:image>
-       <image:loc>https://www.fleischundumwelt.org/assets/img/chicken-outline.jpg</image:loc>
+       <image:loc>https://pascalhonegger.github.io/FleischUndUmwelt/assets/img/chicken-outline.jpg</image:loc>
        <image:caption>Huhn Umriss</image:caption>
     </image:image>
     <image:image>
-       <image:loc>https://www.fleischundumwelt.org/assets/img/car.jpg</image:loc>
+       <image:loc>https://pascalhonegger.github.io/FleischUndUmwelt/assets/img/car.jpg</image:loc>
        <image:caption>Auto</image:caption>
     </image:image>
     <image:image>
-       <image:loc>https://www.fleischundumwelt.org/assets/img/car-outline.jpg</image:loc>
+       <image:loc>https://pascalhonegger.github.io/FleischUndUmwelt/assets/img/car-outline.jpg</image:loc>
        <image:caption>Auto Umriss</image:caption>
     </image:image>
     <image:image>
-       <image:loc>https://www.fleischundumwelt.org/assets/img/tennis-field.jpg</image:loc>
+       <image:loc>https://pascalhonegger.github.io/FleischUndUmwelt/assets/img/tennis-field.jpg</image:loc>
        <image:caption>Tennisplatz</image:caption>
     </image:image>
     <image:image>
-       <image:loc>https://www.fleischundumwelt.org/assets/img/tennis-field-outline.jpg</image:loc>
+       <image:loc>https://pascalhonegger.github.io/FleischUndUmwelt/assets/img/tennis-field-outline.jpg</image:loc>
        <image:caption>Tennisplatz Umriss</image:caption>
     </image:image>
     <image:image>
-       <image:loc>https://www.fleischundumwelt.org/assets/img/shower.jpg</image:loc>
+       <image:loc>https://pascalhonegger.github.io/FleischUndUmwelt/assets/img/shower.jpg</image:loc>
        <image:caption>Dusche</image:caption>
     </image:image>
     <image:image>
-       <image:loc>https://www.fleischundumwelt.org/assets/img/shower-outline.jpg</image:loc>
+       <image:loc>https://pascalhonegger.github.io/FleischUndUmwelt/assets/img/shower-outline.jpg</image:loc>
        <image:caption>Dusche Umriss</image:caption>
     </image:image>
   </url>
   <url>
-    <loc>https://www.fleischundumwelt.org/facts</loc>
+    <loc>https://pascalhonegger.github.io/FleischUndUmwelt/facts</loc>
   </url>
   <url>
-    <loc>https://www.fleischundumwelt.org/impressum</loc>
+    <loc>https://pascalhonegger.github.io/FleischUndUmwelt/impressum</loc>
   </url>
 </urlset>

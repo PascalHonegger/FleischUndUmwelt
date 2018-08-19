@@ -2,12 +2,12 @@
   font-family: 'Material Icons';
   font-style: normal;
   font-weight: 400;
-  src: url(/e79bfd88537def476913f3ed52f4f4b3.eot); /* For IE6-8 */
+  src: url(/FleischUndUmwelt/e79bfd88537def476913f3ed52f4f4b3.eot); /* For IE6-8 */
   src: local('Material Icons'),
        local('MaterialIcons-Regular'),
-       url(/570eb83859dc23dd0eec423a49e147fe.woff2) format('woff2'),
-       url(/012cf6a10129e2275d79d6adac7f3b02.woff) format('woff'),
-       url(/a37b0c01c0baf1888ca812cc0508f6e2.ttf) format('truetype');
+       url(/FleischUndUmwelt/570eb83859dc23dd0eec423a49e147fe.woff2) format('woff2'),
+       url(/FleischUndUmwelt/012cf6a10129e2275d79d6adac7f3b02.woff) format('woff'),
+       url(/FleischUndUmwelt/a37b0c01c0baf1888ca812cc0508f6e2.ttf) format('truetype');
 }
 
 .material-icons {
@@ -48,4 +48,4 @@ body {
   min-height: 100%;
   background: #fafafa; }
 
-/*# sourceMappingURL=main.fe83c55d2f1ab2d72c0b25dd8b13c04f.css.map*/
+/*# sourceMappingURL=main.91b5249f59e3e4b4025a7934a3dd7d1d.css.map*/
