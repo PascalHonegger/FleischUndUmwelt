@@ -32,26 +32,5 @@ export class AppComponent {
       // No caching in dev mode
       return;
     }
-
-    const OfflinePluginRuntime = require('offline-plugin/runtime');
-
-    OfflinePluginRuntime.install({
-      onUpdating: () => {
-        console.debug('SW Event:', 'onUpdating');
-      },
-      onUpdateReady: () => {
-        console.debug('SW Event:', 'onUpdateReady');
-        // Tells to new SW to take control immediately
-        OfflinePluginRuntime.applyUpdate();
-      },
-      onUpdated: () => {
-        console.debug('SW Event:', 'onUpdated');
-        // Reload the webpage to load into the new version
-        window.location.reload();
-      },
-      onUpdateFailed: () => {
-        console.debug('SW Event:', 'onUpdateFailed');
-      }
-    });
   }
 }

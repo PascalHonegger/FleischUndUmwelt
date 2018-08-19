@@ -38,7 +38,7 @@ module.exports = function (options) {
       * Prefixing so every resource will be absolute (otherwise it will be url.com/repoName/repoName...
       * Suffixing since chunks will not do it automatically (testes against about page)
       */
-     publicPath: '/' // + GH_REPO_NAME + '/' + ghDeploy.safeUrl(webpackConfig.output.publicPath)
+     publicPath: '/' + GH_REPO_NAME + '/' + ghDeploy.safeUrl(webpackConfig.output.publicPath)
    },
 
    plugins: [
@@ -68,6 +68,7 @@ module.exports = function (options) {
          ghpages.publish(webpackConfig.output.path, options, function(err) {
            if (err) {
              console.log('GitHub deployment done. STATUS: ERROR.');
+             console.error(err);
              throw err;
            } else {
              console.log('GitHub deployment done. STATUS: SUCCESS.');

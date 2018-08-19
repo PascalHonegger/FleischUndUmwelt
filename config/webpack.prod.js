@@ -23,8 +23,6 @@ const HashedModuleIdsPlugin = require('webpack/lib/HashedModuleIdsPlugin');
 const PurifyPlugin = require('@angular-devkit/build-optimizer').PurifyPlugin;
 const ModuleConcatenationPlugin = require('webpack/lib/optimize/ModuleConcatenationPlugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const OfflinePlugin = require('offline-plugin');
-
 
 function getUglifyOptions (supportES2015) {
   const uglifyCompressOptions = {
@@ -174,31 +172,6 @@ module.exports = function (env) {
       new UglifyJsPlugin({
         parallel: true,
         uglifyOptions: getUglifyOptions(supportES2015)
-      }),
-
-      // it's always better if OfflinePlugin is the last plugin added
-      new OfflinePlugin({
-        publicPath: '/',
-        appShell: '/',
-        caches: 'all',
-        excludes: [
-          '**/.*',
-          '**/*.map',
-          '**/humans.txt',
-          '**/robots.txt',
-          '**/sitemap.xml',
-          '**/humans.txt',
-          '**/google*.html',
-          '**/CNAME',
-          '**/node_modules/**'
-        ],
-        externals: [
-          'https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css',
-          'https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js',
-          'https://avatars1.githubusercontent.com/u/14067784?v=4',
-          'https://avatars3.githubusercontent.com/u/14068276?v=4'
-        ],
-        version: () => null
       }),
 
       /**
